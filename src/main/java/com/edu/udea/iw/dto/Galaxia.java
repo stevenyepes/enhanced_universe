@@ -2,21 +2,52 @@ package com.edu.udea.iw.dto;
 
 import java.io.Serializable;
 
+/**
+ * Clase con el patron DTO para transportar los datos de las galaxias
+ * @author enhanced_universe
+ *
+ */
 public class Galaxia implements Serializable {
 
 	/**
-	 * 
+	 * Serial recomendado por java para una clase que implementa la Interface Serializable 
 	 */
 	private static final long serialVersionUID = 6457010021439862300L;
 	
+	/**
+	 * Id de la galaxia 
+	 */
 	private Integer id;
+	/**
+	 * Nombre completo de la galaxia 
+	 */
 	private String nombre;
+	/**
+	 * El tipo en el cual esta clasificada la galaxia 
+	 */
 	private TipoGalaxia tipogalaxia;
+	/**
+	 * Dimension del alto de la galaxia en años luz 
+	 */
 	private Double alto;
+	/**
+	 * Dimension del ancho de la galaxia en años luz
+	 */
 	private Double ancho;
+	/**
+	 * Dimension de la profundidad de la galaxia en años luz
+	 */
 	private Double profundidad;
+	/**
+	 * Diametro  de la galaxia en años luz
+	 */
 	private Double diametro;
+	/**
+	 * Distancia de la galaxia en años luz hasta la Tierra
+	 */
 	private Double distanciatierra;
+	
+	
 	public Integer getId() {
 		return id;
 	}
