@@ -9,31 +9,31 @@
             <generator class="increment" />
         </id>
         <property name="nombre" type="java.lang.String">
-            <column name="nombre" length="100"/>
+            <column name="nombre" length="100" not-null="true"/>
         </property>
         <property name="masa" type="java.lang.Double">
-            <column name="masa" />
+            <column name="masa" not-null="false" default="NULL"/>
         </property>
         <property name="gravedad" type="java.lang.Double">
-            <column name="gravedad" />
+            <column name="gravedad" not-null="false" default="NULL"/>
         </property>
         <property name="diametro" type="java.lang.Double">
-            <column name="diametro" />
+            <column name="diametro" not-null="false" default="NULL"/>
         </property>
         <property name="temperatura" type="java.lang.Double">
-            <column name="temperatura" />
+            <column name="temperatura" not-null="false" default="NULL"/>
         </property>
         <property name="periodorotacional" type="java.lang.Double">
-            <column name="periodorotacional" />
+            <column name="periodorotacional" not-null="false" default="NULL"/>
         </property>
         <property name="periodoorbital" type="java.lang.Double">
-            <column name="periodoorbital" />
+            <column name="periodoorbital" not-null="false" default="NULL"/>
         </property>
         <property name="distanciatierra" type="java.lang.Double">
-            <column name="distanciatierra" />
+            <column name="distanciatierra" not-null="false" default="NULL"/>
         </property>
         <many-to-one name="galaxia" class="com.edu.udea.iw.dto.Galaxia" fetch="join">
-            <column name="galaxia" precision="11"/>
+            <column name="galaxia" precision="11" not-null="true"/>
         </many-to-one>
     </class>
 </hibernate-mapping>
