@@ -120,7 +120,7 @@ CREATE TABLE IF NOT EXISTS `GALAXIA` (
   `tipo` int(11) unsigned NOT NULL,
   `alto` double DEFAULT NULL,
   `ancho` double DEFAULT NULL,
-  `prufundidad` double DEFAULT NULL,
+  `profundidad` double DEFAULT NULL,
   `diametro` double DEFAULT NULL,
   `distanciatierra` double DEFAULT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
@@ -129,7 +129,7 @@ CREATE TABLE IF NOT EXISTS `GALAXIA` (
 -- Volcado de datos para la tabla `GALAXIA`
 --
 
-INSERT INTO `GALAXIA` (`id`, `nombre`, `tipo`, `alto`, `ancho`, `prufundidad`, `diametro`, `distanciatierra`) VALUES
+INSERT INTO `GALAXIA` (`id`, `nombre`, `tipo`, `alto`, `ancho`, `profundidad`, `diametro`, `distanciatierra`) VALUES
 (1, 'via lactea', 1, NULL, NULL, NULL, 100000, 0);
 
 -- --------------------------------------------------------

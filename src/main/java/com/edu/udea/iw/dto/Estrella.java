@@ -23,6 +23,7 @@ public class Estrella implements Serializable{
 	 * Nombre completo de la estrella
 	 */
 	private String nombre;
+<<<<<<< HEAD
 	/**
 	 * Tipo espectral de la estrella segun su color
 	 */
@@ -30,6 +31,9 @@ public class Estrella implements Serializable{
 	/**
 	 * Temperatura de la estrella en grados celsius
 	 */
+=======
+	private TipoEspectral tipoespectral;
+>>>>>>> 46c176cbf35e1160a425b1c6947c8c2ada7c1f95
 	private Double temperatura;
 	/**
 	 * Clase de la estrella
@@ -61,10 +65,10 @@ public class Estrella implements Serializable{
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public String getTipoespectral() {
+	public TipoEspectral getTipoespectral() {
 		return tipoespectral;
 	}
-	public void setTipoespectral(String tipoespectral) {
+	public void setTipoespectral(TipoEspectral tipoespectral) {
 		this.tipoespectral = tipoespectral;
 	}
 	public Double getTemperatura() {
