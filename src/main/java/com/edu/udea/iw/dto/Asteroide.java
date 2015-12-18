@@ -2,17 +2,38 @@ package com.edu.udea.iw.dto;
 
 import java.io.Serializable;
 
+
+/**
+ * Clase con el patron DTO para transportar los datos de los asteroides
+ * @author enhanced_universe
+ *
+ */
 public class Asteroide implements Serializable{
 
 	/**
-	 * 
+	 * Serial recomendado por java para una clase que implementa la Interface Serializable
 	 */
 	private static final long serialVersionUID = -1316226061811270992L;
 	
+	/**
+	 * Id del asteroide
+	 */
 	private Integer id;
+	/**
+	 * Nombre completo del asteroide
+	 */
 	private String nombre;
+	/**
+	 * Diametro del asteroide en kilometros
+	 */
 	private Double diametro;
+	/**
+	 * Booleano que es verdadero si el asteroide supone un peligro para la Tierra
+	 */
 	private Boolean peligroso;
+	/**
+	 * Galaxia en la cual se mueve el asteroide
+	 */
 	private Galaxia galaxia;
 	
 	public Integer getId() {
