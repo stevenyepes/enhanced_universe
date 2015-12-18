@@ -9,7 +9,7 @@
             <generator class="increment" />
         </id>
         <property name="nombre" type="java.lang.String">
-            <column name="nombre" not-null="true" />
+            <column name="nombre" length="100" not-null="true" />
         </property>
         <property name="diametro" type="java.lang.Double">
             <column name="diametro" not-null="false" default="NULL"/>
