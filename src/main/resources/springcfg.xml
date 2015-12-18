@@ -17,5 +17,40 @@
 		<property name="username" value="root"></property>
 		<property name="password" value="root"></property>
 	</bean>
+	
+	
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="mappingResources">
+
+			<list>
+
+				<value>com/edu/udea/iw/dto/Galaxia.hbm.xml</value>
+				<value>com/udea/iw/dto/Planeta.hbm.xml</value>
+				<value>com/udea/iw/dto/TipoGalaxia.hbm.xml</value>
+			</list>
+		</property>
+
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="javax.persistence.validation.mode">none</prop>
+
+			</props>
+		</property>
+	</bean>
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+
+		<property name="sessionFactory" ref="sessionFactory"></property>
+		<property name="dataSource" ref="dataSource"></property>
+
+	</bean>
+
+	
+
+</beans>
 
 </beans>
