@@ -32,9 +32,7 @@
 				<value>com/edu/udea/iw/dto/Administrador.hbm.xml</value>
 				<value>com/edu/udea/iw/dto/Asteroide.hbm.xml</value>
 				<value>com/edu/udea/iw/dto/Cometa.hbm.xml</value>
-				<value>com/edu/udea/iw/dto/Estrella.hbm.xml</value>
 				<value>com/edu/udea/iw/dto/Glosario.hbm.xml</value>
-				<value>com/edu/udea/iw/dto/Satelite.hbm.xml</value>
 			</list>
 		</property>
 
@@ -58,6 +56,10 @@
 
 
 	<bean id="tipoGalaxiaDao" class="com.edu.udea.iw.dao.impl.TipoGalaxiaDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="galaxiaDao" class="com.edu.udea.iw.dao.impl.GalaxiaDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 	
