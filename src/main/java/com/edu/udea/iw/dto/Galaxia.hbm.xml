@@ -5,14 +5,14 @@
 <hibernate-mapping>
     <class name="com.edu.udea.iw.dto.Galaxia" table="GALAXIA">
         <id name="id" type="java.lang.Integer">
-            <column name="id" />
-            <generator class="assigned" />
+            <column name="id" precision="11" />
+            <generator class="increment" />
         </id>
         <property name="nombre" type="java.lang.String">
-            <column name="nombre" />
+            <column name="nombre" length="100" />
         </property>
         <many-to-one name="tipogalaxia" class="com.edu.udea.iw.dto.TipoGalaxia" fetch="join">
-            <column name="tipogalaxia" />
+            <column name="tipogalaxia" precision="11"/>
         </many-to-one>
         <property name="alto" type="java.lang.Double">
             <column name="alto" />

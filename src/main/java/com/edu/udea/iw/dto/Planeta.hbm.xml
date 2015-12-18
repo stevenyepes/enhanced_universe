@@ -5,35 +5,35 @@
 <hibernate-mapping>
     <class name="com.edu.udea.iw.dto.Planeta" table="PLANETA">
         <id name="id" type="java.lang.Integer">
-            <column name="ID" />
-            <generator class="assigned" />
+            <column name="id" precision="11" />
+            <generator class="increment" />
         </id>
         <property name="nombre" type="java.lang.String">
-            <column name="NOMBRE" />
+            <column name="nombre" length="100"/>
         </property>
         <property name="masa" type="java.lang.Double">
-            <column name="MASA" />
+            <column name="masa" />
         </property>
         <property name="gravedad" type="java.lang.Double">
-            <column name="GRAVEDAD" />
+            <column name="gravedad" />
         </property>
         <property name="diametro" type="java.lang.Double">
-            <column name="DIAMETRO" />
+            <column name="diametro" />
         </property>
         <property name="temperatura" type="java.lang.Double">
-            <column name="TEMPERATURA" />
+            <column name="temperatura" />
         </property>
         <property name="periodorotacional" type="java.lang.Double">
-            <column name="PERIODOROTACIONAL" />
+            <column name="periodorotacional" />
         </property>
         <property name="periodoorbital" type="java.lang.Double">
-            <column name="PERIODOORBITAL" />
+            <column name="periodoorbital" />
         </property>
         <property name="distanciatierra" type="java.lang.Double">
-            <column name="DISTANCIATIERRA" />
+            <column name="distanciatierra" />
         </property>
         <many-to-one name="galaxia" class="com.edu.udea.iw.dto.Galaxia" fetch="join">
-            <column name="GALAXIA" />
+            <column name="galaxia" precision="11"/>
         </many-to-one>
     </class>
 </hibernate-mapping>
