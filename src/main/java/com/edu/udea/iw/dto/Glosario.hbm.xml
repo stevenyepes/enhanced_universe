@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18/12/2015 05:33:29 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.edu.udea.iw.dto.Glosario" table="GLOSARIO">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" precision="11" />
+            <generator class="increment" />
+        </id>
+        <property name="termino" type="java.lang.String">
+            <column name="termino" length="100" not-null="true"/>
+        </property>
+        <property name="definicion" type="java.lang.String">
+            <column name="definicion" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

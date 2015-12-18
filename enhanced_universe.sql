@@ -185,7 +185,7 @@ INSERT INTO `PLANETA` (`id`, `nombre`, `masa`, `gravedad`, `diametro`, `temperat
 
 CREATE TABLE IF NOT EXISTS `SATELITE` (
 `id` int(11) unsigned NOT NULL,
-  `nombre` varchar(100) DEFAULT NULL,
+  `nombre` varchar(100) NOT NULL,
   `masa` double DEFAULT NULL,
   `gravedad` double DEFAULT NULL,
   `diametro` double DEFAULT NULL,
