@@ -11,9 +11,9 @@
         <property name="nombre" type="java.lang.String">
             <column name="nombre" length="100" not-null="true"/>
         </property>
-        <property name="tipoespectral" type="java.lang.String">
+        <many-to-one name="tipoespectral" class="com.edu.udea.iw.dto.TipoEspectral" fetch="join">
             <column name="tipoespectral" length="2" not-null="false" default="NULL"/>
-        </property>
+        </many-to-one>
         <property name="temperatura" type="java.lang.Double">
             <column name="temperatura" not-null="false" default="NULL"/>
         </property>

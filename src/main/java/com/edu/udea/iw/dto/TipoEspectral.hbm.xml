@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18/12/2015 05:52:31 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.edu.udea.iw.dto.TipoEspectral" table="TIPOESPECTRAL">
+        <id name="clasificacion" type="java.lang.String">
+            <column name="clasificacion" length="2" />
+            <generator class="assigned" />
+        </id>
+        <property name="color" type="java.lang.String">
+            <column name="color" length="100" not-null="true"/>
+        </property>
+        <property name="temperatura" type="java.lang.Double">
+            <column name="temperatura" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

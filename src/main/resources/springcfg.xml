@@ -35,6 +35,7 @@
 				<value>com/edu/udea/iw/dto/Estrella.hbm.xml</value>
 				<value>com/edu/udea/iw/dto/Glosario.hbm.xml</value>
 				<value>com/edu/udea/iw/dto/Satelite.hbm.xml</value>
+				<value>com/edu/udea/iw/dto/TipoEspectral.hbm.xml</value>
 			</list>
 		</property>
 

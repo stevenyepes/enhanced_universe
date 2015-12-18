@@ -11,7 +11,7 @@ public class Estrella implements Serializable{
 
 	private Integer id;
 	private String nombre;
-	private String tipoespectral;
+	private TipoEspectral tipoespectral;
 	private Double temperatura;
 	private String clase;
 	private Double masa;
@@ -30,10 +30,10 @@ public class Estrella implements Serializable{
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public String getTipoespectral() {
+	public TipoEspectral getTipoespectral() {
 		return tipoespectral;
 	}
-	public void setTipoespectral(String tipoespectral) {
+	public void setTipoespectral(TipoEspectral tipoespectral) {
 		this.tipoespectral = tipoespectral;
 	}
 	public Double getTemperatura() {
