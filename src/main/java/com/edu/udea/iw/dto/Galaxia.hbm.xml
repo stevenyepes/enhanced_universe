@@ -9,25 +9,25 @@
             <generator class="increment" />
         </id>
         <property name="nombre" type="java.lang.String">
-            <column name="nombre" length="100" />
+            <column name="nombre" length="100" not-null="true"/>
         </property>
         <many-to-one name="tipogalaxia" class="com.edu.udea.iw.dto.TipoGalaxia" fetch="join">
-            <column name="tipogalaxia" precision="11"/>
+            <column name="tipogalaxia" precision="11" not-null="true"/>
         </many-to-one>
         <property name="alto" type="java.lang.Double">
-            <column name="alto" />
+            <column name="alto" not-null="false" default="NULL"/>
         </property>
         <property name="ancho" type="java.lang.Double">
-            <column name="ancho" />
+            <column name="ancho" not-null="false" default="NULL"/>
         </property>
         <property name="profundidad" type="java.lang.Double">
-            <column name="profundidad" />
+            <column name="profundidad" not-null="false" default="NULL"/>
         </property>
         <property name="diametro" type="java.lang.Double">
-            <column name="diametro" />
+            <column name="diametro" not-null="false" default="NULL"/>
         </property>
         <property name="distanciatierra" type="java.lang.Double">
-            <column name="distanciatierra" />
+            <column name="distanciatierra" not-null="false" default="NULL"/>
         </property>
     </class>
 </hibernate-mapping>
