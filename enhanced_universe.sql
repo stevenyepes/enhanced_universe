@@ -120,7 +120,7 @@ CREATE TABLE IF NOT EXISTS `GALAXIA` (
   `tipo` int(11) unsigned NOT NULL,
   `alto` double DEFAULT NULL,
   `ancho` double DEFAULT NULL,
-  `prufundidad` double DEFAULT NULL,
+  `profundidad` double DEFAULT NULL,
   `diametro` double DEFAULT NULL,
   `distanciatierra` double DEFAULT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
