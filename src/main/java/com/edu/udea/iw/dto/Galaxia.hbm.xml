@@ -12,7 +12,7 @@
             <column name="nombre" length="100" not-null="true"/>
         </property>
         <many-to-one name="tipogalaxia" class="com.edu.udea.iw.dto.TipoGalaxia" fetch="join">
-            <column name="tipogalaxia" precision="11" not-null="true"/>
+            <column name="tipo" precision="11" not-null="true"/>
         </many-to-one>
         <property name="alto" type="java.lang.Double">
             <column name="alto" not-null="false" default="NULL"/>
