@@ -129,7 +129,7 @@ CREATE TABLE IF NOT EXISTS `GALAXIA` (
 -- Volcado de datos para la tabla `GALAXIA`
 --
 
-INSERT INTO `GALAXIA` (`id`, `nombre`, `tipo`, `alto`, `ancho`, `prufundidad`, `diametro`, `distanciatierra`) VALUES
+INSERT INTO `GALAXIA` (`id`, `nombre`, `tipo`, `alto`, `ancho`, `profundidad`, `diametro`, `distanciatierra`) VALUES
 (1, 'via lactea', 1, NULL, NULL, NULL, 100000, 0);
 
 -- --------------------------------------------------------
