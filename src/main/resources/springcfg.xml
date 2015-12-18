@@ -27,8 +27,8 @@
 			<list>
 
 				<value>com/edu/udea/iw/dto/Galaxia.hbm.xml</value>
-				<value>com/udea/iw/dto/Planeta.hbm.xml</value>
-				<value>com/udea/iw/dto/TipoGalaxia.hbm.xml</value>
+				<value>com/edu/udea/iw/dto/Planeta.hbm.xml</value>
+				<value>com/edu/udea/iw/dto/TipoGalaxia.hbm.xml</value>
 			</list>
 		</property>
 
@@ -48,6 +48,13 @@
 		<property name="dataSource" ref="dataSource"></property>
 
 	</bean>
+	
+
+
+	<bean id="tipoGalaxiaDao" class="com.edu.udea.iw.dao.impl.TipoGalaxiaDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
 
 	
 
