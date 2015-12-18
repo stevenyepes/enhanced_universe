@@ -35,14 +35,22 @@ public class TipoGalaxiaDAOimplTest {
 		assertTrue(tipoGalaxia.size()>0);
 	}
 
-	//@Test
-	public void testGuardar() {
-		fail("Not yet implemented");
+	@Test
+	public void testGuardar() throws MyException {
+
+		TipoGalaxia tipoGalaxia = new TipoGalaxia();
+		tipoGalaxia.setNombre("Tipo 1");
+		
+		
+		assertTrue(tipogalaxiaDAO.guardar(tipoGalaxia));
 	}
 
 	@Test
-	public void testEliminar() {
-		fail("Not yet implemented");
+	public void testEliminar() throws MyException {
+		
+		TipoGalaxia tipoGalaxia = new TipoGalaxia();
+		tipoGalaxia.setId(1);
+		assertTrue(tipogalaxiaDAO.eliminar(tipoGalaxia));
 	}
 
 }

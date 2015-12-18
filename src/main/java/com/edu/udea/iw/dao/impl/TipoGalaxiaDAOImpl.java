@@ -45,13 +45,13 @@ public class TipoGalaxiaDAOImpl  extends HibernateDaoSupport implements TipoGala
 			// Inicia la transaccion
 			tr = (Transaction) session.beginTransaction();
 			session.save(tipogalaxia);
-			
+			isSaved = true;
 			
 		} catch (HibernateException e) {
 			throw new MyException(e);
 		} finally {
 			
-			isSaved = true;
+			
 		
 		}
 		
@@ -69,13 +69,13 @@ public class TipoGalaxiaDAOImpl  extends HibernateDaoSupport implements TipoGala
 			// Inicia la transaccion
 			tr = (Transaction) session.beginTransaction();
 			session.delete(tipoGalaxia);
-			
+			isDelete = true;
 			
 		} catch (HibernateException e) {
 			throw new MyException(e);
 		} finally {
 			
-			isDelete = true;
+			
 		
 		}
 		
