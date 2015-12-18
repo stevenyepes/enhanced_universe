@@ -2,21 +2,52 @@ package com.edu.udea.iw.dto;
 
 import java.io.Serializable;
 
+
+/**
+ * Clase con el patron DTO para transportar los datos de la estrella
+ * @author enhanced_universe
+ *
+ */
 public class Estrella implements Serializable{
 
 	/**
-	 * 
+	 * Serial recomendado por java para una clase que implementa la Interface Serializable 
 	 */
 	private static final long serialVersionUID = -4699554243740151135L;
-
+	
+	/**
+	 * Id de la estrella
+	 */
 	private Integer id;
+	/**
+	 * Nombre completo de la estrella
+	 */
 	private String nombre;
+	/**
+	 * Tipo espectral de la estrella segun su color
+	 */
 	private String tipoespectral;
+	/**
+	 * Temperatura de la estrella en grados celsius
+	 */
 	private Double temperatura;
+	/**
+	 * Clase de la estrella
+	 */
 	private String clase;
+	/**
+	 * Masa de la estrella
+	 */
 	private Double masa;
+	/**
+	 * Diametro de la estrella en kilometros
+	 */
 	private Double diametro;
+	/**
+	 * Galaxia en la que se encuentra la estrella
+	 */
 	private Galaxia galaxia;
+	
 	
 	public Integer getId() {
 		return id;
