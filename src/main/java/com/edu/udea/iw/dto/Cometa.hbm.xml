@@ -1,24 +1,27 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 18/12/2015 04:37:38 PM by Hibernate Tools 3.4.0.CR1 -->
+<!-- Generated 18/12/2015 05:05:35 PM by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="com.edu.udea.iw.dto.Asteroide" table="ASTEROIDE">
+    <class name="com.edu.udea.iw.dto.Cometa" table="COMETA">
         <id name="id" type="java.lang.Integer">
             <column name="id" precision="11"/>
             <generator class="increment" />
         </id>
         <property name="nombre" type="java.lang.String">
-            <column name="nombre" length="100" not-null="true" />
+            <column name="nombre" not-null="true" />
         </property>
         <property name="diametro" type="java.lang.Double">
-            <column name="diametro" not-null="false" default="NULL" />
+            <column name="diametro" not-null="false" default="NULL"/>
         </property>
-        <property name="peligroso" type="java.lang.Boolean">
-            <column name="peligroso" not-null="false" default="NULL"/>
+        <property name="periodoorbital" type="java.lang.Double">
+            <column name="periodoorbital" not-null="false" default="NULL" />
+        </property>
+        <property name="ultimoperihelio" type="java.lang.Integer">
+            <column name="ultimoperihelio" not-null="false" default="NULL"/>
         </property>
         <many-to-one name="galaxia" class="com.edu.udea.iw.dto.Galaxia" fetch="join">
-            <column name="galaxia" precision="11" not-null="true" />
+            <column name="GALAXIA" precision="11" not-null="true" />
         </many-to-one>
     </class>
 </hibernate-mapping>
