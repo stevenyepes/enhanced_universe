@@ -8,6 +8,7 @@ import com.edu.udea.iw.exception.MyException;
 public interface TipoGalaxiaDAO {
 	
 	public List<TipoGalaxia> consultar() throws MyException;
-	public boolean guardar(TipoGalaxia tipogalaxia);
+	public Boolean guardar(TipoGalaxia tipogalaxia) throws MyException;
+	public Boolean eliminar(TipoGalaxia tipoGalaxia) throws MyException;
 
 }

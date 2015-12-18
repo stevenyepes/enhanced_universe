@@ -18,6 +18,15 @@
 		</dependency>
 		
 		
+		
+		<!-- Hibernate dependencies -->
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>3.6.10.Final</version>
+		</dependency>
+		
 		<!-- Mysql dependencies -->
 
 		<dependency>
