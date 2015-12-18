@@ -26,7 +26,7 @@ public class Estrella implements Serializable{
 	/**
 	 * Tipo espectral de la estrella segun su color
 	 */
-	private String tipoespectral;
+	private TipoEspectral tipoespectral;
 	/**
 	 * Temperatura de la estrella en grados celsius
 	 */
