@@ -7,6 +7,7 @@ import org.springframework.aop.ThrowsAdvice;
 
 import com.edu.udea.iw.bl.GalaxiaBL;
 import com.edu.udea.iw.dao.GalaxiaDAO;
+import com.edu.udea.iw.dao.PlanetaDAO;
 import com.edu.udea.iw.dao.TipoGalaxiaDAO;
 import com.edu.udea.iw.dao.impl.GalaxiaDAOImpl;
 import com.edu.udea.iw.dao.impl.TipoGalaxiaDAOImpl;
@@ -14,6 +15,10 @@ import com.edu.udea.iw.dto.Galaxia;
 import com.edu.udea.iw.dto.TipoGalaxia;
 import com.edu.udea.iw.exception.MyException;
 
+/**
+ * Implementacion de los metodos de la interface {@link GalaxiaBL}
+ * @author enhanced_universe
+*/
 public class GalaxiaBLImpl implements GalaxiaBL {
 
 	GalaxiaDAO galaxiaDao;
