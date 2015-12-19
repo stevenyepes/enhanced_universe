@@ -41,7 +41,7 @@ public interface GalaxiaBL {
 	 * si el planeta no guardo correctamente 
 	 * @throws MyException Datos ingresados invalidos.
 	 */
-	public Boolean guardarGarlaxia(String nombre, String tipo, Double alto, Double ancho, Double profundidad, Double diametro, Double distanciatierra) throws MyException;
+	public Boolean guardarGalaxia(String nombre, String tipo, Double alto, Double ancho, Double profundidad, Double diametro, Double distanciatierra) throws MyException;
 		
 	/**
 	 * Verifica los datos de la galaxia  dada para actualizarlos.
