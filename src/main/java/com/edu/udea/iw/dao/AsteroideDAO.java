@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.edu.udea.iw.dto.Asteroide;
 import com.edu.udea.iw.exception.MyException;
-
+//
 public interface AsteroideDAO {
 
 	public List<Asteroide> consultar() throws MyException;

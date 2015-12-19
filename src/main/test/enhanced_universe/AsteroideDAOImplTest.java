@@ -15,7 +15,7 @@ import com.edu.udea.iw.dao.AsteroideDAO;
 import com.edu.udea.iw.dto.Asteroide;
 import com.edu.udea.iw.exception.MyException;
 
-
+//
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:springcfg.xml")
 

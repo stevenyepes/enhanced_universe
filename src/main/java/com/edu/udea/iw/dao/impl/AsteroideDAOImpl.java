@@ -13,7 +13,7 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import com.edu.udea.iw.dao.AsteroideDAO;
 import com.edu.udea.iw.dto.Asteroide;
 import com.edu.udea.iw.exception.MyException;
-
+//
 public class AsteroideDAOImpl extends HibernateDaoSupport implements AsteroideDAO{
 
 	public List<Asteroide> consultar() throws MyException {
