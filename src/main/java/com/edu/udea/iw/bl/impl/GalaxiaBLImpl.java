@@ -47,7 +47,7 @@ public class GalaxiaBLImpl implements GalaxiaBL {
 		return galaxiaDTO;
 	}
 
-	public Boolean guardarGarlaxia(String nombre, String tipo, Double alto, Double ancho, Double profundidad,
+	public Boolean guardarGalaxia(String nombre, String tipo, Double alto, Double ancho, Double profundidad,
 			Double diametro, Double distanciatierra) throws MyException {
 		
 		Boolean isSaved = false;
