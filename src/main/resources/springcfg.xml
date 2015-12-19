@@ -75,6 +75,10 @@
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 	
+	<bean id="sateliteDao" class="com.edu.udea.iw.dao.impl.SateliteDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
 
 	
 
