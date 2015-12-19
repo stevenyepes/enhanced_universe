@@ -71,6 +71,10 @@
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 	
+	<bean id="cometaDao" class="com.edu.udea.iw.dao.impl.CometaDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
 
 	
 
