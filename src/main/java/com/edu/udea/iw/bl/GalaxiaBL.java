@@ -27,6 +27,7 @@ public interface GalaxiaBL {
 	 * @throws MyException Proporcionar nombre valido de la galaxia
 	 */
 	public Galaxia listarGalaxia(String galaxia) throws MyException;
+<<<<<<< HEAD
 	
 	/**
 	 * Verifica los datos de la galaxia dada para guardarlos.
@@ -56,6 +57,9 @@ public interface GalaxiaBL {
 	 * si el planeta no actualiza correctamente 
 	 * @throws MyException Datos ingresados no validos.
 	 */
+=======
+	public Boolean guardarGalaxia(String nombre, String tipo, Double alto, Double ancho, Double profundidad, Double diametro, Double distanciatierra) throws MyException;
+>>>>>>> 531f19acfc067cb067c7840c9277484d1abb6b37
 	public Boolean actualizarGalaxia(String nombre, String tipo, Double alto, Double ancho, Double profundidad, Double diametro, Double distanciatierra) throws MyException;
 	
 	/**
