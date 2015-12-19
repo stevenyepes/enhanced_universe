@@ -38,7 +38,7 @@ public interface GalaxiaBL {
 	 * @param diametro galaxia a guardar
 	 * @param distanciatierra distancia ala tierra de la galaxia a guardar 
 	 * @return true si la galaxia se guardo con exito, false
-	 * si el planeta no guardo correctamente 
+	 * si la galaxia no guardo correctamente 
 	 * @throws MyException Datos ingresados invalidos.
 	 */
 	public Boolean guardarGalaxia(String nombre, String tipo, Double alto, Double ancho, Double profundidad, Double diametro, Double distanciatierra) throws MyException;
@@ -53,7 +53,7 @@ public interface GalaxiaBL {
 	 * @param diametro galaxia a actualizar
 	 * @param distanciatierra distancia ala tierra de la galaxia a actualizar 
 	 * @return true si la galaxia se actualiza con exito, false
-	 * si el planeta no actualiza correctamente 
+	 * si la galaxia no actualiza correctamente 
 	 * @throws MyException Datos ingresados no validos.
 	 */
 	public Boolean actualizarGalaxia(String nombre, String tipo, Double alto, Double ancho, Double profundidad, Double diametro, Double distanciatierra) throws MyException;

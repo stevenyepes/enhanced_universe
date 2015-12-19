@@ -111,8 +111,9 @@
 		<property name="asteroideDao" ref="asteroideDao"></property>
 	</bean>
 	
-	
-
+	<bean id="administradorBL" class="com.edu.udea.iw.bl.impl.AdministradorBLImpl">
+		<property name="administradorDao" ref="administradorDao"></property>
+	</bean>	
 	
 
 </beans>

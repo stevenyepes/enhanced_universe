@@ -42,7 +42,7 @@ public class AdministradorDAOImpl extends HibernateDaoSupport implements Adminis
 	}
 
 	public Administrador consultaUnica(String usuario) throws MyException {
-		Administrador administrador = new Administrador();
+		Administrador administrador = null;
 		Session session = null;
 		
 		try {
