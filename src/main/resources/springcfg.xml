@@ -107,7 +107,9 @@
 		<property name="tipoGalaxiaDao" ref="tipoGalaxiaDao"></property>
 	</bean>
 	
-	
+	<bean id="administradorBL" class="com.edu.udea.iw.bl.impl.AdministradorBLImpl">
+		<property name="administradorDao" ref="administradorDao"></property>
+	</bean>	
 	
 
 	
