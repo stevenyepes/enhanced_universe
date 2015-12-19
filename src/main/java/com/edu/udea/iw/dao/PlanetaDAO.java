@@ -16,7 +16,7 @@ public interface PlanetaDAO {
 	/**
 	 * Entrega la lista de planetas en la base de datos
 	 * @return lista planetas
-	 * @throws MyException Ocurre un error con la conexión.
+	 * @throws MyException Ocurre un error con la conexion.
 	 */
 	public List<Planeta> consultar() throws MyException;
 	

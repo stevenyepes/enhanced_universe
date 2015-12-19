@@ -17,7 +17,7 @@ import com.edu.udea.iw.dto.Estrella;
 import com.edu.udea.iw.exception.MyException;
 
 /**
- * Implementación utilizando hibernate de la interface {@link Cometa}
+ * Implementacion utilizando hibernate de la interface {@link Cometa}
  * @author enhanced_universe
 */
 public class CometaDAOImpl extends HibernateDaoSupport implements CometaDAO {

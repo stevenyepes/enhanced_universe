@@ -15,7 +15,7 @@ public interface GalaxiaDAO {
 	/**
 	 * Entrega la lista de galaxias en la base de datos
 	 * @return lista galaxias
-	 * @throws MyException Ocurre un error con la conexión.
+	 * @throws MyException Ocurre un error con la conexion.
 	 */
 	public List<Galaxia> consultar() throws MyException;
 	

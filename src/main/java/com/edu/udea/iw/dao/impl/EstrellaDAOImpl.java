@@ -16,7 +16,7 @@ import com.edu.udea.iw.dto.Estrella;
 import com.edu.udea.iw.exception.MyException;
 
 /**
- * Implementación utilizando hibernate de la interface {@link EstrellaDAO}
+ * Implementacion utilizando hibernate de la interface {@link EstrellaDAO}
  * @author enhanced_universe
 */
 public class EstrellaDAOImpl extends HibernateDaoSupport implements EstrellaDAO{

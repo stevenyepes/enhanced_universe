@@ -15,7 +15,7 @@ public interface CometaDAO {
 	/**
 	 * Entrega la lista de cometas en la base de datos
 	 * @return lista cometas
-	 * @throws MyException Ocurre un error con la conexión.
+	 * @throws MyException Ocurre un error con la conexion.
 	 */
 	public List<Cometa> consultar() throws MyException;
 	

@@ -15,7 +15,7 @@ public interface TipoEspectralDAO {
 	/**
 	 * Entrega la lista de tipo espectral en la base de datos
 	 * @return lista tiposespectrales
-	 * @throws MyException Ocurre un error con la conexión.
+	 * @throws MyException Ocurre un error con la conexion.
 	 */
 	public List<TipoEspectral> consultar() throws MyException;
 	

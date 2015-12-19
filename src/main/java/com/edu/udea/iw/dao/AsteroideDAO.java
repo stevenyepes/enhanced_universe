@@ -15,7 +15,7 @@ public interface AsteroideDAO {
 	/**
 	 * Entrega la lista de asteroide en la base de datos
 	 * @return lista asteroide
-	 * @throws MyException Ocurre un error con la conexión.
+	 * @throws MyException Ocurre un error con la conexion.
 	 */
 	public List<Asteroide> consultar() throws MyException;
 	

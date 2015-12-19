@@ -11,13 +11,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.edu.udea.iw.dao.GalaxiaDAO;
 import com.edu.udea.iw.dao.GlosarioDAO;
 import com.edu.udea.iw.dto.Glosario;
 import com.edu.udea.iw.exception.MyException;
 
+/**
+ * Implementacion de pruebas para los metodos del dao {@link GlosarioDAO}
+ * @author enhanced_universe
+*/
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:springcfg.xml")
-
 public class GlosarioDAOImplTest {
 
 	@Autowired

@@ -16,7 +16,7 @@ import com.edu.udea.iw.dto.Galaxia;
 import com.edu.udea.iw.exception.MyException;
 
 /**
- * Implementación utilizando hibernate de la interface {@link GalaxiaDAO}
+ * Implementacion utilizando hibernate de la interface {@link GalaxiaDAO}
  * @author enhanced_universe
 */
 public class GalaxiaDAOImpl extends HibernateDaoSupport implements GalaxiaDAO {
