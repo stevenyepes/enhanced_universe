@@ -10,27 +10,22 @@ import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
-import com.edu.udea.iw.dao.AdministradorDAO;
-import com.edu.udea.iw.dao.PlanetaDAO;
-import com.edu.udea.iw.dto.Administrador;
-import com.edu.udea.iw.dto.Cometa;
+import com.edu.udea.iw.dao.GlosarioDAO;
+import com.edu.udea.iw.dto.Glosario;
 import com.edu.udea.iw.exception.MyException;
 
-/**
- * Implementación utilizando hibernate de la interface {@link AdministradorDAO}
- * @author enhanced_universe
-*/
-public class AdministradorDAOImpl extends HibernateDaoSupport implements AdministradorDAO {
 
-	public List<Administrador> consultar() throws MyException {
-		List<Administrador> administradores = new ArrayList<Administrador>();
+public class GlosarioDAOImpl extends HibernateDaoSupport implements GlosarioDAO{
+
+	public List<Glosario> consultar() throws MyException {
+		List<Glosario> glosarios = new ArrayList<Glosario>();
 		Session session = null;
 		
 		try {
 
 			session = getSession();
-			Criteria criteria = session.createCriteria(Administrador.class);
-			administradores = criteria.list();
+			Criteria criteria = session.createCriteria(Glosario.class);
+			glosarios = criteria.list();
 
 		} catch (HibernateException e) {
 
@@ -38,29 +33,28 @@ public class AdministradorDAOImpl extends HibernateDaoSupport implements Adminis
 
 		} 
 
-		return administradores;
+		return glosarios;
 	}
 
-	public Administrador consultaUnica(String usuario) throws MyException {
-		Administrador administrador = new Administrador();
+	public Glosario consultaUnica(String termino) throws MyException {
+		Glosario glosario = new Glosario();
 		Session session = null;
 		
 		try {
 
 			session = getSession();
-			Criteria criteria = session.createCriteria(Administrador.class).add(Restrictions.eq("usuario", usuario));
-			administrador = (Administrador) criteria.uniqueResult();
+			Criteria criteria = session.createCriteria(Glosario.class).add(Restrictions.eq("termino", termino));
+			glosario = (Glosario) criteria.uniqueResult();
 
 		} catch (HibernateException e) {
-
 			throw new MyException(e);
 
 		} 
 
-		return administrador;
+		return glosario;
 	}
 
-	public Boolean guardar(Administrador administrador) throws MyException {
+	public Boolean guardar(Glosario glosario) throws MyException {
 		boolean isSaved = false;
 		Session session = null;
 		Transaction tr = null;
@@ -69,7 +63,7 @@ public class AdministradorDAOImpl extends HibernateDaoSupport implements Adminis
 			// Guarda el objeto
 			// Inicia la transaccion
 			tr = (Transaction) session.beginTransaction();
-			session.save(administrador);
+			session.save(glosario);
 			isSaved = true;
 			
 		} catch (HibernateException e) {
@@ -83,7 +77,7 @@ public class AdministradorDAOImpl extends HibernateDaoSupport implements Adminis
 		return isSaved;
 	}
 
-	public Boolean actualizar(Administrador administrador) throws MyException {
+	public Boolean actualizar(Glosario glosario) throws MyException {
 		boolean isUpdated = false;
 		Session session = null;
 		Transaction tr = null;
@@ -92,7 +86,7 @@ public class AdministradorDAOImpl extends HibernateDaoSupport implements Adminis
 			// Guarda el objeto
 			// Inicia la transaccion
 			tr = (Transaction) session.beginTransaction();
-			session.update(administrador);
+			session.update(glosario);
 			isUpdated = true;
 			
 		} catch (HibernateException e) {
@@ -106,7 +100,7 @@ public class AdministradorDAOImpl extends HibernateDaoSupport implements Adminis
 		return isUpdated;
 	}
 
-	public Boolean eliminar(Administrador administrador) throws MyException {
+	public Boolean eliminar(Glosario glosario) throws MyException {
 		boolean isDeleted = false;
 		Session session = null;
 		Transaction tr = null;
@@ -115,7 +109,7 @@ public class AdministradorDAOImpl extends HibernateDaoSupport implements Adminis
 			// Guarda el objeto
 			// Inicia la transaccion
 			tr = (Transaction) session.beginTransaction();
-			session.delete(administrador);
+			session.delete(glosario);
 			isDeleted = true;
 			
 		} catch (HibernateException e) {
