@@ -95,9 +95,7 @@
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>	
 	
-	<bean id="glosarioDao" class="com.edu.udea.iw.dao.impl.GlosarioDAOImpl">
-		<property name="sessionFactory" ref="sessionFactory"></property>
-	</bean>
+	
 	
 	
 

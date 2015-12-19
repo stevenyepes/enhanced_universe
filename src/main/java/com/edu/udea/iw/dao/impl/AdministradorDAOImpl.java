@@ -43,7 +43,7 @@ public class AdministradorDAOImpl extends HibernateDaoSupport implements Adminis
 		try {
 
 			session = getSession();
-			Criteria criteria = session.createCriteria(Cometa.class).add(Restrictions.eq("usuario", usuario));
+			Criteria criteria = session.createCriteria(Administrador.class).add(Restrictions.eq("usuario", usuario));
 			administrador = (Administrador) criteria.uniqueResult();
 
 		} catch (HibernateException e) {
