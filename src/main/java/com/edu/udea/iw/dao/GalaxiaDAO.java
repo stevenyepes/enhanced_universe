@@ -21,7 +21,7 @@ public interface GalaxiaDAO {
 	
 	/**
 	 * Consulta los datos de una galaxia dado su nombre.
-	 * @param galaxia nombre de la galaxia a consultar
+	 * @param nombre nombre de la galaxia a consultar
 	 * @return una instacia de los datos de la galaxia consultada, si no
 	 * existe una galaxia con el nombre dado retorna un null.
 	 * @throws MyException Ocurre un error con la base de datos.

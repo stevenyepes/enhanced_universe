@@ -70,7 +70,15 @@
 	<bean id="planetaDao" class="com.edu.udea.iw.dao.impl.PlanetaDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
+
+	<bean id="estrellaDao" class="com.edu.udea.iw.dao.impl.EstrellaDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
 	
+	<bean id="tipoEspectralDao" class="com.edu.udea.iw.dao.impl.TipoEspectralDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
 	<bean id="cometaDao" class="com.edu.udea.iw.dao.impl.CometaDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>

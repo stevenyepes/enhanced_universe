@@ -11,10 +11,15 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.edu.udea.iw.dao.CometaDAO;
+import com.edu.udea.iw.dao.GalaxiaDAO;
 import com.edu.udea.iw.dto.Cometa;
 import com.edu.udea.iw.dto.Estrella;
 import com.edu.udea.iw.exception.MyException;
 
+/**
+ * Implementación utilizando hibernate de la interface {@link Cometa}
+ * @author enhanced_universe
+*/
 public class CometaDAOImpl extends HibernateDaoSupport implements CometaDAO {
 
 	public List<Cometa> consultar() throws MyException {
