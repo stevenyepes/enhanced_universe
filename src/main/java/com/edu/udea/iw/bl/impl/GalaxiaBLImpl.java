@@ -62,11 +62,21 @@ public class GalaxiaBLImpl implements GalaxiaBL {
 			
 			throw new MyException("Datos nulos, por favor reviselos ",null );
 		}
+		
+		for(Galaxia galaxiaAux : galaxiaDao.consultar()) {
+			
+			if(galaxiaAux.getNombre().equals(nombre)) {
+				
+				throw new MyException("El tipo de galaxia ya existe ",null );
+			}
+	
+		}
+		
 		TipoGalaxiaDAO tipoGalaxiaDao = new TipoGalaxiaDAOImpl();
 		Galaxia galaxia = new Galaxia();
 		galaxia.setNombre(nombre);
 		
-
+		
 		
 		for(TipoGalaxia tipoGalaxia : tipoGalaxiaDao.consultar()) {
 			

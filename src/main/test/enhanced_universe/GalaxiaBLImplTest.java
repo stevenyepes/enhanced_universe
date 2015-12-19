@@ -31,9 +31,12 @@ public class GalaxiaBLImplTest {
 		assertTrue(galaxias.size()>0);
 	}
 
-	//@Test
-	public void testListarGalaxia() {
-		fail("Not yet implemented");
+	@Test
+	public void testListarGalaxia() throws MyException {
+		Galaxia galaxia;
+		String nombre = "via lactea";
+		galaxia = galaxiaBL.listarGalaxia(nombre);
+		assertTrue(galaxia.getNombre().equals(nombre));
 	}
 
 }

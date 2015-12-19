@@ -100,9 +100,12 @@
 	</bean>	
 	
 	<bean id="galaxiaBL" class="com.edu.udea.iw.bl.impl.GalaxiaBLImpl">
-		<property name="sessionFactory" ref="sessionFactory"></property>
+		<property name="galaxiaDao" ref="galaxiaDao"></property>
 	</bean>	
 	
+	<bean id="tipoGalaxiaBL" class="com.edu.udea.iw.bl.impl.TipoGalaxiaBLImpl">
+		<property name="tipoGalaxiaDao" ref="tipoGalaxiaDao"></property>
+	</bean>
 	
 	
 	
