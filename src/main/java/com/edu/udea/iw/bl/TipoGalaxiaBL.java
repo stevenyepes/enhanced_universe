@@ -2,7 +2,7 @@ package com.edu.udea.iw.bl;
 
 import java.util.List;
 
-import com.edu.udea.iw.dto.Galaxia;
+import com.edu.udea.iw.dto.Asteroide;
 import com.edu.udea.iw.dto.TipoGalaxia;
 import com.edu.udea.iw.exception.MyException;
 

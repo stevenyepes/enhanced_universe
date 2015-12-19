@@ -107,6 +107,9 @@
 		<property name="tipoGalaxiaDao" ref="tipoGalaxiaDao"></property>
 	</bean>
 	
+	<bean id="asteroideBL" class="com.edu.udea.iw.bl.impl.AsteroideBLImpl">
+		<property name="asteroideDao" ref="asteroideDao"></property>
+	</bean>
 	
 	
 

@@ -72,7 +72,7 @@ public class GalaxiaBLImpl implements GalaxiaBL {
 			
 			if(galaxiaAux.getNombre().equals(nombre)) {
 				
-				throw new MyException("El tipo de galaxia ya existe ",null );
+				throw new MyException("La galaxia ya existe ",null );
 			}
 	
 		}
