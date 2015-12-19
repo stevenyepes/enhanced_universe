@@ -26,15 +26,15 @@ import com.edu.udea.iw.exception.MyException;
 public class planetaDAOImplTest {
 
 	@Autowired
-	PlanetaDAO planetaDAO;
+	PlanetaDAO planetaDao;
 	
 	@Autowired
-	GalaxiaDAO galaxiaDAO;
+	GalaxiaDAO galaxiaDao;
 	
 	@Test
 	public void testConsultar() throws MyException {
 		List <Planeta> planetas = new ArrayList<Planeta>();
-		planetas = planetaDAO.consultar();
+		planetas = planetaDao.consultar();
 		
 		assertTrue(planetas.size()>0);
 	}
@@ -43,7 +43,7 @@ public class planetaDAOImplTest {
 	public void testConsultaUnica() throws MyException {
 
 		Planeta planeta;
-		planeta  = planetaDAO.consultaUnica("tierra");
+		planeta  = planetaDao.consultaUnica("tierra");
 		assertTrue(planeta != null);
 	}
 
@@ -51,10 +51,10 @@ public class planetaDAOImplTest {
 	public void testGuardar() throws MyException {
 		Planeta planeta = new Planeta();
 		planeta.setNombre("marte");
-		planeta.setGalaxia(galaxiaDAO.consultaUnica("via lactea"));
+		planeta.setGalaxia(galaxiaDao.consultaUnica("via lactea"));
 		
 		
-		assertTrue(planetaDAO.guardar(planeta));
+		assertTrue(planetaDao.guardar(planeta));
 	}
 
 	@Test
@@ -65,7 +65,7 @@ public class planetaDAOImplTest {
 		planeta.setNombre("Tierra 2");
 		
 		
-		assertTrue(planetaDAO.actualizar(planeta));
+		assertTrue(planetaDao.actualizar(planeta));
 	}
 
 	@Test
@@ -74,7 +74,7 @@ public class planetaDAOImplTest {
 		planeta.setNombre("Via nu");
 		
 		
-		assertTrue(planetaDAO.eliminar(planeta));
+		assertTrue(planetaDao.eliminar(planeta));
 	}
 
 }
