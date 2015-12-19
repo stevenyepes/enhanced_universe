@@ -17,7 +17,7 @@ import com.edu.udea.iw.dto.Satelite;
 import com.edu.udea.iw.exception.MyException;
 
 /**
- * Implementación utilizando hibernate de la interface {@link SateliteDAO}
+ * Implementacion utilizando hibernate de la interface {@link SateliteDAO}
  * @author enhanced_universe
 */
 public class SateliteDAOImpl extends HibernateDaoSupport implements SateliteDAO {

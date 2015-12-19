@@ -16,7 +16,7 @@ public interface AdministradorDAO {
 	/**
 	 * Entrega la lista de administradores en la base de datos
 	 * @return lista administradores
-	 * @throws MyException Ocurre un error con la conexión.
+	 * @throws MyException Ocurre un error con la conexion.
 	 */
 	public List<Administrador> consultar() throws MyException;
 	

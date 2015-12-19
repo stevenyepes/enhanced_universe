@@ -15,7 +15,7 @@ public interface SateliteDAO {
 	/**
 	 * Entrega la lista de satelites en la base de datos
 	 * @return lista satelites
-	 * @throws MyException Ocurre un error con la conexión.
+	 * @throws MyException Ocurre un error con la conexion.
 	 */
 	public List<Satelite> consultar() throws MyException;
 	

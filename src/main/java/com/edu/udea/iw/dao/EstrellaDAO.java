@@ -15,7 +15,7 @@ public interface EstrellaDAO {
 	/**
 	 * Entrega la lista de estrellas en la base de datos
 	 * @return lista estrellas
-	 * @throws MyException Ocurre un error con la conexión.
+	 * @throws MyException Ocurre un error con la conexion.
 	 */
 	public List<Estrella> consultar() throws MyException;
 	

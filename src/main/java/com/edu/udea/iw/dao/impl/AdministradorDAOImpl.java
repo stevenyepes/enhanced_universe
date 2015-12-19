@@ -17,7 +17,7 @@ import com.edu.udea.iw.dto.Cometa;
 import com.edu.udea.iw.exception.MyException;
 
 /**
- * Implementación utilizando hibernate de la interface {@link AdministradorDAO}
+ * Implementacion utilizando hibernate de la interface {@link AdministradorDAO}
  * @author enhanced_universe
 */
 public class AdministradorDAOImpl extends HibernateDaoSupport implements AdministradorDAO {

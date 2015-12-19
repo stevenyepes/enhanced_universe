@@ -17,7 +17,7 @@ import com.edu.udea.iw.dto.Planeta;
 import com.edu.udea.iw.exception.MyException;
 
 /**
- * Implementación utilizando hibernate de la interface {@link PlanetaDAO}
+ * Implementacion utilizando hibernate de la interface {@link PlanetaDAO}
  * @author enhanced_universe
 */
 public class PlanetaDAOImpl  extends HibernateDaoSupport implements PlanetaDAO {

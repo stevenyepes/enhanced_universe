@@ -16,7 +16,7 @@ import com.edu.udea.iw.dto.Asteroide;
 import com.edu.udea.iw.exception.MyException;
 
 /**
- * Implementación utilizando hibernate de la interface {@link AsteroideDAO}
+ * Implementacion utilizando hibernate de la interface {@link AsteroideDAO}
  * @author enhanced_universe
 */
 public class AsteroideDAOImpl extends HibernateDaoSupport implements AsteroideDAO{

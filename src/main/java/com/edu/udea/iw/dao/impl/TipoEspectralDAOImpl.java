@@ -15,7 +15,7 @@ import com.edu.udea.iw.dto.TipoEspectral;
 import com.edu.udea.iw.exception.MyException;
 
 /**
- * Implementación utilizando hibernate de la interface {@link TipoEspectralDAO}
+ * Implementacion utilizando hibernate de la interface {@link TipoEspectralDAO}
  * @author enhanced_universe
 */
 public class TipoEspectralDAOImpl extends HibernateDaoSupport implements TipoEspectralDAO{
