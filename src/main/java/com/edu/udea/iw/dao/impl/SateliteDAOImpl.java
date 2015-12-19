@@ -10,27 +10,22 @@ import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
-import com.edu.udea.iw.dao.GalaxiaDAO;
-import com.edu.udea.iw.dao.PlanetaDAO;
-import com.edu.udea.iw.dto.Galaxia;
+import com.edu.udea.iw.dao.SateliteDAO;
 import com.edu.udea.iw.dto.Planeta;
+import com.edu.udea.iw.dto.Satelite;
 import com.edu.udea.iw.exception.MyException;
 
-/**
- * Implementación utilizando hibernate de la interface {@link PlanetaDAO}
- * @author enhanced_universe
-*/
-public class PlanetaDAOImpl  extends HibernateDaoSupport implements PlanetaDAO {
+public class SateliteDAOImpl extends HibernateDaoSupport implements SateliteDAO {
 
-	public List<Planeta> consultar() throws MyException {
-		List<Planeta> planetas = new ArrayList<Planeta>();
+	public List<Satelite> consultar() throws MyException {
+		List<Satelite> satelites = new ArrayList<Satelite>();
 		Session session = null;
 		
 		try {
 
 			session = getSession();
-			Criteria criteria = session.createCriteria(Planeta.class);
-			planetas = criteria.list();
+			Criteria criteria = session.createCriteria(Satelite.class);
+			satelites = criteria.list();
 
 		} catch (HibernateException e) {
 
@@ -38,19 +33,19 @@ public class PlanetaDAOImpl  extends HibernateDaoSupport implements PlanetaDAO {
 
 		} 
 
-		return planetas;
+		return satelites;
 	}
 
-	public Planeta consultaUnica(String nombre) throws MyException {
-		Planeta planeta = new Planeta();
+	public Satelite consultaUnica(String nombre) throws MyException {
+		Satelite satelite = new Satelite();
 		
 		Session session = null;
 		
 		try {
 
 			session = getSession();
-			Criteria criteria = session.createCriteria(Planeta.class).add(Restrictions.eq("nombre", nombre));
-			planeta = (Planeta) criteria.uniqueResult();
+			Criteria criteria = session.createCriteria(Satelite.class).add(Restrictions.eq("nombre", nombre));
+			satelite = (Satelite) criteria.uniqueResult();
 
 		} catch (HibernateException e) {
 
@@ -58,10 +53,10 @@ public class PlanetaDAOImpl  extends HibernateDaoSupport implements PlanetaDAO {
 
 		} 
 
-		return planeta;
+		return satelite;
 	}
 
-	public Boolean guardar(Planeta planeta) throws MyException {
+	public Boolean guardar(Satelite satelite) throws MyException {
 		boolean isSaved = false;
 		Session session = null;
 		Transaction tr = null;
@@ -70,7 +65,7 @@ public class PlanetaDAOImpl  extends HibernateDaoSupport implements PlanetaDAO {
 			// Guarda el objeto
 			// Inicia la transaccion
 			tr = (Transaction) session.beginTransaction();
-			session.save(planeta);
+			session.save(satelite);
 			isSaved = true;
 			
 		} catch (HibernateException e) {
@@ -84,7 +79,7 @@ public class PlanetaDAOImpl  extends HibernateDaoSupport implements PlanetaDAO {
 		return isSaved;
 	}
 
-	public Boolean actualizar(Planeta planeta) throws MyException {
+	public Boolean actualizar(Satelite satelite) throws MyException {
 		boolean isUpdated = false;
 		Session session = null;
 		Transaction tr = null;
@@ -93,7 +88,7 @@ public class PlanetaDAOImpl  extends HibernateDaoSupport implements PlanetaDAO {
 			// Guarda el objeto
 			// Inicia la transaccion
 			tr = (Transaction) session.beginTransaction();
-			session.update(planeta);
+			session.update(satelite);
 			isUpdated = true;
 			
 		} catch (HibernateException e) {
@@ -107,7 +102,7 @@ public class PlanetaDAOImpl  extends HibernateDaoSupport implements PlanetaDAO {
 		return isUpdated;
 	}
 
-	public Boolean eliminar(Planeta planeta) throws MyException {
+	public Boolean eliminar(Satelite satelite) throws MyException {
 		boolean isDeleted = false;
 		Session session = null;
 		Transaction tr = null;
@@ -116,7 +111,7 @@ public class PlanetaDAOImpl  extends HibernateDaoSupport implements PlanetaDAO {
 			// Guarda el objeto
 			// Inicia la transaccion
 			tr = (Transaction) session.beginTransaction();
-			session.delete(planeta);
+			session.delete(satelite);
 			isDeleted = true;
 			
 		} catch (HibernateException e) {
