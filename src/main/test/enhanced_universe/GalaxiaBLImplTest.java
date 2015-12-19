@@ -12,11 +12,14 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.edu.udea.iw.bl.GalaxiaBL;
+import com.edu.udea.iw.dao.GalaxiaDAO;
 import com.edu.udea.iw.dto.Galaxia;
 import com.edu.udea.iw.exception.MyException;
 
-
-
+/**
+ * Implementacion de pruebas para los metodos del bl {@link GalaxiaBL}
+ * @author enhanced_universe
+*/
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:springcfg.xml")
 public class GalaxiaBLImplTest {

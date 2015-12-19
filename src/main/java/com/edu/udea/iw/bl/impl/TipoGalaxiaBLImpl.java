@@ -3,12 +3,17 @@ package com.edu.udea.iw.bl.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.edu.udea.iw.bl.GalaxiaBL;
 import com.edu.udea.iw.bl.TipoGalaxiaBL;
 import com.edu.udea.iw.dao.TipoGalaxiaDAO;
 import com.edu.udea.iw.dto.Galaxia;
 import com.edu.udea.iw.dto.TipoGalaxia;
 import com.edu.udea.iw.exception.MyException;
 
+/**
+ * Implementacion de los metodos de la interface {@link TipoGalaxiaBL}
+ * @author enhanced_universe
+*/
 public class TipoGalaxiaBLImpl implements TipoGalaxiaBL {
 
 	TipoGalaxiaDAO tipoGalaxiaDao;
