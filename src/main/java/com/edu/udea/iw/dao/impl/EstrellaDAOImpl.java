@@ -11,9 +11,14 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.edu.udea.iw.dao.EstrellaDAO;
+import com.edu.udea.iw.dao.GalaxiaDAO;
 import com.edu.udea.iw.dto.Estrella;
 import com.edu.udea.iw.exception.MyException;
 
+/**
+ * Implementación utilizando hibernate de la interface {@link EstrellaDAO}
+ * @author enhanced_universe
+*/
 public class EstrellaDAOImpl extends HibernateDaoSupport implements EstrellaDAO{
 
 	public List<Estrella> consultar() throws MyException {
