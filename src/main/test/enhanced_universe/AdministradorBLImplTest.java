@@ -12,9 +12,14 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.edu.udea.iw.bl.AdministradorBL;
+import com.edu.udea.iw.bl.AsteroideBL;
 import com.edu.udea.iw.dto.Administrador;
 import com.edu.udea.iw.exception.MyException;
 
+/**
+ * Implementacion de pruebas para los metodos del bl {@link AdministradorBL}
+ * @author enhanced_universe
+*/
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:springcfg.xml")
 public class AdministradorBLImplTest {

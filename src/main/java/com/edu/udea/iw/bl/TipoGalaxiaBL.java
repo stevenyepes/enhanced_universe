@@ -2,7 +2,7 @@ package com.edu.udea.iw.bl;
 
 import java.util.List;
 
-import com.edu.udea.iw.dto.Asteroide;
+
 import com.edu.udea.iw.dto.TipoGalaxia;
 import com.edu.udea.iw.exception.MyException;
 
@@ -25,7 +25,7 @@ public interface TipoGalaxiaBL {
 	 * @param tipoGalaxia nombre del tipo de galaxia a consultar
 	 * @return una instacia de los datos del tipo de galaxia consultada, si no
 	 * existe el tipo de galaxia con el nombre dado retorna un null.
-	 * @throws MyException Proporcionar nombre valido de la galaxia
+	 * @throws MyException Proporcionar nombre valido del tipo de galaxia
 	 */
 	public TipoGalaxia listarTipoGalaxia(String tipoGalaxia) throws MyException;
 	

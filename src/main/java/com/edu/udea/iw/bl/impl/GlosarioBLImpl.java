@@ -1,11 +1,16 @@
 package com.edu.udea.iw.bl.impl;
 
+import com.edu.udea.iw.bl.GalaxiaBL;
 import com.edu.udea.iw.bl.GlosarioBL;
 import com.edu.udea.iw.dao.GlosarioDAO;
 import com.edu.udea.iw.dto.Asteroide;
 import com.edu.udea.iw.dto.Glosario;
 import com.edu.udea.iw.exception.MyException;
 
+/**
+ * Implementacion de los metodos de la interface {@link GlosarioBL}
+ * @author enhanced_universe
+*/
 public class GlosarioBLImpl implements GlosarioBL {
 
 	GlosarioDAO glosarioDao;
