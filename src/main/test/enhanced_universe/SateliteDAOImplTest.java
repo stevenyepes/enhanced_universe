@@ -11,16 +11,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.edu.udea.iw.dao.PlanetaDAO;
 import com.edu.udea.iw.dao.SateliteDAO;
 import com.edu.udea.iw.dto.Cometa;
 import com.edu.udea.iw.dto.Satelite;
 import com.edu.udea.iw.exception.MyException;
 
-
+/**
+ * Implementacion de pruebas para los metodos del dao {@link SateliteDAO}
+ * @author enhanced_universe
+*/
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:springcfg.xml")
-
-
 public class SateliteDAOImplTest {
 
 	@Autowired

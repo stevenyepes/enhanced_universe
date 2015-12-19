@@ -13,16 +13,19 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.edu.udea.iw.dao.CometaDAO;
+import com.edu.udea.iw.dao.EstrellaDAO;
+import com.edu.udea.iw.dao.TipoGalaxiaDAO;
 import com.edu.udea.iw.dto.Cometa;
 import com.edu.udea.iw.dto.Galaxia;
 import com.edu.udea.iw.dto.Planeta;
 import com.edu.udea.iw.exception.MyException;
 
+/**
+ * Implementacion de pruebas para los metodos del dao {@link CometaDAO}
+ * @author enhanced_universe
+*/
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:springcfg.xml")
-
-
-
 public class CometaDAOImplTest {
 
 	@Autowired

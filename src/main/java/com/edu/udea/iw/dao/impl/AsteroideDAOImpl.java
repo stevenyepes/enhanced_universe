@@ -11,9 +11,14 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.edu.udea.iw.dao.AsteroideDAO;
+import com.edu.udea.iw.dao.PlanetaDAO;
 import com.edu.udea.iw.dto.Asteroide;
 import com.edu.udea.iw.exception.MyException;
-//
+
+/**
+ * Implementación utilizando hibernate de la interface {@link AsteroideDAO}
+ * @author enhanced_universe
+*/
 public class AsteroideDAOImpl extends HibernateDaoSupport implements AsteroideDAO{
 
 	public List<Asteroide> consultar() throws MyException {

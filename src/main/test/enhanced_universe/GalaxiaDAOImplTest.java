@@ -12,16 +12,19 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.edu.udea.iw.dao.EstrellaDAO;
 import com.edu.udea.iw.dao.GalaxiaDAO;
 import com.edu.udea.iw.dto.Galaxia;
 import com.edu.udea.iw.dao.TipoGalaxiaDAO;
 import com.edu.udea.iw.exception.MyException;
 
+/**
+ * Implementacion de pruebas para los metodos del dao {@link GalaxiaDAO}
+ * @author enhanced_universe
+*/
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:springcfg.xml")
-
 @Transactional
-
 public class GalaxiaDAOImplTest {
 
 	@Autowired

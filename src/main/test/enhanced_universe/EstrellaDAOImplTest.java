@@ -11,18 +11,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.edu.udea.iw.dao.CometaDAO;
 import com.edu.udea.iw.dao.EstrellaDAO;
 import com.edu.udea.iw.dto.Estrella;
 import com.edu.udea.iw.exception.MyException;
 
 
-
-
+/**
+ * Implementacion de pruebas para los metodos del dao {@link EstrellaDAO}
+ * @author enhanced_universe
+*/
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:springcfg.xml")
-
-
-
 public class EstrellaDAOImplTest {
 
 	@Autowired
