@@ -13,6 +13,10 @@ import com.edu.udea.iw.dao.TipoGalaxiaDAO;
 import com.edu.udea.iw.dto.TipoGalaxia;
 import com.edu.udea.iw.exception.MyException;
 
+/**
+ * Implementación utilizando hibernate de la interface {@link TipoGalaxiaDAO}
+ * @author enhanced_universe
+*/
 public class TipoGalaxiaDAOImpl  extends HibernateDaoSupport implements TipoGalaxiaDAO {
 
 	public List<TipoGalaxia> consultar() throws MyException {
