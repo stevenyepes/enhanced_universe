@@ -166,7 +166,7 @@ CREATE TABLE IF NOT EXISTS `PLANETA` (
   `temperatura` double DEFAULT NULL,
   `periodorotacional` double DEFAULT NULL,
   `periodoorbital` double DEFAULT NULL,
-  `distaciatierra` double DEFAULT NULL,
+  `distanciatierra` double DEFAULT NULL,
   `galaxia` int(11) unsigned NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
@@ -174,7 +174,7 @@ CREATE TABLE IF NOT EXISTS `PLANETA` (
 -- Volcado de datos para la tabla `PLANETA`
 --
 
-INSERT INTO `PLANETA` (`id`, `nombre`, `masa`, `gravedad`, `diametro`, `temperatura`, `periodorotacional`, `periodoorbital`, `distaciatierra`, `galaxia`) VALUES
+INSERT INTO `PLANETA` (`id`, `nombre`, `masa`, `gravedad`, `diametro`, `temperatura`, `periodorotacional`, `periodoorbital`, `distanciatierra`, `galaxia`) VALUES
 (4, 'tierra', 5.9736e24, 9.780327, 6378.1, 14.05, 24, 1, 0, 1);
 
 -- --------------------------------------------------------
