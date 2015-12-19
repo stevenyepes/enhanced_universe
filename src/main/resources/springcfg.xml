@@ -81,6 +81,22 @@
 
 	<bean id="cometaDao" class="com.edu.udea.iw.dao.impl.CometaDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>	
+	
+	<bean id="sateliteDao" class="com.edu.udea.iw.dao.impl.SateliteDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="asteroideDao" class="com.edu.udea.iw.dao.impl.AsteroideDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>	
+	
+	<bean id="administradorDao" class="com.edu.udea.iw.dao.impl.AdministradorDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>	
+	
+	<bean id="glosarioDao" class="com.edu.udea.iw.dao.impl.GlosarioDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 	
 
