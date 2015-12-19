@@ -34,7 +34,7 @@ public class GlosarioDAOImplTest {
 	@Test
 	public void testConsultaUnica() throws MyException {
 		Glosario glosario;
-		glosario  = glosarioDao.consultaUnica("ceres");
+		glosario  = glosarioDao.consultaUnica("tipo espectral");
 		assertTrue(glosario != null);
 	}
 
