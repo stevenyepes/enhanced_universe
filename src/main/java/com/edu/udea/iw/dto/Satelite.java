@@ -2,21 +2,54 @@ package com.edu.udea.iw.dto;
 
 import java.io.Serializable;
 
+
+/**
+ * Clase con el patron DTO para transportar los datos del satelite
+ * @author enhanced_universe
+ *
+ */
 public class Satelite implements Serializable{
 
 	/**
-	 * 
+	 * Serial recomendado por java para una clase que implementa la Interface Serializable 
 	 */
 	private static final long serialVersionUID = 2634727383228921210L;
 	
+	/**
+	 * Id del satelite
+	 */
 	private Integer id;
+	/**
+	 * Nombre completo del satelite
+	 */
 	private String nombre;
+	/**
+	 * Masa del satelite
+	 */
 	private Double masa;
+	/**
+	 * Gravedad del satelite en metros sobre segundos
+	 */
 	private Double gravedad;
+	/**
+	 * Diametro del satelite en kilometros
+	 */
 	private Double diametro;
+	/**
+	 * Temperatura del satelite en grados celsius
+	 */
 	private Double temperatura;
+	/**
+	 * Tiempo del satelite en dar una vuelta sobre si mismo
+	 */
 	private Double periodorotacional;
+	/**
+	 * Tiempo del satelite en dar una vuelta alrededor del astro que orbita 
+	 */
 	private Double periodoorbital;
+	/**
+	 * Planeta al cual el satelite rodea
+	 */
 	private Planeta planeta;
 	
 	public Integer getId() {

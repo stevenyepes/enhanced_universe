@@ -11,9 +11,14 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.edu.udea.iw.dao.GalaxiaDAO;
+import com.edu.udea.iw.dao.TipoGalaxiaDAO;
 import com.edu.udea.iw.dto.Galaxia;
 import com.edu.udea.iw.exception.MyException;
 
+/**
+ * Implementación utilizando hibernate de la interface {@link GalaxiaDAO}
+ * @author enhanced_universe
+*/
 public class GalaxiaDAOImpl extends HibernateDaoSupport implements GalaxiaDAO {
 
 	public List<Galaxia> consultar() throws MyException {
