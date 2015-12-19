@@ -10,21 +10,22 @@ import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
-import com.edu.udea.iw.dao.GalaxiaDAO;
+import com.edu.udea.iw.dao.PlanetaDAO;
 import com.edu.udea.iw.dto.Galaxia;
+import com.edu.udea.iw.dto.Planeta;
 import com.edu.udea.iw.exception.MyException;
 
-public class GalaxiaDAOImpl extends HibernateDaoSupport implements GalaxiaDAO {
+public class PlanetaDAOImpl  extends HibernateDaoSupport implements PlanetaDAO {
 
-	public List<Galaxia> consultar() throws MyException {
-		List<Galaxia> galaxias = new ArrayList<Galaxia>();
+	public List<Planeta> consultar() throws MyException {
+		List<Planeta> planetas = new ArrayList<Planeta>();
 		Session session = null;
 		
 		try {
 
 			session = getSession();
-			Criteria criteria = session.createCriteria(Galaxia.class);
-			galaxias = criteria.list();
+			Criteria criteria = session.createCriteria(Planeta.class);
+			planetas = criteria.list();
 
 		} catch (HibernateException e) {
 
@@ -32,20 +33,19 @@ public class GalaxiaDAOImpl extends HibernateDaoSupport implements GalaxiaDAO {
 
 		} 
 
-		return galaxias;
+		return planetas;
 	}
 
-	public Galaxia consultaUnica(String nombre) throws MyException {
-		
-		Galaxia galaxia = new Galaxia();
+	public Planeta consultaUnica(String nombre) throws MyException {
+		Planeta planeta = new Planeta();
 		
 		Session session = null;
 		
 		try {
 
 			session = getSession();
-			Criteria criteria = session.createCriteria(Galaxia.class).add(Restrictions.eq("nombre", nombre));
-			galaxia = (Galaxia) criteria.uniqueResult();
+			Criteria criteria = session.createCriteria(Planeta.class).add(Restrictions.eq("nombre", nombre));
+			planeta = (Planeta) criteria.uniqueResult();
 
 		} catch (HibernateException e) {
 
@@ -53,11 +53,10 @@ public class GalaxiaDAOImpl extends HibernateDaoSupport implements GalaxiaDAO {
 
 		} 
 
-		return galaxia;
+		return planeta;
 	}
 
-	public Boolean guardar(Galaxia galaxia) throws MyException {
-		
+	public Boolean guardar(Planeta planeta) throws MyException {
 		boolean isSaved = false;
 		Session session = null;
 		Transaction tr = null;
@@ -66,7 +65,7 @@ public class GalaxiaDAOImpl extends HibernateDaoSupport implements GalaxiaDAO {
 			// Guarda el objeto
 			// Inicia la transaccion
 			tr = (Transaction) session.beginTransaction();
-			session.save(galaxia);
+			session.save(planeta);
 			isSaved = true;
 			
 		} catch (HibernateException e) {
@@ -80,7 +79,7 @@ public class GalaxiaDAOImpl extends HibernateDaoSupport implements GalaxiaDAO {
 		return isSaved;
 	}
 
-	public Boolean actualizar(Galaxia galaxia) throws MyException {
+	public Boolean actualizar(Planeta planeta) throws MyException {
 		boolean isUpdated = false;
 		Session session = null;
 		Transaction tr = null;
@@ -89,7 +88,7 @@ public class GalaxiaDAOImpl extends HibernateDaoSupport implements GalaxiaDAO {
 			// Guarda el objeto
 			// Inicia la transaccion
 			tr = (Transaction) session.beginTransaction();
-			session.update(galaxia);
+			session.update(planeta);
 			isUpdated = true;
 			
 		} catch (HibernateException e) {
@@ -103,7 +102,7 @@ public class GalaxiaDAOImpl extends HibernateDaoSupport implements GalaxiaDAO {
 		return isUpdated;
 	}
 
-	public Boolean eliminar(Galaxia galaxia) throws MyException {
+	public Boolean eliminar(Planeta planeta) throws MyException {
 		boolean isDeleted = false;
 		Session session = null;
 		Transaction tr = null;
@@ -112,7 +111,7 @@ public class GalaxiaDAOImpl extends HibernateDaoSupport implements GalaxiaDAO {
 			// Guarda el objeto
 			// Inicia la transaccion
 			tr = (Transaction) session.beginTransaction();
-			session.delete(galaxia);
+			session.delete(planeta);
 			isDeleted = true;
 			
 		} catch (HibernateException e) {

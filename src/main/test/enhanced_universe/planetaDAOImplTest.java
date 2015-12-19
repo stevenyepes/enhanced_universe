@@ -13,8 +13,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.edu.udea.iw.dao.GalaxiaDAO;
+import com.edu.udea.iw.dao.PlanetaDAO;
 import com.edu.udea.iw.dto.Galaxia;
-import com.edu.udea.iw.dao.TipoGalaxiaDAO;
+import com.edu.udea.iw.dto.Planeta;
 import com.edu.udea.iw.exception.MyException;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -22,58 +23,58 @@ import com.edu.udea.iw.exception.MyException;
 
 @Transactional
 
-public class GalaxiaDAOImplTest {
+public class planetaDAOImplTest {
 
 	@Autowired
-	GalaxiaDAO galaxiaDao;
+	PlanetaDAO planetaDAO;
 	
 	@Autowired
-	TipoGalaxiaDAO tipoGalaxiaDao;
+	GalaxiaDAO galaxiaDAO;
 	
 	@Test
 	public void testConsultar() throws MyException {
-		List <Galaxia> galaxia = new ArrayList<Galaxia>();
-		galaxia = galaxiaDao.consultar();
+		List <Planeta> planetas = new ArrayList<Planeta>();
+		planetas = planetaDAO.consultar();
 		
-		assertTrue(galaxia.size()>0);
+		assertTrue(planetas.size()>0);
 	}
 
 	@Test
 	public void testConsultaUnica() throws MyException {
-		
-		Galaxia galaxia;
-		galaxia  = (Galaxia) galaxiaDao.consultaUnica("via lactea");
-		assertTrue(galaxia != null);
+
+		Planeta planeta;
+		planeta  = planetaDAO.consultaUnica("tierra");
+		assertTrue(planeta != null);
 	}
 
 	@Test
 	public void testGuardar() throws MyException {
-		Galaxia galaxia = new Galaxia();
-		galaxia.setId(1);
-		galaxia.setNombre("via nueva");
-		galaxia.setTipogalaxia(tipoGalaxiaDao.consultar().get(0));
+		Planeta planeta = new Planeta();
+		planeta.setNombre("marte");
+		planeta.setGalaxia(galaxiaDAO.consultaUnica("via lactea"));
 		
 		
-		assertTrue(galaxiaDao.guardar(galaxia));
+		assertTrue(planetaDAO.guardar(planeta));
 	}
 
 	@Test
 	public void testActualizar() throws MyException {
-		Galaxia galaxia = new Galaxia();
-		galaxia.setId(1);
-		galaxia.setNombre("Via nueva");
+		
+		Planeta planeta = new Planeta();
+		planeta.setId(1);
+		planeta.setNombre("Tierra 2");
 		
 		
-		assertTrue(galaxiaDao.actualizar(galaxia));
+		assertTrue(planetaDAO.actualizar(planeta));
 	}
 
 	@Test
 	public void testEliminar() throws MyException {
-		Galaxia galaxia = new Galaxia();
-		galaxia.setId(1);
+		Planeta planeta = new Planeta();
+		planeta.setNombre("Via nu");
 		
 		
-		assertTrue(galaxiaDao.eliminar(galaxia));
+		assertTrue(planetaDAO.eliminar(planeta));
 	}
 
 }
