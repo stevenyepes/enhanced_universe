@@ -10,9 +10,6 @@ import com.edu.udea.iw.dao.TipoEspectralDAO;
 import com.edu.udea.iw.dao.impl.GalaxiaDAOImpl;
 import com.edu.udea.iw.dao.impl.TipoEspectralDAOImpl;
 import com.edu.udea.iw.dto.Estrella;
-import com.edu.udea.iw.dto.Estrella;
-import com.edu.udea.iw.dto.Estrella;
-import com.edu.udea.iw.dto.Estrella;
 import com.edu.udea.iw.dto.Galaxia;
 import com.edu.udea.iw.dto.TipoEspectral;
 import com.edu.udea.iw.exception.MyException;
@@ -21,6 +18,14 @@ public class EstrellaBLImpl implements EstrellaBL {
 
 	EstrellaDAO estrellaDao;
 	
+	public EstrellaDAO getEstrellaDao() {
+		return estrellaDao;
+	}
+
+	public void setEstrellaDao(EstrellaDAO estrellaDao) {
+		this.estrellaDao = estrellaDao;
+	}
+
 	public List<Estrella> listarEstrellas() throws MyException {
 		List<Estrella> estrellas = new ArrayList<Estrella>();
 		estrellas = estrellaDao.consultar();
