@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.edu.udea.iw.bl.AsteroideBL;
-import com.edu.udea.iw.bl.GalaxiaBL;
 import com.edu.udea.iw.dao.AsteroideDAO;
 import com.edu.udea.iw.dao.GalaxiaDAO;
 import com.edu.udea.iw.dao.impl.GalaxiaDAOImpl;
@@ -12,10 +11,7 @@ import com.edu.udea.iw.dto.Asteroide;
 import com.edu.udea.iw.dto.Galaxia;
 import com.edu.udea.iw.exception.MyException;
 
-/**
- * Implementacion de los metodos de la interface {@link AsteroideBL}
- * @author enhanced_universe
-*/
+
 public class AsteroideBLImpl implements AsteroideBL {
 
 	AsteroideDAO asteroideDao;
@@ -49,7 +45,7 @@ public class AsteroideBLImpl implements AsteroideBL {
 
 		asteroideDTO = asteroideDao.consultaUnica(asteroide);
 		if (asteroideDTO == null) {
-			throw new MyException("Por favor proporcione un nombre de" + " asteroide válido ", null);
+			throw new MyException("Por favor proporcione un nombre de" + " asteroide vï¿½lido ", null);
 
 		}
 
@@ -90,7 +86,7 @@ public class AsteroideBLImpl implements AsteroideBL {
 		if (asteroide.getGalaxia() == null) {
 			throw new MyException("La galaxia a la que quiere ingresar el asteroide" + " no existe", null);
 		}
-
+		asteroide.setNombre(nombre);
 		asteroide.setDiametro(diametro);
 		asteroide.setPeligroso(peligroso);
 
@@ -126,6 +122,7 @@ public class AsteroideBLImpl implements AsteroideBL {
 
 			if (asteroideAux.getNombre().equals(nombre)) {
 				asteroide.setId(asteroideAux.getId());
+				asteroide.setNombre(nombre);
 				asteroide.setDiametro(diametro);
 				asteroide.setPeligroso(peligroso);
 				return asteroideDao.actualizar(asteroide);
