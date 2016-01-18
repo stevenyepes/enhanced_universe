@@ -221,6 +221,12 @@ CREATE TABLE IF NOT EXISTS `TIPOESPECTRAL` (
 
 INSERT INTO `TIPOESPECTRAL` (`clasificacion`, `color`, `temperatura`) VALUES
 ('G', 'amarillo', 6000);
+INSERT INTO `TIPOESPECTRAL` (`clasificacion`, `color`, `temperatura`) VALUES
+('O', 'azul', 50000);
+INSERT INTO `TIPOESPECTRAL` (`clasificacion`, `color`, `temperatura`) VALUES
+('A', 'blanco', 9000);
+INSERT INTO `TIPOESPECTRAL` (`clasificacion`, `color`, `temperatura`) VALUES
+('M', 'rojo', 3000);
 
 -- --------------------------------------------------------
 
