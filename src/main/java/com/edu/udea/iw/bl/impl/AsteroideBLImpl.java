@@ -49,7 +49,7 @@ public class AsteroideBLImpl implements AsteroideBL {
 
 		asteroideDTO = asteroideDao.consultaUnica(asteroide);
 		if (asteroideDTO == null) {
-			throw new MyException("Por favor proporcione un nombre de" + " asteroide válido ", null);
+			throw new MyException("Por favor proporcione un nombre de" + " asteroide vï¿½lido ", null);
 
 		}
 
