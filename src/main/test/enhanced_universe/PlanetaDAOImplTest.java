@@ -26,7 +26,7 @@ import com.edu.udea.iw.exception.MyException;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:springcfg.xml")
 @Transactional
-public class planetaDAOImplTest {
+public class PlanetaDAOImplTest {
 
 	@Autowired
 	PlanetaDAO planetaDao;
