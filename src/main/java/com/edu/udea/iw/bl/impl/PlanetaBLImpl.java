@@ -8,6 +8,7 @@ import com.edu.udea.iw.dao.AsteroideDAO;
 import com.edu.udea.iw.dao.GalaxiaDAO;
 import com.edu.udea.iw.dao.PlanetaDAO;
 import com.edu.udea.iw.dao.impl.GalaxiaDAOImpl;
+import com.edu.udea.iw.dto.Administrador;
 import com.edu.udea.iw.dto.Asteroide;
 import com.edu.udea.iw.dto.Galaxia;
 import com.edu.udea.iw.dto.Planeta;
@@ -34,9 +35,29 @@ public class PlanetaBLImpl implements PlanetaBL {
 		return planetaDTO;
 	}
 
-	public Boolean eliminarPlaneta(String Planeta) throws MyException {
-		// TODO Auto-generated method stub
-		return null;
+	public Boolean eliminarPlaneta(String planeta) throws MyException {
+Boolean isDeleted = false;
+		
+		if(planeta.isEmpty() || "".equals(planeta)) {
+			
+			throw new MyException("Por favor proporcione el nombre del planeta",null);
+		}
+		
+		Planeta planetaDTO = null;
+		for (Planeta planetaAux : planetaDao.consultar()) {
+			if (planetaAux.getNombre().equals(planeta)) {
+				planetaDTO = new Planeta();
+				planetaDTO = planetaAux;
+				break;
+			}
+		}
+		
+		if (planetaDTO != null) {
+			planetaDao.eliminar(planetaDTO);
+			isDeleted = true;
+		}
+		
+		return isDeleted;
 	}
 
 	public Boolean guardarPlaneta(String nombre, Double masa, Double gravedad,
@@ -145,6 +166,14 @@ public class PlanetaBLImpl implements PlanetaBL {
 		}
 
 		return planetas;
+	}
+
+	public PlanetaDAO getPlanetaDao() {
+		return planetaDao;
+	}
+
+	public void setPlanetaDao(PlanetaDAO planetaDao) {
+		this.planetaDao = planetaDao;
 	}
 
 }
