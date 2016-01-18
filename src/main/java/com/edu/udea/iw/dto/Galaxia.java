@@ -2,13 +2,21 @@ package com.edu.udea.iw.dto;
 
 import java.io.Serializable;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * Clase con el patron DTO para transportar los datos de las galaxias
  * @author enhanced_universe
  *
  */
+
+
+@XmlRootElement(name="galaxias")
 public class Galaxia implements Serializable {
 
+	
+	
+	
 	/**
 	 * Serial recomendado por java para una clase que implementa la Interface Serializable 
 	 */
