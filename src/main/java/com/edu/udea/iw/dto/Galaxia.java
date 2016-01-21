@@ -4,13 +4,15 @@ import java.io.Serializable;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
+import org.codehaus.jackson.map.annotate.JsonDeserialize;
+
 /**
  * Clase con el patron DTO para transportar los datos de las galaxias
  * @author enhanced_universe
  *
  */
 
-
+@JsonDeserialize
 @XmlRootElement(name="galaxias")
 public class Galaxia implements Serializable {
 

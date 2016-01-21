@@ -22,6 +22,7 @@ import com.edu.udea.iw.exception.MyException;
 public class GalaxiaBLImpl implements GalaxiaBL {
 
 	GalaxiaDAO galaxiaDao;
+	TipoGalaxiaDAO tipoGalaxiaDao;
 	
 	public List<Galaxia> listarGalaxias() throws MyException {
 		List<Galaxia> galaxias = new ArrayList<Galaxia>();
@@ -77,15 +78,16 @@ public class GalaxiaBLImpl implements GalaxiaBL {
 	
 		}
 		
-		TipoGalaxiaDAO tipoGalaxiaDao = new TipoGalaxiaDAOImpl();
 		Galaxia galaxia = new Galaxia();
 		galaxia.setNombre(nombre);
 		
+
 		
 		
 		for(TipoGalaxia tipoGalaxia : tipoGalaxiaDao.consultar()) {
 			
 			if(tipoGalaxia.getNombre().equals(tipo)){
+				System.out.println("Pase por aqui y soy" + tipoGalaxia.getNombre());
 				galaxia.setTipogalaxia(tipoGalaxia);
 			}
 		}
@@ -187,5 +189,15 @@ public class GalaxiaBLImpl implements GalaxiaBL {
 	public void setGalaxiaDao(GalaxiaDAO galaxiaDao) {
 		this.galaxiaDao = galaxiaDao;
 	}
+	
+
+	public TipoGalaxiaDAO getTipoGalaxiaDao() {
+		return tipoGalaxiaDao;
+	}
+
+	public void setTipoGalaxiaDao(TipoGalaxiaDAO tipoGalaxiaDao) {
+		this.tipoGalaxiaDao = tipoGalaxiaDao;
+	}
+
 
 }

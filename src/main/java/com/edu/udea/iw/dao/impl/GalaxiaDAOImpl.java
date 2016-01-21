@@ -72,6 +72,7 @@ public class GalaxiaDAOImpl extends HibernateDaoSupport implements GalaxiaDAO {
 			// Inicia la transaccion
 			tr = (Transaction) session.beginTransaction();
 			session.save(galaxia);
+			tr.commit();
 			isSaved = true;
 			
 		} catch (HibernateException e) {

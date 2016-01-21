@@ -18,7 +18,7 @@
 	</listener>
 
 	<servlet>
-		<servlet-name>HolaMundo</servlet-name>
+		<servlet-name>ServiceServlet</servlet-name>
 		<servlet-class>com.sun.jersey.spi.spring.container.servlet.SpringServlet</servlet-class>
 		<!-- Register resources and providers under com.vogella.jersey.first package. -->
 		<init-param>
@@ -32,7 +32,7 @@
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>HolaMundo</servlet-name>
+		<servlet-name>ServiceServlet</servlet-name>
 		<url-pattern>/rest/*</url-pattern>
 	</servlet-mapping>
 

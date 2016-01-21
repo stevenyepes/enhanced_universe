@@ -1,8 +1,6 @@
 package com.edu.udea.iw.service;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,6 +29,7 @@ public class GalaxiaService {
 	@Autowired
 	GalaxiaBL galaxiaBL;
 
+
 	@GET
 	@Path("/{galaxia_nombre}")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -53,8 +52,7 @@ public class GalaxiaService {
 	@Path("/")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Transactional
-	public Response getGalaxias()
-			throws MyException {
+	public Response getGalaxias() throws MyException {
 		List<Galaxia> galaxias = new ArrayList<Galaxia>();
 		galaxias = galaxiaBL.listarGalaxias();
 		return Response
@@ -68,34 +66,20 @@ public class GalaxiaService {
 
 
 	@POST
-	@Path("/guardar")
-	@Transactional
-	@Consumes(MediaType.APPLICATION_JSON)
-	public Response guardarGalaxia(InputStream datosEntrada) throws MyException {
-		StringBuilder galaxiaBuilder = new StringBuilder();
-		try {
-			BufferedReader in = new BufferedReader(new InputStreamReader(
-					datosEntrada));
-			String line = null;
-			
-			while ((line = in.readLine()) != null) {
-				System.out.println(line);
-				galaxiaBuilder.append(line);
-			}
-		} catch (Exception e) {
-			System.out.println("Error Parsing: - ");
-		}
-		System.out.println("Data Received: " + galaxiaBuilder.toString());
+	@Consumes({ MediaType.APPLICATION_JSON })
+	public Response guardarGalaxia(Galaxia galaxia) throws MyException {
+		System.out.println("Nombre " + galaxia.getNombre() + "\n\n\n");
+		Boolean crearGalaxia = galaxiaBL.guardarGalaxia(galaxia.getNombre(), galaxia.getTipogalaxia().getNombre(),
+								galaxia.getAlto(),galaxia.getAncho(), galaxia.getProfundidad(), galaxia.getDiametro(),
+								galaxia.getDistanciatierra());
 
-		//boolean isSaved =galaxiaBL.guardarGalaxia("lactosa", "espiral", 45.0, 45.0, 89.9, 65.9, 458.8);
 		
-		
-		return Response
-				.ok()
+		return Response.status(Response.Status.CREATED)
 				// 201
-				.header("Access-Control-Allow-Origin", "*")
-				.header("Access-Control-Allow-Methods",
-						"GET, POST, DELETE, PUT").build();
+				.entity("Creado")
+				.header("Location",
+						"http://localhost:8080/enhanced_universe/rest/galaxia"
+								+ galaxia.getNombre()).build();
 	}
 
 }

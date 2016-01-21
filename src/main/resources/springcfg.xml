@@ -103,6 +103,7 @@
 
 	<bean id="galaxiaBL" class="com.edu.udea.iw.bl.impl.GalaxiaBLImpl">
 		<property name="galaxiaDao" ref="galaxiaDao"></property>
+		
 	</bean>
 
 	<bean id="tipoGalaxiaBL" class="com.edu.udea.iw.bl.impl.TipoGalaxiaBLImpl">
