@@ -45,7 +45,7 @@ public class GalaxiaBLImpl implements GalaxiaBL {
 		galaxiaDTO = galaxiaDao.consultaUnica(galaxia);
 		if(galaxiaDTO == null) {
 			throw new MyException("Por favor proporcione un nombre de"
-					+ " galaxia válido ",null );
+					+ " galaxia vï¿½lido ",null );
 			
 		}
 		
