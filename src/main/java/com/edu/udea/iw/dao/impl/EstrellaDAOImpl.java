@@ -70,7 +70,7 @@ public class EstrellaDAOImpl extends HibernateDaoSupport implements EstrellaDAO{
 			tr = (Transaction) session.beginTransaction();
 			session.save(estrella);
 			isSaved = true;
-			
+			tr.commit();
 		} catch (HibernateException e) {
 			throw new MyException(e);
 		} finally {
@@ -93,7 +93,7 @@ public class EstrellaDAOImpl extends HibernateDaoSupport implements EstrellaDAO{
 			tr = (Transaction) session.beginTransaction();
 			session.update(estrella);
 			isUpdated = true;
-			
+			tr.commit();
 		} catch (HibernateException e) {
 			throw new MyException(e);
 		} finally {
@@ -116,7 +116,7 @@ public class EstrellaDAOImpl extends HibernateDaoSupport implements EstrellaDAO{
 			tr = (Transaction) session.beginTransaction();
 			session.delete(estrella);
 			isDeleted = true;
-			
+			tr.commit();
 		} catch (HibernateException e) {
 			throw new MyException(e);
 		} finally {

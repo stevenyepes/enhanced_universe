@@ -51,7 +51,7 @@ public class PlanetaDAOImpl  extends HibernateDaoSupport implements PlanetaDAO {
 			session = getSession();
 			Criteria criteria = session.createCriteria(Planeta.class).add(Restrictions.eq("nombre", nombre));
 			planeta = (Planeta) criteria.uniqueResult();
-
+			
 		} catch (HibernateException e) {
 
 			throw new MyException(e);
@@ -72,7 +72,7 @@ public class PlanetaDAOImpl  extends HibernateDaoSupport implements PlanetaDAO {
 			tr = (Transaction) session.beginTransaction();
 			session.save(planeta);
 			isSaved = true;
-			
+			tr.commit();
 		} catch (HibernateException e) {
 			throw new MyException(e);
 		} finally {
@@ -95,7 +95,7 @@ public class PlanetaDAOImpl  extends HibernateDaoSupport implements PlanetaDAO {
 			tr = (Transaction) session.beginTransaction();
 			session.update(planeta);
 			isUpdated = true;
-			
+			tr.commit();
 		} catch (HibernateException e) {
 			throw new MyException(e);
 		} finally {
@@ -118,7 +118,7 @@ public class PlanetaDAOImpl  extends HibernateDaoSupport implements PlanetaDAO {
 			tr = (Transaction) session.beginTransaction();
 			session.delete(planeta);
 			isDeleted = true;
-			
+			tr.commit();
 		} catch (HibernateException e) {
 			throw new MyException(e);
 		} finally {

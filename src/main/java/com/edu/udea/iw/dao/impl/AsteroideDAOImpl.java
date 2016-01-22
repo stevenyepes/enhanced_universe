@@ -69,7 +69,7 @@ public class AsteroideDAOImpl extends HibernateDaoSupport implements AsteroideDA
 			tr = (Transaction) session.beginTransaction();
 			session.save(asteroide);
 			isSaved = true;
-			
+			tr.commit();
 		} catch (HibernateException e) {
 			throw new MyException(e);
 		} finally {
@@ -92,7 +92,7 @@ public class AsteroideDAOImpl extends HibernateDaoSupport implements AsteroideDA
 			tr = (Transaction) session.beginTransaction();
 			session.update(asteroide);
 			isUpdated = true;
-			
+			tr.commit();
 		} catch (HibernateException e) {
 			throw new MyException(e);
 		} finally {
@@ -115,7 +115,7 @@ public class AsteroideDAOImpl extends HibernateDaoSupport implements AsteroideDA
 			tr = (Transaction) session.beginTransaction();
 			session.delete(asteroide);
 			isDeleted = true;
-			
+			tr.commit();
 		} catch (HibernateException e) {
 			throw new MyException(e);
 		} finally {

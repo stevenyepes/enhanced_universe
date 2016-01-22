@@ -69,7 +69,7 @@ public class GlosarioDAOImpl extends HibernateDaoSupport implements GlosarioDAO{
 			tr = (Transaction) session.beginTransaction();
 			session.save(glosario);
 			isSaved = true;
-			
+			tr.commit();
 		} catch (HibernateException e) {
 			throw new MyException(e);
 		} finally {
@@ -92,7 +92,7 @@ public class GlosarioDAOImpl extends HibernateDaoSupport implements GlosarioDAO{
 			tr = (Transaction) session.beginTransaction();
 			session.update(glosario);
 			isUpdated = true;
-			
+			tr.commit();
 		} catch (HibernateException e) {
 			throw new MyException(e);
 		} finally {
@@ -115,7 +115,7 @@ public class GlosarioDAOImpl extends HibernateDaoSupport implements GlosarioDAO{
 			tr = (Transaction) session.beginTransaction();
 			session.delete(glosario);
 			isDeleted = true;
-			
+			tr.commit();
 		} catch (HibernateException e) {
 			throw new MyException(e);
 		} finally {

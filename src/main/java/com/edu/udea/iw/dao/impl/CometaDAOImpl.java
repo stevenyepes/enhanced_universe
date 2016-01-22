@@ -71,7 +71,7 @@ public class CometaDAOImpl extends HibernateDaoSupport implements CometaDAO {
 			tr = (Transaction) session.beginTransaction();
 			session.save(cometa);
 			isSaved = true;
-			
+			tr.commit();
 		} catch (HibernateException e) {
 			throw new MyException(e);
 		} finally {
@@ -94,7 +94,7 @@ public class CometaDAOImpl extends HibernateDaoSupport implements CometaDAO {
 			tr = (Transaction) session.beginTransaction();
 			session.update(cometa);
 			isUpdated = true;
-			
+			tr.commit();
 		} catch (HibernateException e) {
 			throw new MyException(e);
 		} finally {
@@ -117,7 +117,7 @@ public class CometaDAOImpl extends HibernateDaoSupport implements CometaDAO {
 			tr = (Transaction) session.beginTransaction();
 			session.delete(cometa);
 			isDeleted = true;
-			
+			tr.commit();
 		} catch (HibernateException e) {
 			throw new MyException(e);
 		} finally {
