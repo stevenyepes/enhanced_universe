@@ -9,6 +9,12 @@ app.config(['$routeProvider',function($routeProvider){
 		templateUrl : 'templates/login.html',
 		controller: 'contLogin'
 	});
+	
+	$routeProvider.when('/galaxia', {
+		
+		templateUrl : 'templates/galaxias.html',
+		controller: 'galaxiaCtrl'
+	});
 }]);
 
 app.controller('contLogin', function($scope, usuario){
@@ -32,6 +38,20 @@ app.controller('contLogin', function($scope, usuario){
 
 });
     
+app.controller('galaxiaCtrl', function($scope, galaxia){
+	
+	$scope.galaxias = [];
+	galaxia.getAll().success(function(data){
+		
+		$scope.galaxias = data;
+		log(data);
+	});
+	
+	
+	
+
+});
+
 app.service('usuario',function($http) {
 	
 	this.validar = function(user,pwd) {
@@ -40,6 +60,21 @@ app.service('usuario',function($http) {
 			
 			method: 'GET',
 			url: 'http://localhost:8080/enhanced_universe/rest/administrador/'+user+'/' + pwd,
+			
+		})
+	}
+	
+	
+});
+
+app.service('galaxia',function($http) {
+	
+	this.getAll = function() {
+		
+		return $http({
+			
+			method: 'GET',
+			url: 'http://localhost:8080/enhanced_universe/rest/galaxia/',
 			
 		})
 	}
