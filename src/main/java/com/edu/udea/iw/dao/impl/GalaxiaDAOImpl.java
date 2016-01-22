@@ -74,7 +74,7 @@ public class GalaxiaDAOImpl extends HibernateDaoSupport implements GalaxiaDAO {
 			session.save(galaxia);
 			tr.commit();
 			isSaved = true;
-			
+			tr.commit();
 		} catch (HibernateException e) {
 			throw new MyException(e);
 		} finally {
@@ -97,7 +97,7 @@ public class GalaxiaDAOImpl extends HibernateDaoSupport implements GalaxiaDAO {
 			tr = (Transaction) session.beginTransaction();
 			session.update(galaxia);
 			isUpdated = true;
-			
+			tr.commit();
 		} catch (HibernateException e) {
 			throw new MyException(e);
 		} finally {
@@ -120,7 +120,7 @@ public class GalaxiaDAOImpl extends HibernateDaoSupport implements GalaxiaDAO {
 			tr = (Transaction) session.beginTransaction();
 			session.delete(galaxia);
 			isDeleted = true;
-			
+			tr.commit();
 		} catch (HibernateException e) {
 			throw new MyException(e);
 		} finally {

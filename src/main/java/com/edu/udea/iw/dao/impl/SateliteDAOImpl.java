@@ -72,7 +72,7 @@ public class SateliteDAOImpl extends HibernateDaoSupport implements SateliteDAO 
 			tr = (Transaction) session.beginTransaction();
 			session.save(satelite);
 			isSaved = true;
-			
+			tr.commit();
 		} catch (HibernateException e) {
 			throw new MyException(e);
 		} finally {
@@ -95,7 +95,7 @@ public class SateliteDAOImpl extends HibernateDaoSupport implements SateliteDAO 
 			tr = (Transaction) session.beginTransaction();
 			session.update(satelite);
 			isUpdated = true;
-			
+			tr.commit();
 		} catch (HibernateException e) {
 			throw new MyException(e);
 		} finally {
@@ -118,7 +118,7 @@ public class SateliteDAOImpl extends HibernateDaoSupport implements SateliteDAO 
 			tr = (Transaction) session.beginTransaction();
 			session.delete(satelite);
 			isDeleted = true;
-			
+			tr.commit();
 		} catch (HibernateException e) {
 			throw new MyException(e);
 		} finally {

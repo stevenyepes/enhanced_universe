@@ -50,7 +50,7 @@ public class TipoEspectralDAOImpl extends HibernateDaoSupport implements TipoEsp
 			tr = (Transaction) session.beginTransaction();
 			session.save(tipoEspectral);
 			isSaved = true;
-			
+			tr.commit();
 		} catch (HibernateException e) {
 			throw new MyException(e);
 		} finally {
@@ -73,7 +73,7 @@ public class TipoEspectralDAOImpl extends HibernateDaoSupport implements TipoEsp
 			tr = (Transaction) session.beginTransaction();
 			session.delete(tipoEspectral);
 			isDelete = true;
-			
+			tr.commit();
 		} catch (HibernateException e) {
 			throw new MyException(e);
 		} finally {

@@ -71,7 +71,7 @@ public class AdministradorDAOImpl extends HibernateDaoSupport implements Adminis
 			tr = (Transaction) session.beginTransaction();
 			session.save(administrador);
 			isSaved = true;
-			
+			tr.commit();
 		} catch (HibernateException e) {
 			throw new MyException(e);
 		} finally {
@@ -94,7 +94,7 @@ public class AdministradorDAOImpl extends HibernateDaoSupport implements Adminis
 			tr = (Transaction) session.beginTransaction();
 			session.update(administrador);
 			isUpdated = true;
-			
+			tr.commit();
 		} catch (HibernateException e) {
 			throw new MyException(e);
 		} finally {
@@ -117,7 +117,7 @@ public class AdministradorDAOImpl extends HibernateDaoSupport implements Adminis
 			tr = (Transaction) session.beginTransaction();
 			session.delete(administrador);
 			isDeleted = true;
-			
+			tr.commit();
 		} catch (HibernateException e) {
 			throw new MyException(e);
 		} finally {
