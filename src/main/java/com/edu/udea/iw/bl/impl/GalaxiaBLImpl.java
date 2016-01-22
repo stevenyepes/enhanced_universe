@@ -120,7 +120,6 @@ public class GalaxiaBLImpl implements GalaxiaBL {
 			
 			throw new MyException("Datos nulos, por favor reviselos ",null );
 		}
-		TipoGalaxiaDAO tipoGalaxiaDao = new TipoGalaxiaDAOImpl();
 		
 		Galaxia galaxiaDTO = new Galaxia();
 		

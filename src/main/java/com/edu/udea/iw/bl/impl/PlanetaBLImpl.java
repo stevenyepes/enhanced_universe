@@ -17,6 +17,15 @@ import com.edu.udea.iw.exception.MyException;
 public class PlanetaBLImpl implements PlanetaBL {
 
 	PlanetaDAO planetaDao;
+	GalaxiaDAO galaxiaDao;
+
+	public GalaxiaDAO getGalaxiaDao() {
+		return galaxiaDao;
+	}
+
+	public void setGalaxiaDao(GalaxiaDAO galaxiaDao) {
+		this.galaxiaDao = galaxiaDao;
+	}
 
 	public Planeta buscarPlaneta(String planeta) throws MyException {
 
@@ -88,7 +97,7 @@ Boolean isDeleted = false;
 		}
 		Planeta planeta = new Planeta();
 
-		GalaxiaDAO galaxiaDao = new GalaxiaDAOImpl();
+		
 		for (Galaxia galaxiaAux : galaxiaDao.consultar()) {
 
 			if (galaxiaAux.getNombre().equals(galaxia)) {
@@ -127,7 +136,7 @@ Boolean isDeleted = false;
 
 		Planeta planeta = new Planeta();
 
-		GalaxiaDAO galaxiaDao = new GalaxiaDAOImpl();
+		
 		if (!"".equals(galaxia)) {
 			for (Galaxia galaxiaAux : galaxiaDao.consultar()) {
 

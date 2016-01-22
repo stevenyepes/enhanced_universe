@@ -15,6 +15,15 @@ import com.edu.udea.iw.exception.MyException;
 public class AsteroideBLImpl implements AsteroideBL {
 
 	AsteroideDAO asteroideDao;
+	GalaxiaDAO galaxiaDao;
+
+	public GalaxiaDAO getGalaxiaDao() {
+		return galaxiaDao;
+	}
+
+	public void setGalaxiaDao(GalaxiaDAO galaxiaDao) {
+		this.galaxiaDao = galaxiaDao;
+	}
 
 	public List<Asteroide> listarAsteroides() throws MyException {
 
@@ -75,7 +84,6 @@ public class AsteroideBLImpl implements AsteroideBL {
 		}
 		Asteroide asteroide = new Asteroide();
 
-		GalaxiaDAO galaxiaDao = new GalaxiaDAOImpl();
 		for (Galaxia galaxiaAux : galaxiaDao.consultar()) {
 
 			if (galaxiaAux.getNombre().equals(galaxia)) {
@@ -108,7 +116,7 @@ public class AsteroideBLImpl implements AsteroideBL {
 
 		Asteroide asteroide = new Asteroide();
 
-		GalaxiaDAO galaxiaDao = new GalaxiaDAOImpl();
+	
 		if (!"".equals(galaxia)) {
 			for (Galaxia galaxiaAux : galaxiaDao.consultar()) {
 

@@ -17,6 +17,8 @@ import com.edu.udea.iw.exception.MyException;
 public class EstrellaBLImpl implements EstrellaBL {
 
 	EstrellaDAO estrellaDao;
+	TipoEspectralDAO tipoEspectralDao;
+	GalaxiaDAO galaxiaDao;
 	
 	public EstrellaDAO getEstrellaDao() {
 		return estrellaDao;
@@ -73,7 +75,6 @@ public class EstrellaBLImpl implements EstrellaBL {
 		
 		Estrella estrella = new Estrella();
 		
-		GalaxiaDAO galaxiaDao = new GalaxiaDAOImpl();
 		for (Galaxia galaxiaAux : galaxiaDao.consultar()) {
 			if (galaxiaAux.getNombre().equals(galaxia)) {
 				estrella.setGalaxia(galaxiaDao.consultaUnica(galaxia));
@@ -89,8 +90,8 @@ public class EstrellaBLImpl implements EstrellaBL {
 		estrella.setNombre(nombre);
 		estrella.setTemperatura(temperatura);
 		
-		TipoEspectralDAO tipoespectralDao = new TipoEspectralDAOImpl();
-		for (TipoEspectral tipoAux : tipoespectralDao.consultar()) {
+		 
+		for (TipoEspectral tipoAux : tipoEspectralDao.consultar()) {
 			if (tipoAux.getClasificacion().equals(tipoespectral)) {
 				estrella.setTipoespectral(tipoAux);
 			}
@@ -119,7 +120,7 @@ public class EstrellaBLImpl implements EstrellaBL {
 		
 		Estrella estrella = new Estrella();
 		
-		GalaxiaDAO galaxiaDao = new GalaxiaDAOImpl();
+		
 		for (Galaxia galaxiaAux : galaxiaDao.consultar()) {
 			if (galaxiaAux.getNombre().equals(galaxia)) {
 				estrella.setGalaxia(galaxiaDao.consultaUnica(galaxia));
@@ -138,8 +139,8 @@ public class EstrellaBLImpl implements EstrellaBL {
 				estrella.setMasa(masa);
 				estrella.setTemperatura(temperatura);
 				
-				TipoEspectralDAO tipoespectralDao = new TipoEspectralDAOImpl();
-				for (TipoEspectral tipoAux : tipoespectralDao.consultar()) {
+				
+				for (TipoEspectral tipoAux : tipoEspectralDao.consultar()) {
 					if (tipoAux.getClasificacion().equals(tipoespectral)) {
 						estrella.setTipoespectral(tipoAux);
 					}
@@ -148,6 +149,22 @@ public class EstrellaBLImpl implements EstrellaBL {
 			}
 		}
 		return false;
+	}
+
+	public TipoEspectralDAO getTipoEspectralDao() {
+		return tipoEspectralDao;
+	}
+
+	public void setTipoEspectralDao(TipoEspectralDAO tipoEspectralDao) {
+		this.tipoEspectralDao = tipoEspectralDao;
+	}
+
+	public GalaxiaDAO getGalaxiaDao() {
+		return galaxiaDao;
+	}
+
+	public void setGalaxiaDao(GalaxiaDAO galaxiaDao) {
+		this.galaxiaDao = galaxiaDao;
 	}
 
 	public Boolean eliminarEstrella(String estrella) throws MyException {

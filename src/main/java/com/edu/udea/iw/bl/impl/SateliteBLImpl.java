@@ -17,7 +17,16 @@ import com.edu.udea.iw.exception.MyException;
 public class SateliteBLImpl implements SateliteBL {
 
 	SateliteDAO sateliteDao;
+	PlanetaDAO planetaDao;
 	
+	public PlanetaDAO getPlanetaDao() {
+		return planetaDao;
+	}
+
+	public void setPlanetaDao(PlanetaDAO planetaDao) {
+		this.planetaDao = planetaDao;
+	}
+
 	public SateliteDAO getSateliteDao() {
 		return sateliteDao;
 	}
@@ -80,7 +89,7 @@ public class SateliteBLImpl implements SateliteBL {
 		}
 		Satelite satelite = new Satelite();
 
-		PlanetaDAO planetaDao = new PlanetaDAOImpl();
+	
 		for (Planeta planetaAux : planetaDao.consultar()) {
 
 			if (planetaAux.getNombre().equals(planeta)) {
@@ -120,7 +129,6 @@ public class SateliteBLImpl implements SateliteBL {
 
 		Satelite satelite = new Satelite();
 
-		PlanetaDAO planetaDao = new PlanetaDAOImpl();
 		if (!"".equals(planeta)) {
 			for (Planeta planetaAux : planetaDao.consultar()) {
 

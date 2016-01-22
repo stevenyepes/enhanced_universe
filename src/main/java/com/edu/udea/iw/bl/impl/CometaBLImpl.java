@@ -14,7 +14,16 @@ import com.edu.udea.iw.exception.MyException;
 public class CometaBLImpl implements CometaBL{
 
 	CometaDAO cometaDao;
+	GalaxiaDAO galaxiaDao;
 	
+	public GalaxiaDAO getGalaxiaDao() {
+		return galaxiaDao;
+	}
+
+	public void setGalaxiaDao(GalaxiaDAO galaxiaDao) {
+		this.galaxiaDao = galaxiaDao;
+	}
+
 	public CometaDAO getCometaDao() {
 		return cometaDao;
 	}
@@ -79,7 +88,7 @@ public class CometaBLImpl implements CometaBL{
 		
 		Cometa cometa = new Cometa();
 
-		GalaxiaDAO galaxiaDao = new GalaxiaDAOImpl();
+		
 		for (Galaxia galaxiaAux : galaxiaDao.consultar()) {
 
 			if (galaxiaAux.getNombre().equals(galaxia)) {
@@ -118,7 +127,7 @@ public class CometaBLImpl implements CometaBL{
 
 		Cometa cometa = new Cometa();
 
-		GalaxiaDAO galaxiaDao = new GalaxiaDAOImpl();
+		
 		if (!"".equals(galaxia)) {
 			for (Galaxia galaxiaAux : galaxiaDao.consultar()) {
 

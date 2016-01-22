@@ -113,11 +113,37 @@
 
 	<bean id="asteroideBL" class="com.edu.udea.iw.bl.impl.AsteroideBLImpl">
 		<property name="asteroideDao" ref="asteroideDao"></property>
+		<property name="galaxiaDao" ref="galaxiaDao"></property>
 	</bean>
 
 	<bean id="administradorBL" class="com.edu.udea.iw.bl.impl.AdministradorBLImpl">
 		<property name="administradorDao" ref="administradorDao"></property>
 	</bean>
+	
+	<bean id="estrellaBL" class="com.edu.udea.iw.bl.impl.EstrellaBLImpl">
+		<property name="estrellaDao" ref="estrellaDao"></property>
+		<property name="galaxiaDao" ref="galaxiaDao"></property>
+		<property name="tipoEspectralDao" ref="tipoEspectralDao"></property>
+	</bean>
 
+	<bean id="cometaBL" class="com.edu.udea.iw.bl.impl.CometaBLImpl">
+		<property name="cometaDao" ref="cometaDao"></property>
+		<property name="galaxiaDao" ref="galaxiaDao"></property>
+	</bean>
+
+	<bean id="glosarioBL" class="com.edu.udea.iw.bl.impl.glosarioBLImpl">
+		<property name="glosarioDao" ref="glosarioDao"></property>
+	</bean>
+	
+	<bean id="planetaBL" class="com.edu.udea.iw.bl.impl.PlanetaBLImpl">
+		<property name="planetaDao" ref="planetaDao"></property>
+		<property name="galaxiaDao" ref="galaxiaDao"></property>
+	</bean>
+	
+	<bean id="sateliteBL" class="com.edu.udea.iw.bl.impl.SateliteBLImpl">
+		<property name="planetaDao" ref="planetaDao"></property>
+		<property name="sateliteDao" ref="sateliteDao"></property>
+	</bean>
+	
 
 </beans>
