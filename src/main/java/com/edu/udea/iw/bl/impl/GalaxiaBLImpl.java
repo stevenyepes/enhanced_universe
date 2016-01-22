@@ -152,6 +152,7 @@ public class GalaxiaBLImpl implements GalaxiaBL {
 		galaxiaDTO.setProfundidad(profundidad);
 		galaxiaDTO.setDiametro(diametro);
 		galaxiaDTO.setDistanciatierra(distanciatierra);
+		galaxiaDao.actualizar(galaxiaDTO);
 		isUpdated = true;
 		
 		return isUpdated;

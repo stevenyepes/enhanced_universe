@@ -131,7 +131,7 @@
 		<property name="galaxiaDao" ref="galaxiaDao"></property>
 	</bean>
 
-	<bean id="glosarioBL" class="com.edu.udea.iw.bl.impl.glosarioBLImpl">
+	<bean id="glosarioBL" class="com.edu.udea.iw.bl.impl.GlosarioBLImpl">
 		<property name="glosarioDao" ref="glosarioDao"></property>
 	</bean>
 	

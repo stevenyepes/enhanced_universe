@@ -25,7 +25,7 @@ import com.edu.udea.iw.exception.MyException;
 @Path("/administrador")
 public class AdministradorService {
 
-	@Autowired
+	/*@Autowired
 	AdministradorBL administradorBL;
 	
 	@GET
@@ -60,5 +60,5 @@ public class AdministradorService {
 				.header("Location",
 						"http://localhost:8080/enhanced_universe/rest/administrador"
 								+ login).build();
-	}
+	}*/
 }

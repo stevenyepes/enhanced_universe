@@ -69,7 +69,7 @@ public class GalaxiaService {
 	@Consumes({ MediaType.APPLICATION_JSON })
 	public Response guardarGalaxia(Galaxia galaxia) throws MyException {
 		System.out.println("Nombre " + galaxia.getNombre() + "\n\n\n");
-		Boolean crearGalaxia = galaxiaBL.guardarGalaxia(galaxia.getNombre(), galaxia.getTipogalaxia().getNombre(),
+		galaxiaBL.guardarGalaxia(galaxia.getNombre(), galaxia.getTipogalaxia().getNombre(),
 								galaxia.getAlto(),galaxia.getAncho(), galaxia.getProfundidad(), galaxia.getDiametro(),
 								galaxia.getDistanciatierra());
 
@@ -81,5 +81,25 @@ public class GalaxiaService {
 						"http://localhost:8080/enhanced_universe/rest/galaxia"
 								+ galaxia.getNombre()).build();
 	}
+	
+	@PUT
+	@Consumes({ MediaType.APPLICATION_JSON })
+	public Response actualizarGalaxia(Galaxia galaxia) throws MyException {
+		System.out.println("Nombre " + galaxia.getNombre() + "\n\n\n");
+		galaxiaBL.actualizarGalaxia(galaxia.getNombre(), galaxia.getTipogalaxia().getNombre(),
+								galaxia.getAlto(),galaxia.getAncho(), galaxia.getProfundidad(), galaxia.getDiametro(),
+								galaxia.getDistanciatierra());
+
+		
+		return Response.status(Response.Status.CREATED)
+				// 201
+				.entity("Actualizado")
+				.header("Location",
+						"http://localhost:8080/enhanced_universe/rest/galaxia"
+								+ galaxia.getNombre()).build();
+	}
+	
+	
+	
 
 }

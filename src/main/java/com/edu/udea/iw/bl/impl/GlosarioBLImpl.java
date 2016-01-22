@@ -15,6 +15,14 @@ public class GlosarioBLImpl implements GlosarioBL {
 
 	GlosarioDAO glosarioDao;
 	
+	public GlosarioDAO getGlosarioDao() {
+		return glosarioDao;
+	}
+
+	public void setGlosarioDao(GlosarioDAO glosarioDao) {
+		this.glosarioDao = glosarioDao;
+	}
+
 	public Glosario buscarTermino(String termino) throws MyException {
 		Glosario glosarioDTO = null;
 		if(termino.isEmpty() || "".equals(termino)) {
@@ -31,7 +39,7 @@ public class GlosarioBLImpl implements GlosarioBL {
 		}
 		
 		if(glosarioDTO == null) {
-			throw new MyException("Por favor proporcione un termino válido ",null );
+			throw new MyException("Por favor proporcione un termino vï¿½lido ",null );
 			
 		}
 		
