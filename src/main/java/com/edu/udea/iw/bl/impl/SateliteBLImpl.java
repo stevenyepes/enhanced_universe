@@ -136,6 +136,7 @@ public class SateliteBLImpl implements SateliteBL {
 
 				if (planetaAux.getNombre().equals(planeta)) {
 					satelite.setPlaneta(planetaAux);
+					break;
 				}
 			}
 		}
@@ -147,6 +148,7 @@ public class SateliteBLImpl implements SateliteBL {
 				satelite.setMasa(masa);
 				satelite.setGravedad(gravedad);
 				satelite.setPeriodoorbital(periodoOrbital);
+				satelite.setPeriodorotacional(periodoRotacional);
 				satelite.setDiametro(diametro);
 				satelite.setTemperatura(temperatura);
 				satelite.setNombre(nombre);
