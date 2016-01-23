@@ -6,7 +6,7 @@
     <class name="com.edu.udea.iw.dto.Satelite" table="SATELITE">
         <id name="id" type="java.lang.Integer">
             <column name="id" precision="11" />
-            <generator class="assigned" />
+            <generator class="increment" />
         </id>
         <property name="nombre" type="java.lang.String">
             <column name="nombre" length="100" not-null="true"/>
