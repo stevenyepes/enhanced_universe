@@ -1,9 +1,8 @@
 package com.edu.udea.iw.bl.impl;
 
-import com.edu.udea.iw.bl.GalaxiaBL;
+
 import com.edu.udea.iw.bl.GlosarioBL;
 import com.edu.udea.iw.dao.GlosarioDAO;
-import com.edu.udea.iw.dto.Asteroide;
 import com.edu.udea.iw.dto.Glosario;
 import com.edu.udea.iw.exception.MyException;
 
@@ -61,11 +60,10 @@ public class GlosarioBLImpl implements GlosarioBL {
 					+ " termino a insertar",null );
 		}
 		
-		if(glosarioDao.consultaUnica(termino).getTermino().equals(termino)){
-			
-			throw new MyException("El termino a ingresar ya existe",null );
-		}
+		if(glosarioDao.consultaUnica(termino) != null){
 		
+		throw new MyException("El termino a ingresar ya existe",null );
+		}
 		Glosario glosario = new Glosario();
 		glosario.setTermino(termino);
 		glosario.setDefinicion(descripcion);
@@ -104,8 +102,29 @@ public class GlosarioBLImpl implements GlosarioBL {
 	}
 
 	public Boolean eliminarTermino(String termino) throws MyException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		Boolean isDeleted = false;
+		
+		if(termino.isEmpty() || "".equals(termino)) {
+			
+			throw new MyException("El nombre de la galaxia no puede ser nulo ",null );
+		}
+		
+		for(Glosario glosarioDTO : glosarioDao.consultar()){
+			
+			if(glosarioDTO.getTermino().equals(termino)){
+				glosarioDao.eliminar(glosarioDTO);
+				isDeleted = true;
+				
+			}
+		}
+		
+		if(isDeleted == false) {
+			
+			throw new MyException("La galaxia que desea eliminar no existe ",null );
+		}
+		
+		return isDeleted;
 	}
 
 }
