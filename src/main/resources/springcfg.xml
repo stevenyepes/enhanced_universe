@@ -145,5 +145,9 @@
 		<property name="sateliteDao" ref="sateliteDao"></property>
 	</bean>
 	
+	<bean id="tipoEspectralBL" class="com.edu.udea.iw.bl.impl.TipoEspectralBLImpl">
+		<property name="tipoEspectralDao" ref="tipoEspectralDao"></property>
+	</bean>
+	
 
 </beans>
