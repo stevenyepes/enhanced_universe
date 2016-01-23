@@ -1,0 +1,262 @@
+<div>
+	<div>
+		<h1>Bienvenido a la API Rest de Enhanced Universe</h1>
+		<span>
+		<h2>Para acceder a la API de galaxias: (Soporta GET, POST, PUT, DELETE)</h2>
+		<br/>
+		<p> /enhanced_universe/rest/galaxia</p>
+		<p> Para acceder a una galaxia específica: /enhanced_universe/rest/galaxia/"nombre de la galaxia"</p>
+		<p>Ejemplo: /enhanced_universe/rest/galaxia/via lactea</p>
+		<p>Respuesta: {
+						  "id": 1,
+						  "nombre": "via lactea",
+						  "tipogalaxia": {
+						    "id": 1,
+						    "nombre": "espiral"
+						  },
+						  "alto": null,
+						  "ancho": null,
+						  "profundidad": null,
+						  "diametro": 100000,
+						  "distanciatierra": 0
+						}
+		</p>
+		<p>Para ingresar: /enhanced_universe/rest/galaxia - enviar un json con la informacion de la galaxia a ingresar</p>
+		<p> Para eliminar: /enhanced_universe/rest/galaxia/"nombre de la galaxia" </p>
+		<p> para actualizar: /enhanced_universe/rest/galaxia - enviar un json con la información de la galaxia a editar</p>
+		</span>
+		<span>
+		<h2>Para acceder a la API de planeta: (Soporta GET, POST, PUT, DELETE)</h2>
+		<br/>
+		<p> /enhanced_universe/rest/planeta</p>
+		<p> Para acceder a un planeta específica: /enhanced_universe/rest/planeta/"nombre del planeta"</p>
+		<p>Ejemplo: /enhanced_universe/rest/planeta/tierra</p>
+		<p>Respuesta: {
+						  "id": 4,
+						  "nombre": "tierra",
+						  "masa": 5973600000000000000000000,
+						  "gravedad": 9.780327,
+						  "diametro": 6378.1,
+						  "temperatura": 14.05,
+						  "periodorotacional": 24,
+						  "periodoorbital": 1,
+						  "distanciatierra": 0,
+						  "galaxia": {
+						    "id": 1,
+						    "nombre": "via lactea",
+						    "tipogalaxia": {
+						      "id": 1,
+						      "nombre": "espiral"
+						    },
+						    "alto": null,
+						    "ancho": null,
+						    "profundidad": null,
+						    "diametro": 100000,
+						    "distanciatierra": 0
+						  }
+						}
+		</p>
+		<p>Para ingresar: /enhanced_universe/rest/planeta - enviar un json con la informacion del planeta a ingresar</p>
+		<p> Para eliminar: /enhanced_universe/rest/planeta/"nombre del planeta" </p>
+		<p> para actualizar: /enhanced_universe/rest/planeta - enviar un json con la información del planeta a editar</p>
+		</span>
+		<span>
+		<h2>Para acceder a la API de asteroide: (Soporta GET, POST, PUT, DELETE)</h2>
+		<br/>
+		<p> /enhanced_universe/rest/asteroide</p>
+		<p> Para acceder a un asteroide específico: /enhanced_universe/rest/asteroide/"nombre del asteroide"</p>
+		<p>Ejemplo: /enhanced_universe/rest/asteroide/ceres</p>
+		<p>Respuesta: {
+						  "id": 1,
+						  "nombre": "ceres",
+						  "diametro": 952.4,
+						  "peligroso": null,
+						  "galaxia": {
+						    "id": 1,
+						    "nombre": "via lactea",
+						    "tipogalaxia": {
+						      "id": 1,
+						      "nombre": "espiral"
+						    },
+						    "alto": null,
+						    "ancho": null,
+						    "profundidad": null,
+						    "diametro": 100000,
+						    "distanciatierra": 0
+						  }
+						}
+		</p>
+		<p>Para ingresar: /enhanced_universe/rest/asteroide - enviar un json con la informacion del asteroide a ingresar</p>
+		<p> Para eliminar: /enhanced_universe/rest/asteroide/"nombre del asteroide" </p>
+		<p> para actualizar: /enhanced_universe/rest/asteroide - enviar un json con la información del asteroide a editar</p>
+		</span>
+		<span>
+		<h2>Para acceder a la API de Cometa: (Soporta GET, POST, PUT, DELETE)</h2>
+		<br/>
+		<p> /enhanced_universe/rest/cometa</p>
+		<p> Para acceder a un cometa específico: /enhanced_universe/rest/cometa/"nombre del cometa"</p>
+		<p>Ejemplo: /enhanced_universe/rest/cometa/halley</p>
+		<p>Respuesta: {
+						    "id": 1,
+						    "nombre": "halley",
+						    "diametro": null,
+						    "periodoorbital": 75.3,
+						    "ultimoperihelio": 1986,
+						    "galaxia": {
+						      "id": 1,
+						      "nombre": "via lactea",
+						      "tipogalaxia": {
+						        "id": 1,
+						        "nombre": "espiral"
+						      },
+						      "alto": null,
+						      "ancho": null,
+						      "profundidad": null,
+						      "diametro": 100000,
+						      "distanciatierra": 0
+						    }
+						  }
+		</p>
+		<p>Para ingresar: /enhanced_universe/rest/cometa - enviar un json con la informacion del cometa a ingresar</p>
+		<p> Para eliminar: /enhanced_universe/rest/cometa/"nombre del cometa" </p>
+		<p> para actualizar: /enhanced_universe/rest/cometa - enviar un json con la información del cometa a editar</p>
+		</span>
+		<h2>Para acceder a la API de Estrella: (Soporta GET, POST, PUT, DELETE)</h2>
+		<br/>
+		<p> /enhanced_universe/rest/estrella</p>
+		<p> Para acceder a una estrella específico: /enhanced_universe/rest/estrella/"nombre de la estrella"</p>
+		<p>Ejemplo: /enhanced_universe/rest/estrella/sol</p>
+		<p>Respuesta: {
+						  "id": 1,
+						  "nombre": "sol",
+						  "tipoespectral": {
+						    "clasificacion": "G",
+						    "color": "amarillo",
+						    "temperatura": 6000
+						  },
+						  "temperatura": 5504.85,
+						  "clase": "enana",
+						  "masa": 1989100000000000000000000000000,
+						  "diametro": 1392000,
+						  "galaxia": {
+						    "id": 1,
+						    "nombre": "via lactea",
+						    "tipogalaxia": {
+						      "id": 1,
+						      "nombre": "espiral"
+						    },
+						    "alto": null,
+						    "ancho": null,
+						    "profundidad": null,
+						    "diametro": 100000,
+						    "distanciatierra": 0
+						  }
+						}
+		</p>
+		<p>Para ingresar: /enhanced_universe/rest/estrella - enviar un json con la informacion de la estrella a ingresar</p>
+		<p> Para eliminar: /enhanced_universe/rest/estrella/"nombre de la estrella" </p>
+		<p> para actualizar: /enhanced_universe/rest/estrella - enviar un json con la información de la estrella a editar</p>
+		</span>
+		
+		<h2>Para acceder a la API de Satelite: (Soporta GET, POST, PUT, DELETE)</h2>
+		<br/>
+		<p> /enhanced_universe/rest/satelite</p>
+		<p> Para acceder a un satelite específico: /enhanced_universe/rest/satelite/"nombre del satelite"</p>
+		<p>Ejemplo: /enhanced_universe/rest/satelite/luna</p>
+		<p>Respuesta: {
+						    "id": 1,
+						    "nombre": "luna",
+						    "masa": 73490000000000000000000,
+						    "gravedad": 1.62,
+						    "diametro": 3474,
+						    "temperatura": 107,
+						    "periodorotacional": null,
+						    "periodoorbital": 29.5,
+						    "planeta": {
+						      "id": 4,
+						      "nombre": "tierra",
+						      "masa": 5973600000000000000000000,
+						      "gravedad": 9.780327,
+						      "diametro": 6378.1,
+						      "temperatura": 14.05,
+						      "periodorotacional": 24,
+						      "periodoorbital": 1,
+						      "distanciatierra": 0,
+						      "galaxia": {
+						        "id": 1,
+						        "nombre": "via lactea",
+						        "tipogalaxia": {
+						          "id": 1,
+						          "nombre": "espiral"
+						        },
+						        "alto": null,
+						        "ancho": null,
+						        "profundidad": null,
+						        "diametro": 100000,
+						        "distanciatierra": 0
+						      }
+						    }
+						  }
+		</p>
+		<p>Para ingresar: /enhanced_universe/rest/satelite - enviar un json con la informacion del satelite a ingresar</p>
+		<p> Para eliminar: /enhanced_universe/rest/satelite/"nombre del satelite" </p>
+		<p> para actualizar: /enhanced_universe/rest/satelite - enviar un json con la información del satelite a editar</p>
+		</span>
+		<span>
+		<h2>Para acceder a la API de Tipo Galaxia: (Soporta GET, POST, DELETE)</h2>
+		<br/>
+		<p> /enhanced_universe/rest/tipogalaxia</p>
+		<p> Para acceder a todos los tipos de galaxia: /enhanced_universe/rest/tipogalaxia/</p>
+		<p>Ejemplo: /enhanced_universe/rest/tipogalaxia/</p>
+		<p>Respuesta: [
+						  {
+						    "id": 2,
+						    "nombre": "eliptica"
+						  },
+						  {
+						    "id": 1,
+						    "nombre": "espiral"
+						  }
+						]
+		</p>
+		<p>Para ingresar: /enhanced_universe/rest/tipogalaxia - enviar un json con la informacion del tipo galaxia a ingresar</p>
+		<p> Para eliminar: /enhanced_universe/rest/tipogalaxia/"nombre del tipo galaxia" </p>
+		</span>
+		
+		<span>
+		<h2>Para acceder a la API de Tipo Espectral: (Soporta GET, POST, DELETE)</h2>
+		<br/>
+		<p> /enhanced_universe/rest/tipoespectral</p>
+		<p> Para acceder a todos los tipos espectrales: /enhanced_universe/rest/tipoespectral/</p>
+		<p>Ejemplo: /enhanced_universe/rest/tipoespectral/</p>
+		<p>Respuesta: [
+						  {
+						    "clasificacion": "A",
+						    "color": "blanco",
+						    "temperatura": 9000
+						  },
+						  {
+						    "clasificacion": "G",
+						    "color": "amarillo",
+						    "temperatura": 6000
+						  },
+						  {
+						    "clasificacion": "M",
+						    "color": "rojo",
+						    "temperatura": 3000
+						  },
+						  {
+						    "clasificacion": "O",
+						    "color": "azul",
+						    "temperatura": 50000
+						  }
+						]
+		</p>
+		<p>Para ingresar: /enhanced_universe/rest/tipoespectral - enviar un json con la informacion del tipo espectral a ingresar</p>
+		<p> Para eliminar: /enhanced_universe/rest/tipoespectral/"clasificacion del tipo espectral" </p>
+		</span>
+		
+	</div>
+	
+
+</div>

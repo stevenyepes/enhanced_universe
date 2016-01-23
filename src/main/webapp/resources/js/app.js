@@ -6,6 +6,12 @@ app.config(['$routeProvider',function($routeProvider){
 	
 	$routeProvider.when('/', {
 		
+		templateUrl : 'templates/principal.html',
+		controller: 'principalCtrl'
+	});
+	
+	$routeProvider.when('/login', {
+		
 		templateUrl : 'templates/login.html',
 		controller: 'contLogin'
 	});
@@ -24,6 +30,12 @@ app.config(['$routeProvider',function($routeProvider){
 	
 	$routeProvider.otherwise('/');
 }]);
+
+app.controller('principalCtrl', function($scope){
+	
+
+});
+
 
 app.controller('contLogin', function($scope, usuario){
 	
