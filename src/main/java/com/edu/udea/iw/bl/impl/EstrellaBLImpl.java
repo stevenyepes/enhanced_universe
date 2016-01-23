@@ -89,11 +89,12 @@ public class EstrellaBLImpl implements EstrellaBL {
 		estrella.setMasa(masa);
 		estrella.setNombre(nombre);
 		estrella.setTemperatura(temperatura);
-		
+		estrella.setClase(clase);
 		 
 		for (TipoEspectral tipoAux : tipoEspectralDao.consultar()) {
 			if (tipoAux.getClasificacion().equals(tipoespectral)) {
 				estrella.setTipoespectral(tipoAux);
+				break;
 			}
 		}
 		
@@ -112,13 +113,18 @@ public class EstrellaBLImpl implements EstrellaBL {
 			throw new MyException("Datos nulos, por favor reviselos ", null);
 		}
 
+		Estrella estrella = null;
+		
 		for (Estrella estrellaAux : estrellaDao.consultar()) {
 			if (estrellaAux.getNombre().equals(nombre)) {
-				throw new MyException("La estrella ya existe ", null);
+				estrella = estrellaAux;
 			}
 		}
 		
-		Estrella estrella = new Estrella();
+		if(estrella == null) {
+			throw new MyException("La estrella no existe ", null);
+		}
+		
 		
 		
 		for (Galaxia galaxiaAux : galaxiaDao.consultar()) {
@@ -138,6 +144,7 @@ public class EstrellaBLImpl implements EstrellaBL {
 				estrella.setDiametro(diametro);
 				estrella.setMasa(masa);
 				estrella.setTemperatura(temperatura);
+				estrella.setClase(clase);
 				
 				
 				for (TipoEspectral tipoAux : tipoEspectralDao.consultar()) {
