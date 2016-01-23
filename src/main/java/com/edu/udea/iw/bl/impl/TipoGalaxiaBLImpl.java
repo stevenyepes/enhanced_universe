@@ -55,7 +55,7 @@ public class TipoGalaxiaBLImpl implements TipoGalaxiaBL {
 		
 		if(tipoGalaxiaDTO == null) {
 			throw new MyException("Por favor proporcione un nombre de"
-					+ " galaxia válido ",null );
+					+ " galaxia vï¿½lido ",null );
 			
 		}
 		
@@ -98,13 +98,13 @@ public class TipoGalaxiaBLImpl implements TipoGalaxiaBL {
 			
 			throw new MyException("Por favor proporcione el nombre ",null );
 		}
-		TipoGalaxia tipoGalaxiaDTO= null;
+		//TipoGalaxia tipoGalaxiaDTO= null;
 		
 		for(TipoGalaxia tipoGalaxiaAux : tipoGalaxiaDao.consultar()) {
 			
 			if(tipoGalaxiaAux.getNombre().equals(tipoGalaxia)) {
 				
-				tipoGalaxiaDao.eliminar(tipoGalaxiaDTO);
+				tipoGalaxiaDao.eliminar(tipoGalaxiaAux);
 				isDeleted = true;
 			}
 	

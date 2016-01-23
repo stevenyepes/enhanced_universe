@@ -69,7 +69,6 @@ public class GalaxiaService {
 	@POST
 	@Consumes({ MediaType.APPLICATION_JSON })
 	public Response guardarGalaxia(Galaxia galaxia) throws MyException {
-		System.out.println("Nombre " + galaxia.getNombre() + "\n\n\n");
 		galaxiaBL.guardarGalaxia(galaxia.getNombre(), galaxia.getTipogalaxia().getNombre(),
 								galaxia.getAlto(),galaxia.getAncho(), galaxia.getProfundidad(), galaxia.getDiametro(),
 								galaxia.getDistanciatierra());
@@ -78,15 +77,15 @@ public class GalaxiaService {
 		return Response.status(Response.Status.CREATED)
 				// 201
 				.entity("Creado")
-				.header("Location",
-						"http://localhost:8080/enhanced_universe/rest/galaxia"
-								+ galaxia.getNombre()).build();
+				.header("Access-Control-Allow-Origin", "*")
+				.header("Access-Control-Allow-Methods",
+						"GET, POST, DELETE, PUT").build();
 	}
 	
 	@PUT
 	@Consumes({ MediaType.APPLICATION_JSON })
 	public Response actualizarGalaxia(Galaxia galaxia) throws MyException {
-		System.out.println("Nombre " + galaxia.getNombre() + "\n\n\n");
+		
 		boolean actualizado = galaxiaBL.actualizarGalaxia(galaxia.getNombre(), galaxia.getTipogalaxia().getNombre(),
 								galaxia.getAlto(),galaxia.getAncho(), galaxia.getProfundidad(), galaxia.getDiametro(),
 								galaxia.getDistanciatierra());
@@ -95,9 +94,9 @@ public class GalaxiaService {
 		return Response.status(Response.Status.CREATED)
 				// 201
 				.entity("Actualizado")
-				.header("Location",
-						"http://localhost:8080/enhanced_universe/rest/galaxia"
-								+ galaxia.getNombre()).build();
+				.header("Access-Control-Allow-Origin", "*")
+				.header("Access-Control-Allow-Methods",
+						"GET, POST, DELETE, PUT").build();
 	}
 	
 	

@@ -100,12 +100,7 @@ public class AdministradorBLImpl implements AdministradorBL {
 			String contrasena) throws MyException {
 		
 		Boolean isUpdated = false;
-		
-		if(usuario.isEmpty() || "".equals(usuario)) {
-			
-			throw new MyException("Por favor proporcione el usuario del administrador",null);
-		}
-		
+
 		Administrador administrador = new Administrador();
 		
 		for (Administrador adm : administradorDao.consultar()) {
