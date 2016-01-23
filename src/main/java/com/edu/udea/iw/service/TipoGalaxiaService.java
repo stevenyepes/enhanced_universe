@@ -22,7 +22,7 @@ import com.edu.udea.iw.exception.MyException;
 @Path("/tipogalaxia")
 public class TipoGalaxiaService {
 
-	/*@Autowired
+	@Autowired
 	TipoGalaxiaBL tipoGalaxiaBL;
 	
 	@GET
@@ -39,6 +39,6 @@ public class TipoGalaxiaService {
 				.header("Access-Control-Allow-Origin", "*")
 				.header("Access-Control-Allow-Methods",
 						"GET, POST, DELETE, PUT").build();
-	}*/
+	}
 
 }

@@ -74,7 +74,6 @@ public class GalaxiaDAOImpl extends HibernateDaoSupport implements GalaxiaDAO {
 			session.save(galaxia);
 			tr.commit();
 			isSaved = true;
-			tr.commit();
 		} catch (HibernateException e) {
 			throw new MyException(e);
 		} finally {

@@ -41,7 +41,7 @@ public class AdministradorBLImpl implements AdministradorBL {
 		administradorDTO = administradorDao.consultaUnica(usuario);
 		if(administradorDTO == null) {
 			throw new MyException("Por favor proporcione un usuario de"
-					+ " administrador válido ",null );
+					+ " administrador vï¿½lido ",null );
 			
 		}
 		
@@ -174,7 +174,7 @@ public class AdministradorBLImpl implements AdministradorBL {
 		
 		Boolean valido = false;
 		
-		if(usuario.isEmpty() || "".equals(usuario)) {
+		if("".equals(usuario) || usuario.isEmpty()) {
 			
 			throw new MyException("Por favor proporcione el usuario del administrador",null);
 		}

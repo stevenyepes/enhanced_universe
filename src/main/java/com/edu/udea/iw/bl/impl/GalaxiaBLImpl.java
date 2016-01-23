@@ -177,7 +177,11 @@ public class GalaxiaBLImpl implements GalaxiaBL {
 				
 			}
 		}
-
+		
+		if(isDeleted == false) {
+			
+			throw new MyException("La galaxia que desea eliminar no existe ",null );
+		}
 		
 		return isDeleted;
 	}

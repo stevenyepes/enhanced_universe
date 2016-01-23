@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -25,14 +26,14 @@ import com.edu.udea.iw.exception.MyException;
 @Path("/administrador")
 public class AdministradorService {
 
-	/*@Autowired
+	@Autowired
 	AdministradorBL administradorBL;
 	
 	@GET
 	@Path("/")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Transactional
-	public Response getGalaxias() throws MyException {
+	public Response getAdministrador() throws MyException {
 		List<Administrador> administradores = new ArrayList<Administrador>();
 		administradores = administradorBL.listarAdministradores();
 		return Response
@@ -44,12 +45,12 @@ public class AdministradorService {
 						"GET, POST, DELETE, PUT").build();
 	}
 	
-	@GET
-	@Path("/{login}/{contrasena}")
+	@POST
+	@Path("/login")
 	@Consumes({ MediaType.APPLICATION_JSON })
 	public Response administradorBL(
-			@PathParam("login") String login,
-			@PathParam("contrasena") String contrasena) throws MyException {
+			@FormParam("login") String login,
+			@FormParam("contrasena") String contrasena) throws MyException {
 		
 		boolean validado = administradorBL.validarAdministrador(login, contrasena);
 
@@ -60,5 +61,5 @@ public class AdministradorService {
 				.header("Location",
 						"http://localhost:8080/enhanced_universe/rest/administrador"
 								+ login).build();
-	}*/
+	}
 }

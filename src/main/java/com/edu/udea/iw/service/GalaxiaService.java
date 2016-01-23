@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -86,7 +87,7 @@ public class GalaxiaService {
 	@Consumes({ MediaType.APPLICATION_JSON })
 	public Response actualizarGalaxia(Galaxia galaxia) throws MyException {
 		System.out.println("Nombre " + galaxia.getNombre() + "\n\n\n");
-		galaxiaBL.actualizarGalaxia(galaxia.getNombre(), galaxia.getTipogalaxia().getNombre(),
+		boolean actualizado = galaxiaBL.actualizarGalaxia(galaxia.getNombre(), galaxia.getTipogalaxia().getNombre(),
 								galaxia.getAlto(),galaxia.getAncho(), galaxia.getProfundidad(), galaxia.getDiametro(),
 								galaxia.getDistanciatierra());
 
@@ -99,6 +100,24 @@ public class GalaxiaService {
 								+ galaxia.getNombre()).build();
 	}
 	
+	
+	@DELETE
+	@Path("/{galaxia_nombre}")
+	@Transactional
+	public Response eliminarGalaxia(
+			@PathParam("galaxia_nombre") String galaxia_nombre)
+			throws MyException {
+		
+		galaxiaBL.eliminarGalaxia(galaxia_nombre);
+		return Response
+				.ok()
+				// 200
+				.entity("Eliminado")
+				.header("Access-Control-Allow-Origin", "*")
+				.header("Access-Control-Allow-Methods",
+						"GET, POST, DELETE, PUT").build();
+
+	}
 	
 	
 
