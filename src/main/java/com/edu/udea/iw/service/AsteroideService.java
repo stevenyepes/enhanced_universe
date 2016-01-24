@@ -23,7 +23,7 @@ import com.edu.udea.iw.dto.Asteroide;
 import com.edu.udea.iw.exception.MyException;
 
 /**
- * Implementacion de los metodos HTTP GET, POST, PUT, DELETE para el servicio REST de asteroide
+ * Implementacion de los metodos HTTP GET, POST, PUT, DELETE para el servicio  web Restful de asteroide
  * @author enhanced_universe
 */
 @Component
@@ -33,6 +33,11 @@ public class AsteroideService {
 	@Autowired
 	AsteroideBL asteroideBL;
 	
+	/**
+	 * HTTP GET para obtener un asteroide de la base de datos	
+	 * @param asteoride_nombre nombre del asteroide a consultar 
+	 * @throws MyException El asteoride no existe en la base de datos
+	 */
 	@GET
 	@Path("/{asteroide_nombre}")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -50,7 +55,12 @@ public class AsteroideService {
 				.header("Access-Control-Allow-Methods",
 						"GET, POST, DELETE, PUT").build();
 	}
-
+	
+	
+	/**
+	 * HTTP GET para obtener todos asteorides de la base de datos	 
+	 * @throws MyException No hay asteroides en la base de datos
+	 */
 	@GET
 	@Path("/")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -67,6 +77,12 @@ public class AsteroideService {
 						"GET, POST, DELETE, PUT").build();
 	}
 	
+
+	/**
+	 * HTTP POST para guardar un asteroide nuevo en la base de datos
+	 * @param asteroide asteoride a guardar en la base de datos 
+	 * @throws MyException El asteroide no se pudo guardar
+	 */
 	@POST
 	@Consumes({ MediaType.APPLICATION_JSON })
 	public Response guardarAsteroide(Asteroide asteroide) throws MyException {
@@ -82,6 +98,11 @@ public class AsteroideService {
 						"GET, POST, DELETE, PUT").build();
 	}
 	
+	/**
+	 * HTTP PUT para actualizar  un  asteroide en la base de datos
+	 * @param asteoride asteoride que se va a actualizar	
+	 * @throws MyException El asteroide no se pudo actualizar
+	 */
 	@PUT
 	@Consumes({ MediaType.APPLICATION_JSON })
 	public Response actualizarAsteroide(Asteroide asteroide) throws MyException {
@@ -98,7 +119,11 @@ public class AsteroideService {
 						"GET, POST, DELETE, PUT").build();
 	}
 	
-	
+	/**
+	 * HTTP DELETE para borrar  un  asteroide en la base de datos
+	 * @param asteoride_nombre nombre del asteoride que se va a borrar	
+	 * @throws MyException El asteroide no se pudo borrar
+	 */
 	@DELETE
 	@Path("/{asteroide_nombre}")
 	@Transactional

@@ -20,7 +20,7 @@ import com.edu.udea.iw.dto.Glosario;
 import com.edu.udea.iw.exception.MyException;
 
 /**
- * Implementacion de los metodos HTTP GET, POST, PUT, DELETE para el servicio REST de glosario
+ * Implementacion de los metodos HTTP GET, POST, PUT, DELETE para el servicio  web Restful de glosario
  * @author enhanced_universe
 */
 @Component
@@ -30,7 +30,11 @@ public class GlosarioService {
 	@Autowired
 	GlosarioBL glosarioBL;
 
-
+	/**
+	 * HTTP GET para obtener un termino de la base de datos	
+	 * @param glosario_termino termino a consultar 
+	 * @throws MyException El termino no existe en la base de datos
+	 */
 	@GET
 	@Path("/{glosario_termino}")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -47,7 +51,12 @@ public class GlosarioService {
 				.header("Access-Control-Allow-Methods",
 						"GET, POST, DELETE, PUT").build();
 	}
-
+	
+	/**
+	 * HTTP POST para guardar un termino nuevo en la base de datos
+	 * @param glosario termino a guardar en la base de datos 
+	 * @throws MyException El termino no se pudo guardar
+	 */
 	@POST
 	@Consumes({ MediaType.APPLICATION_JSON })
 	public Response guardarTermino(Glosario glosario) throws MyException {
@@ -62,6 +71,11 @@ public class GlosarioService {
 						"GET, POST, DELETE, PUT").build();
 	}
 	
+	/**
+	 * HTTP PUT para actualizar  un termino en la base de datos
+	 * @param glosario termino que se va a actualizar	
+	 * @throws MyException El termino no se pudo actualizar
+	 */
 	@PUT
 	@Consumes({ MediaType.APPLICATION_JSON })
 	public Response actualizarTermino(Glosario glosario) throws MyException {
@@ -76,7 +90,11 @@ public class GlosarioService {
 						"GET, POST, DELETE, PUT").build();
 	}
 	
-	
+	/**
+	 * HTTP DELETE para borrar  un  termino en la base de datos
+	 * @param glosario_termino termino que se va a borrar	
+	 * @throws MyException El termino no se pudo borrar
+	 */
 	@DELETE
 	@Path("/{glosario_termino}")
 	@Transactional

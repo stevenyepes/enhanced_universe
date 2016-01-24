@@ -24,7 +24,7 @@ import com.edu.udea.iw.dto.Galaxia;
 import com.edu.udea.iw.exception.MyException;
 
 /**
- * Implementacion de los metodos HTTP GET, POST, PUT, DELETE para el servicio REST de galaxia
+ * Implementacion de los metodos HTTP GET, POST, PUT, DELETE para el servicio  web Restful de galaxia
  * @author enhanced_universe
 */
 @Component
@@ -34,7 +34,11 @@ public class GalaxiaService {
 	@Autowired
 	GalaxiaBL galaxiaBL;
 
-
+	/**
+	 * HTTP GET para obtener una galaxia de la base de datos	
+	 * @param galaxia_nombre nombre de la galaxia a consultar 
+	 * @throws MyException La galaxia no existe en la base de datos
+	 */
 	@GET
 	@Path("/{galaxia_nombre}")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -52,7 +56,11 @@ public class GalaxiaService {
 				.header("Access-Control-Allow-Methods",
 						"GET, POST, DELETE, PUT").build();
 	}
-
+	
+	/**
+	 * HTTP GET para obtener todas las galaxias de la base de datos	 
+	 * @throws MyException No hay galaxias en la base de datos
+	 */
 	@GET
 	@Path("/")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -69,7 +77,11 @@ public class GalaxiaService {
 						"GET, POST, DELETE, PUT").build();
 	}
 
-
+	/**
+	 * HTTP POST para guardar una galaxia nueva en la base de datos
+	 * @param galaxia galaxia a guardar en la base de datos 
+	 * @throws MyException La galaxia no se pudo guardar
+	 */
 	@POST
 	@Consumes({ MediaType.APPLICATION_JSON })
 	public Response guardarGalaxia(Galaxia galaxia) throws MyException {
@@ -86,6 +98,11 @@ public class GalaxiaService {
 						"GET, POST, DELETE, PUT").build();
 	}
 	
+	/**
+	 * HTTP PUT para actualizar  una galaxia en la base de datos
+	 * @param galaxia galaxia que se va a actualizar	
+	 * @throws MyException La galaxia no se pudo actualizar
+	 */
 	@PUT
 	@Consumes({ MediaType.APPLICATION_JSON })
 	public Response actualizarGalaxia(Galaxia galaxia) throws MyException {
@@ -103,7 +120,11 @@ public class GalaxiaService {
 						"GET, POST, DELETE, PUT").build();
 	}
 	
-	
+	/**
+	 * HTTP DELETE para borrar  una galaxia en la base de datos
+	 * @param galaxia_nombre nombre de la galaxia que se va a borrar	
+	 * @throws MyException La galaxia no se pudo borrar
+	 */
 	@DELETE
 	@Path("/{galaxia_nombre}")
 	@Transactional

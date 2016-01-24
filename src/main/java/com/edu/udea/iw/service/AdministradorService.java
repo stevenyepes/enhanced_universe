@@ -24,7 +24,7 @@ import com.edu.udea.iw.dto.Administrador;
 import com.edu.udea.iw.exception.MyException;
 
 /**
- * Implementacion de los metodos HTTP GET, POST, PUT, DELETE para el servicio REST de administrador
+ * Implementacion de los metodos HTTP GET, POST, PUT, DELETE para el servicio  web Restful de administrador
  * @author enhanced_universe
 */
 @Component
@@ -35,7 +35,10 @@ public class AdministradorService {
 	@Autowired
 	AdministradorBL administradorBL;
 	
-	
+	/**
+	 * HTTP GET para obtener todos administradores de la base de datos	 
+	 * @throws MyException No hay administradores en la base de datos
+	 */
 	@GET
 	@Path("/")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -52,6 +55,13 @@ public class AdministradorService {
 						"GET, POST, DELETE, PUT").build();
 	}
 	
+	
+	/**
+	 * HTTP POST para validar el administrador en el login
+	 * @param login nombre del usuario login del administrador
+	 * @param contrasena contraseña del administrador	 
+	 * @throws MyException Administrador no valido
+	 */
 	@POST
 	@Path("/login")
 	@Consumes({ MediaType.APPLICATION_JSON })
@@ -70,6 +80,11 @@ public class AdministradorService {
 								+ login).build();
 	}
 	
+	/**
+	 * HTTP POST para guardar un nuevo administrador en la base de datos
+	 * @param administrador administrador que se va a guardar	
+	 * @throws MyException El administrador no se pudo crear
+	 */
 	@POST
 	@Consumes({ MediaType.APPLICATION_JSON })
 	public Response guardarAdministrador(Administrador administrador) throws MyException {
@@ -85,6 +100,11 @@ public class AdministradorService {
 						"GET, POST, DELETE, PUT").build();
 	}
 	
+	/**
+	 * HTTP PUT para actualizar  un  administrador en la base de datos
+	 * @param administrador administrador que se va a actualizar	
+	 * @throws MyException El administrador no se pudo actualizar
+	 */
 	@PUT
 	@Consumes({ MediaType.APPLICATION_JSON })
 	public Response actualizarAdministrador(Administrador administrador) throws MyException {
@@ -101,7 +121,11 @@ public class AdministradorService {
 						"GET, POST, DELETE, PUT").build();
 	}
 	
-	
+	/**
+	 * HTTP DELETE para borrar  un  administrador en la base de datos
+	 * @param usuario usuario del administrador que se va a borrar	
+	 * @throws MyException El administrador no se pudo borrar
+	 */
 	@DELETE
 	@Path("/{usuario}")
 	@Transactional

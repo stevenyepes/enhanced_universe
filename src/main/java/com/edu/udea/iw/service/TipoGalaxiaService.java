@@ -22,7 +22,7 @@ import com.edu.udea.iw.dto.TipoGalaxia;
 import com.edu.udea.iw.exception.MyException;
 
 /**
- * Implementacion de los metodos HTTP GET, POST, PUT, DELETE para el servicio REST de tipo galaxia
+ * Implementacion de los metodos HTTP GET, POST, PUT, DELETE para el servicio web Restful de tipo galaxia
  * @author enhanced_universe
 */
 @Component
@@ -32,6 +32,11 @@ public class TipoGalaxiaService {
 	@Autowired
 	TipoGalaxiaBL tipoGalaxiaBL;
 	
+
+	/**
+	 * HTTP GET para obtener todos los tipos galaxia de la base de datos	 
+	 * @throws MyException No hay tipos galaxia en la base de datos
+	 */
 	@GET
 	@Path("/")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -48,6 +53,11 @@ public class TipoGalaxiaService {
 						"GET, POST, DELETE, PUT").build();
 	}
 	
+	/**
+	 * HTTP POST para guardar un tipo galixa nuevo en la base de datos
+	 * @param tipoGalaxia tipo galaxia a guardar en la base de datos 
+	 * @throws MyException El tipo galaxia no se pudo guardar
+	 */
 	@POST
 	@Consumes({ MediaType.APPLICATION_JSON })
 	public Response guardarTipoGalaxia(TipoGalaxia tipoGalaxia) throws MyException {
@@ -62,7 +72,11 @@ public class TipoGalaxiaService {
 						"GET, POST, DELETE, PUT").build();
 	}
 	
-	
+	/**
+	 * HTTP DELETE para borrar  un tipo galaxia en la base de datos
+	 * @param tipoGalaxia_nombre nombre del tipo galaxia que se va a borrar	
+	 * @throws MyException El tipo galaxia no se pudo borrar
+	 */
 	@DELETE
 	@Path("/{tipogalaxia_nombre}")
 	@Transactional

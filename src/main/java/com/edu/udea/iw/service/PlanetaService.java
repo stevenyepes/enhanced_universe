@@ -23,7 +23,7 @@ import com.edu.udea.iw.dto.Planeta;
 import com.edu.udea.iw.exception.MyException;
 
 /**
- * Implementacion de los metodos HTTP GET, POST, PUT, DELETE para el servicio REST de planeta
+ * Implementacion de los metodos HTTP GET, POST, PUT, DELETE para el servicio  web Restful de planeta
  * @author enhanced_universe
 */
 @Component
@@ -33,6 +33,11 @@ public class PlanetaService {
 	@Autowired
 	PlanetaBL planetaBL;
 	
+	/**
+	 * HTTP GET para obtener un planeta de la base de datos	
+	 * @param planeta_nombre nombre del planeta a consultar 
+	 * @throws MyException El planeta no existe en la base de datos
+	 */
 	@GET
 	@Path("/{planeta_nombre}")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -50,7 +55,11 @@ public class PlanetaService {
 				.header("Access-Control-Allow-Methods",
 						"GET, POST, DELETE, PUT").build();
 	}
-
+	
+	/**
+	 * HTTP GET para obtener todos planetas de la base de datos	 
+	 * @throws MyException No hay planetas en la base de datos
+	 */
 	@GET
 	@Path("/")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -67,7 +76,11 @@ public class PlanetaService {
 						"GET, POST, DELETE, PUT").build();
 	}
 
-
+	/**
+	 * HTTP POST para guardar un planeta nuevo en la base de datos
+	 * @param planeta planeta a guardar en la base de datos 
+	 * @throws MyException El planeta no se pudo guardar
+	 */
 	@POST
 	@Consumes({ MediaType.APPLICATION_JSON })
 	public Response guardarPlaneta(Planeta planeta) throws MyException {
@@ -82,6 +95,11 @@ public class PlanetaService {
 						"GET, POST, DELETE, PUT").build();
 	}
 	
+	/**
+	 * HTTP PUT para actualizar  un  planeta en la base de datos
+	 * @param planeta planeta que se va a actualizar	
+	 * @throws MyException El planeta no se pudo actualizar
+	 */
 	@PUT
 	@Consumes({ MediaType.APPLICATION_JSON })
 	public Response actualizarPlaneta(Planeta planeta) throws MyException {
@@ -96,7 +114,11 @@ public class PlanetaService {
 						"GET, POST, DELETE, PUT").build();
 	}
 	
-	
+	/**
+	 * HTTP DELETE para borrar  un  planeta en la base de datos
+	 * @param planeta_nombre nombre del planeta que se va a borrar	
+	 * @throws MyException El planeta no se pudo borrar
+	 */
 	@DELETE
 	@Path("/{planeta_nombre}")
 	@Transactional

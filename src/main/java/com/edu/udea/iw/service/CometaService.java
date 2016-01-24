@@ -24,7 +24,7 @@ import com.edu.udea.iw.exception.MyException;
 
 
 /**
- * Implementacion de los metodos HTTP GET, POST, PUT, DELETE para el servicio REST de cometa
+ * Implementacion de los metodos HTTP GET, POST, PUT, DELETE para el servicio  web Restful de cometa
  * @author enhanced_universe
 */
 @Component
@@ -34,6 +34,11 @@ public class CometaService {
 	@Autowired
 	CometaBL cometaBL;
 	
+	/**
+	 * HTTP GET para obtener un cometa de la base de datos	
+	 * @param cometa_nombre nombre del cometa a consultar 
+	 * @throws MyException El cometa no existe en la base de datos
+	 */
 	@GET
 	@Path("/{cometa_nombre}")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -51,7 +56,11 @@ public class CometaService {
 				.header("Access-Control-Allow-Methods",
 						"GET, POST, DELETE, PUT").build();
 	}
-
+	
+	/**
+	 * HTTP GET para obtener todos cometas de la base de datos	 
+	 * @throws MyException No hay cometas en la base de datos
+	 */
 	@GET
 	@Path("/")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -68,6 +77,11 @@ public class CometaService {
 						"GET, POST, DELETE, PUT").build();
 	}
 	
+	/**
+	 * HTTP POST para guardar un cometa nuevo en la base de datos
+	 * @param cometa cometa a guardar en la base de datos 
+	 * @throws MyException El cometa no se pudo guardar
+	 */
 	@POST
 	@Consumes({ MediaType.APPLICATION_JSON })
 	public Response guardarCometa(Cometa cometa) throws MyException {
@@ -83,6 +97,11 @@ public class CometaService {
 						"GET, POST, DELETE, PUT").build();
 	}
 	
+	/**
+	 * HTTP PUT para actualizar  un  cometa en la base de datos
+	 * @param cometa cometa que se va a actualizar	
+	 * @throws MyException El cometa no se pudo actualizar
+	 */
 	@PUT
 	@Consumes({ MediaType.APPLICATION_JSON })
 	public Response actualizarCometa(Cometa cometa) throws MyException {
@@ -99,7 +118,11 @@ public class CometaService {
 						"GET, POST, DELETE, PUT").build();
 	}
 	
-	
+	/**
+	 * HTTP DELETE para borrar  un  cometa en la base de datos
+	 * @param cometa_nombre nombre del cometa que se va a borrar	
+	 * @throws MyException El cometa no se pudo borrar
+	 */
 	@DELETE
 	@Path("/{cometa_nombre}")
 	@Transactional

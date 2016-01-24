@@ -23,7 +23,7 @@ import com.edu.udea.iw.dto.Estrella;
 import com.edu.udea.iw.exception.MyException;
 
 /**
- * Implementacion de los metodos HTTP GET, POST, PUT, DELETE para el servicio REST de estrella
+ * Implementacion de los metodos HTTP GET, POST, PUT, DELETE para el servicio  web Restful de estrella
  * @author enhanced_universe
 */
 @Component
@@ -33,7 +33,11 @@ public class EstrellaService {
 	@Autowired
 	EstrellaBL estrellaBL;
 
-
+	/**
+	 * HTTP GET para obtener una estrella de la base de datos	
+	 * @param estrella_nombre nombre de la estrella a consultar 
+	 * @throws MyException La estrella no existe en la base de datos
+	 */
 	@GET
 	@Path("/{estrella_nombre}")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -51,7 +55,11 @@ public class EstrellaService {
 				.header("Access-Control-Allow-Methods",
 						"GET, POST, DELETE, PUT").build();
 	}
-
+	
+	/**
+	 * HTTP GET para obtener todas las estrellas de la base de datos	 
+	 * @throws MyException No hay estrellas en la base de datos
+	 */
 	@GET
 	@Path("/")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -68,7 +76,11 @@ public class EstrellaService {
 						"GET, POST, DELETE, PUT").build();
 	}
 
-
+	/**
+	 * HTTP POST para guardar una estrella nueva en la base de datos
+	 * @param estrella estrella a guardar en la base de datos 
+	 * @throws MyException La estrella no se pudo guardar
+	 */
 	@POST
 	@Consumes({ MediaType.APPLICATION_JSON })
 	public Response guardarEstrella(Estrella estrella) throws MyException {
@@ -85,6 +97,11 @@ public class EstrellaService {
 						"GET, POST, DELETE, PUT").build();
 	}
 	
+	/**
+	 * HTTP PUT para actualizar  una estrella en la base de datos
+	 * @param estrella estrella que se va a actualizar	
+	 * @throws MyException La estrella no se pudo actualizar
+	 */
 	@PUT
 	@Consumes({ MediaType.APPLICATION_JSON })
 	public Response actualizarEstrella(Estrella estrella) throws MyException {
@@ -102,7 +119,11 @@ public class EstrellaService {
 						"GET, POST, DELETE, PUT").build();
 	}
 	
-	
+	/**
+	 * HTTP DELETE para borrar  una estrella en la base de datos
+	 * @param estrella_nombre nombre de la estrella que se va a borrar	
+	 * @throws MyException La estrella no se pudo borrar
+	 */
 	@DELETE
 	@Path("/{estrella_nombre}")
 	@Transactional
