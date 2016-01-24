@@ -9,7 +9,6 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
-import com.edu.udea.iw.dao.GalaxiaDAO;
 import com.edu.udea.iw.dao.TipoEspectralDAO;
 import com.edu.udea.iw.dto.TipoEspectral;
 import com.edu.udea.iw.exception.MyException;

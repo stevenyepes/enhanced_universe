@@ -22,6 +22,10 @@ import com.edu.udea.iw.bl.EstrellaBL;
 import com.edu.udea.iw.dto.Estrella;
 import com.edu.udea.iw.exception.MyException;
 
+/**
+ * Implementacion de los metodos HTTP GET, POST, PUT, DELETE para el servicio REST de estrella
+ * @author enhanced_universe
+*/
 @Component
 @Path("/estrella")
 public class EstrellaService {

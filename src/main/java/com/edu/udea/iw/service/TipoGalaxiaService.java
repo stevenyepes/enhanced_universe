@@ -7,7 +7,6 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -19,11 +18,13 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.edu.udea.iw.bl.TipoGalaxiaBL;
-import com.edu.udea.iw.dto.Galaxia;
 import com.edu.udea.iw.dto.TipoGalaxia;
 import com.edu.udea.iw.exception.MyException;
 
-
+/**
+ * Implementacion de los metodos HTTP GET, POST, PUT, DELETE para el servicio REST de tipo galaxia
+ * @author enhanced_universe
+*/
 @Component
 @Path("/tipogalaxia")
 public class TipoGalaxiaService {

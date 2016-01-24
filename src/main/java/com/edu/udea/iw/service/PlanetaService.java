@@ -22,6 +22,10 @@ import com.edu.udea.iw.bl.PlanetaBL;
 import com.edu.udea.iw.dto.Planeta;
 import com.edu.udea.iw.exception.MyException;
 
+/**
+ * Implementacion de los metodos HTTP GET, POST, PUT, DELETE para el servicio REST de planeta
+ * @author enhanced_universe
+*/
 @Component
 @Path("/planeta")
 public class PlanetaService {

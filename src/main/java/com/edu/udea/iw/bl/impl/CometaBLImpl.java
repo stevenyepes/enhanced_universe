@@ -6,11 +6,14 @@ import java.util.List;
 import com.edu.udea.iw.bl.CometaBL;
 import com.edu.udea.iw.dao.CometaDAO;
 import com.edu.udea.iw.dao.GalaxiaDAO;
-import com.edu.udea.iw.dao.impl.GalaxiaDAOImpl;
 import com.edu.udea.iw.dto.Cometa;
 import com.edu.udea.iw.dto.Galaxia;
 import com.edu.udea.iw.exception.MyException;
 
+/**
+ * Implementacion de los metodos de la interface {@link CometaBL}
+ * @author enhanced_universe
+*/
 public class CometaBLImpl implements CometaBL{
 
 	CometaDAO cometaDao;

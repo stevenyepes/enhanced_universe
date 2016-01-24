@@ -4,16 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.edu.udea.iw.bl.PlanetaBL;
-import com.edu.udea.iw.dao.AsteroideDAO;
 import com.edu.udea.iw.dao.GalaxiaDAO;
 import com.edu.udea.iw.dao.PlanetaDAO;
-import com.edu.udea.iw.dao.impl.GalaxiaDAOImpl;
-import com.edu.udea.iw.dto.Administrador;
-import com.edu.udea.iw.dto.Asteroide;
 import com.edu.udea.iw.dto.Galaxia;
 import com.edu.udea.iw.dto.Planeta;
 import com.edu.udea.iw.exception.MyException;
 
+/**
+ * Implementacion de los metodos de la interface {@link PlanetaBL}
+ * @author enhanced_universe
+*/
 public class PlanetaBLImpl implements PlanetaBL {
 
 	PlanetaDAO planetaDao;

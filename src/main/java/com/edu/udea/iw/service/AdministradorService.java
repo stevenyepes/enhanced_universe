@@ -21,16 +21,20 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.edu.udea.iw.bl.AdministradorBL;
 import com.edu.udea.iw.dto.Administrador;
-import com.edu.udea.iw.dto.Galaxia;
 import com.edu.udea.iw.exception.MyException;
 
-
+/**
+ * Implementacion de los metodos HTTP GET, POST, PUT, DELETE para el servicio REST de administrador
+ * @author enhanced_universe
+*/
 @Component
 @Path("/administrador")
 public class AdministradorService {
-
+	
+	
 	@Autowired
 	AdministradorBL administradorBL;
+	
 	
 	@GET
 	@Path("/")

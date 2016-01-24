@@ -10,9 +10,8 @@ import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
-import com.edu.udea.iw.dao.PlanetaDAO;
+
 import com.edu.udea.iw.dao.SateliteDAO;
-import com.edu.udea.iw.dto.Planeta;
 import com.edu.udea.iw.dto.Satelite;
 import com.edu.udea.iw.exception.MyException;
 

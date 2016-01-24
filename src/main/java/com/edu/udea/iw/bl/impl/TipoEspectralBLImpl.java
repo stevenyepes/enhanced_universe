@@ -8,6 +8,10 @@ import com.edu.udea.iw.dao.TipoEspectralDAO;
 import com.edu.udea.iw.dto.TipoEspectral;
 import com.edu.udea.iw.exception.MyException;
 
+/**
+ * Implementacion de los metodos de la interface {@link TipoEspectralBL}
+ * @author enhanced_universe
+*/
 public class TipoEspectralBLImpl implements TipoEspectralBL{
 
 	TipoEspectralDAO tipoEspectralDao;

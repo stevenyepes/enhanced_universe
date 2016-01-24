@@ -4,16 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.edu.udea.iw.bl.SateliteBL;
-import com.edu.udea.iw.dao.GalaxiaDAO;
 import com.edu.udea.iw.dao.PlanetaDAO;
 import com.edu.udea.iw.dao.SateliteDAO;
-import com.edu.udea.iw.dao.impl.GalaxiaDAOImpl;
-import com.edu.udea.iw.dao.impl.PlanetaDAOImpl;
-import com.edu.udea.iw.dto.Galaxia;
 import com.edu.udea.iw.dto.Planeta;
 import com.edu.udea.iw.dto.Satelite;
 import com.edu.udea.iw.exception.MyException;
 
+/**
+ * Implementacion de los metodos de la interface {@link SateliteBL}
+ * @author enhanced_universe
+*/
 public class SateliteBLImpl implements SateliteBL {
 
 	SateliteDAO sateliteDao;

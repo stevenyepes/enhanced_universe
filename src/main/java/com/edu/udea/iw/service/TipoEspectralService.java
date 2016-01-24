@@ -21,6 +21,10 @@ import com.edu.udea.iw.bl.TipoEspectralBL;
 import com.edu.udea.iw.dto.TipoEspectral;
 import com.edu.udea.iw.exception.MyException;
 
+/**
+ * Implementacion de los metodos HTTP GET, POST, PUT, DELETE para el servicio REST de tipo espectral
+ * @author enhanced_universe
+*/
 @Component
 @Path("/tipoespectral")
 public class TipoEspectralService {

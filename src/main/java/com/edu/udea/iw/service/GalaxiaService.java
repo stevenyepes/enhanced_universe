@@ -23,6 +23,10 @@ import com.edu.udea.iw.bl.GalaxiaBL;
 import com.edu.udea.iw.dto.Galaxia;
 import com.edu.udea.iw.exception.MyException;
 
+/**
+ * Implementacion de los metodos HTTP GET, POST, PUT, DELETE para el servicio REST de galaxia
+ * @author enhanced_universe
+*/
 @Component
 @Path("/galaxia")
 public class GalaxiaService {
@@ -93,7 +97,7 @@ public class GalaxiaService {
 		
 		return Response.status(Response.Status.CREATED)
 				// 201
-				.entity("Actualizado")
+				.entity("Actualizado: "+actualizado)
 				.header("Access-Control-Allow-Origin", "*")
 				.header("Access-Control-Allow-Methods",
 						"GET, POST, DELETE, PUT").build();

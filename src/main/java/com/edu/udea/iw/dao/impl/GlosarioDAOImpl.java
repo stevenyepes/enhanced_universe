@@ -10,7 +10,6 @@ import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
-import com.edu.udea.iw.dao.GalaxiaDAO;
 import com.edu.udea.iw.dao.GlosarioDAO;
 import com.edu.udea.iw.dto.Glosario;
 import com.edu.udea.iw.exception.MyException;

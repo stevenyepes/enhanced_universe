@@ -7,13 +7,15 @@ import com.edu.udea.iw.bl.EstrellaBL;
 import com.edu.udea.iw.dao.EstrellaDAO;
 import com.edu.udea.iw.dao.GalaxiaDAO;
 import com.edu.udea.iw.dao.TipoEspectralDAO;
-import com.edu.udea.iw.dao.impl.GalaxiaDAOImpl;
-import com.edu.udea.iw.dao.impl.TipoEspectralDAOImpl;
 import com.edu.udea.iw.dto.Estrella;
 import com.edu.udea.iw.dto.Galaxia;
 import com.edu.udea.iw.dto.TipoEspectral;
 import com.edu.udea.iw.exception.MyException;
 
+/**
+ * Implementacion de los metodos de la interface {@link EstrellaBL}
+ * @author enhanced_universe
+*/
 public class EstrellaBLImpl implements EstrellaBL {
 
 	EstrellaDAO estrellaDao;

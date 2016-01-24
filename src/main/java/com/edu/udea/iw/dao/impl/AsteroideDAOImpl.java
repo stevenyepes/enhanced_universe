@@ -11,7 +11,6 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.edu.udea.iw.dao.AsteroideDAO;
-import com.edu.udea.iw.dao.PlanetaDAO;
 import com.edu.udea.iw.dto.Asteroide;
 import com.edu.udea.iw.exception.MyException;
 

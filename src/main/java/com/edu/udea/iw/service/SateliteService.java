@@ -22,6 +22,10 @@ import com.edu.udea.iw.bl.SateliteBL;
 import com.edu.udea.iw.dto.Satelite;
 import com.edu.udea.iw.exception.MyException;
 
+/**
+ * Implementacion de los metodos HTTP GET, POST, PUT, DELETE para el servicio REST de satelite
+ * @author enhanced_universe
+*/
 @Component
 @Path("/satelite")
 public class SateliteService {

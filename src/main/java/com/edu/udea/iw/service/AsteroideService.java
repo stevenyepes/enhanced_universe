@@ -22,7 +22,10 @@ import com.edu.udea.iw.bl.AsteroideBL;
 import com.edu.udea.iw.dto.Asteroide;
 import com.edu.udea.iw.exception.MyException;
 
-
+/**
+ * Implementacion de los metodos HTTP GET, POST, PUT, DELETE para el servicio REST de asteroide
+ * @author enhanced_universe
+*/
 @Component
 @Path("/asteroide")
 public class AsteroideService {

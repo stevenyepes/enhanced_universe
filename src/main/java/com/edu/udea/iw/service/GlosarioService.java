@@ -1,8 +1,5 @@
 package com.edu.udea.iw.service;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -22,6 +19,10 @@ import com.edu.udea.iw.bl.GlosarioBL;
 import com.edu.udea.iw.dto.Glosario;
 import com.edu.udea.iw.exception.MyException;
 
+/**
+ * Implementacion de los metodos HTTP GET, POST, PUT, DELETE para el servicio REST de glosario
+ * @author enhanced_universe
+*/
 @Component
 @Path("/glosario")
 public class GlosarioService {

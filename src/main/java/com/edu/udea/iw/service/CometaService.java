@@ -23,7 +23,10 @@ import com.edu.udea.iw.dto.Cometa;
 import com.edu.udea.iw.exception.MyException;
 
 
-
+/**
+ * Implementacion de los metodos HTTP GET, POST, PUT, DELETE para el servicio REST de cometa
+ * @author enhanced_universe
+*/
 @Component
 @Path("/cometa")
 public class CometaService {
