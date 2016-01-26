@@ -1,13 +1,31 @@
 
-<div >
-	<table class="item" ng-repeat="galaxia in galaxias">
+<div class="container">
+	<table class="table table-striped table-bordered table-hover" >
 		<tr>
-			<td>{{galaxia.nombre}}</td>
-			<td>{{galaxia.tipogalaxia}}</td>
+			<th>Nombre</th>
+			<th>Tipo</th>
+			<th>Alto</th>
+			<th>Ancho</th>
+			<th>Profundidad</th>
+			<th>Diametro</th>
+			<th>Distancia Tierra</th>
 			
 		</tr>
 		
+		<tr ng-repeat="galaxia in galaxias">
+			<td>{{galaxia.nombre}}</td>
+			<td>{{galaxia.tipogalaxia.nombre}}</td>
+			<td>{{galaxia.ancho}}</td>
+			<td>{{galaxia.alto}}</td>
+			<td>{{galaxia.profundidad}}</td>
+			<td>{{galaxia.diametro}}</td>
+			<td>{{galaxia.distanciatierra}}</td>
+			
+		</tr>
+		
+		
 	</table>
-
-	<a href="#/agregarGalaxia">agregar</a>
+	<a class="btn btn-success" href="#/addGalaxia" role="agregar">Agregar</a>
 </div>
+
+
