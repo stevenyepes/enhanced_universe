@@ -1,17 +1,33 @@
 <form name="agregarGalaxiaForm">
-<div>
-	<div>
-		<label>Nombre</label>
-		<input type="text" required ng-model="nombre"/>
+	<div class="container">
+		<div>
+			<label for="nombre">Nombre</label> 
+			<input type="text" required ng-model="nombre" />
+
+
+			<label for="tipogalaxia">Tipo Galaxia</label> <select ng-model="tipogalaxia"
+				ng-change="showSelectValue(tipogalaxia)">
+				<option ng-repeat="tipogalaxia in tipoGalaxias">{{tipogalaxia.nombre}}</option>
+			</select>
+			
+			<label for="ancho">Ancho</label>
+			<input type="text" ng-model="ancho">
+			
+			<label for="alto">Alto</label>
+			<input type="text" ng-model="alto">
+			
+			<label for="profundidad">Profundidad</label>
+			<input type="text" ng-model="profundidad">
+			
+			<label for="diametro">Diametro</label>
+			<input type="text" ng-model="diametro">
+			
+			<label for="distanciatierra">Distancia a la Tierra</label>
+			<input type="text" ng-model="distanciatierra">
+
+		</div>
+		<button class="btn btn-default" type="submit">guardar</button>
 	</div>
-	<div>
-		<label>Tipo Galaxia</label>
-		 <select ng-model="tipogalaxia" ng-change="showSelectValue(tipogalaxia)">
-                <option  ng-repeat="tipogalaxia in tipoGalaxias">{{tipogalaxia.nombre}}</option>
-            </select>
-	</div>
-	<button type="submit" ng-click="validar()">Validar</button>
-</div>
 
 	<a></a>
 

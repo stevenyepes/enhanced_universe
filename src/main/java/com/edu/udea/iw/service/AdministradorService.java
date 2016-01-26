@@ -59,22 +59,22 @@ public class AdministradorService {
 	/**
 	 * HTTP POST para validar el administrador en el login
 	 * @param login nombre del usuario login del administrador
-	 * @param contrasena contraseña del administrador	 
+	 * @param contrasena contraseï¿½a del administrador	 
 	 * @throws MyException Administrador no valido
 	 */
-	@POST
-	@Path("/login")
+	@GET
+	@Path("/login/{login}/{contrasena}")
 	@Consumes({ MediaType.APPLICATION_JSON })
 	public Response administradorBL(
-			@FormParam("login") String login,
-			@FormParam("contrasena") String contrasena) throws MyException {
+			@PathParam("login") String login,
+			@PathParam("contrasena") String contrasena) throws MyException {
 		
 		boolean validado = administradorBL.validarAdministrador(login, contrasena);
 
 		
 		return Response.status(Response.Status.CREATED)
 				// 201
-				.entity(" el usuario es  " + validado)
+				.entity(validado)
 				.header("Location",
 						"http://localhost:8080/enhanced_universe/rest/administrador"
 								+ login).build();

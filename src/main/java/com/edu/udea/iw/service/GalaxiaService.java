@@ -90,9 +90,10 @@ public class GalaxiaService {
 								galaxia.getDistanciatierra());
 
 		
+		
 		return Response.status(Response.Status.CREATED)
 				// 201
-				.entity("Creado")
+				.entity("")
 				.header("Access-Control-Allow-Origin", "*")
 				.header("Access-Control-Allow-Methods",
 						"GET, POST, DELETE, PUT").build();

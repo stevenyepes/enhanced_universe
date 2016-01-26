@@ -80,28 +80,31 @@ app.controller('agregarGalaxiaCtrl', function($scope, $http, tipoGalaxiaService)
 		
 	}) ;
 	
-	/*$http({
+	
+	
+	$scope.enviar = function() {
 		
-		method: 'POST',
-		url: 'http://localhost:8080/enhanced_universe/rest/galaxia/',
-		data: {
-			
-			nombre: "andromeda V",
-		    tipogalaxia: {
-		      id: 1,
-		      nombre: "espiral"
-		    },
-		    alto: 847769,
-		    ancho: 46,
-		    profundidad: 457646,
-		    diametro: 123456,
-		    distanciatierra: 5847564645
-		}
-		
-	}).success(function(data){
-		
-		
-	});*/
+	
+	 $http({
+	        method : 'POST',
+	        url : 'http://localhost:8080/enhanced_universe/rest/galaxia/',
+	        //headers: headers,
+	        data :{
+	        	nombre : $scope.nombre,
+				tipogalaxia : {
+					nombre : $scope.tipogalaxia
+				},
+				ancho : $scope.ancho,
+				alto : $scope.alto,
+				profundidad: $scope.profundidad,
+				diametro: $scope.diametro,
+				distanciatierra: $scope.distanciatierra,
+
+	           }
+	        }).success(function(data) {
+	            alert('guardado')
+	        });
+	}
 		
 	
 	
@@ -110,16 +113,17 @@ app.controller('agregarGalaxiaCtrl', function($scope, $http, tipoGalaxiaService)
 
 });
 
-app.service('usuario',function($http) {
+app.service('usuario',function($http, $cookies) {
 	
 	this.validar = function(user,pwd) {
 
+		$cookies.nombreUsuario = user;
 		
 		return $http({
 			
-			method: 'POST',
+			method: 'GET',
 			url: 'http://localhost:8080/enhanced_universe/rest/administrador/login',
-			data: {
+			params: {
 				login : user,
 				contrasena : pwd
 			}
@@ -160,4 +164,15 @@ app.service('tipoGalaxiaService',function($http) {
 	
 	
 });
+
+app.run(function($rootScope, $cookies, $location){
 	
+	$rootScope.$on('$routChangeStart', function(){
+		if(typeOf($cookies.nombreUsuario) == 'undefined'){
+			
+			$location.url('#/login')
+		}
+	});
+});
+
+
