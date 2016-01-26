@@ -28,15 +28,15 @@ angular.module('app.addGalaxia', ['ngRoute'])
 	        url : 'http://localhost:8080/enhanced_universe/rest/galaxia/',
 	        //headers: headers,
 	        data :{
-	        	nombre : $scope.nombre,
+	        	nombre : $scope.galaxia.nombre,
 				tipogalaxia : {
-					nombre : $scope.tipogalaxia
+					nombre : $scope.galaxia.tipogalaxia
 				},
-				ancho : $scope.ancho,
-				alto : $scope.alto,
-				profundidad: $scope.profundidad,
-				diametro: $scope.diametro,
-				distanciatierra: $scope.distanciatierra,
+				ancho : $scope.galaxia.ancho,
+				alto : $scope.galaxia.alto,
+				profundidad: $scope.galaxia.profundidad,
+				diametro: $scope.galaxia.diametro,
+				distanciatierra: $scope.galaxia.distanciatierra,
 
 	           }
 	        }).success(function() {

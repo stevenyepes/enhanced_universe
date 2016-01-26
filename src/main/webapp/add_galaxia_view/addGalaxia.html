@@ -3,34 +3,34 @@
 		
 				<div class="form-group">
 				<label for="nombre">Nombre</label> 
-				<input  class="form-control" id="nombre" type="text" required ng-model="nombre" />
+				<input  class="form-control" id="nombre" type="text" required ng-model="galaxia.nombre" />
 				</div>
 
 				<div class="form-group">
-				<label for="tipogalaxia">Tipo Galaxia</label> <select  class="form-control" id="tipogalaxia" ng-model="tipogalaxia"
+				<label for="tipogalaxia">Tipo Galaxia</label> <select  class="form-control" id="tipogalaxia" ng-model="galaxia.tipogalaxia"
 					ng-change="showSelectValue(tipogalaxia)" required>
 					<option ng-repeat="tipogalaxia in tipoGalaxias">{{tipogalaxia.nombre}}</option>
 				</select>
 				</div>
 				<div class="form-group">
 				<label for="ancho">Ancho</label>
-				<input class="form-control"  type="text" required ng-model="ancho">
+				<input class="form-control"  type="text" required ng-model="galaxia.ancho">
 				</div>
 				<div class="form-group">
 				<label for="alto">Alto</label>
-				<input class="form-control"  type="text" ng-model="alto">
+				<input class="form-control"  type="text" ng-model="galaxia.alto">
 				</div>
 				<div class="form-group">
 				<label for="profundidad">Profundidad</label>
-				<input class="form-control"  type="text" ng-model="profundidad">
+				<input class="form-control"  type="text" ng-model="galaxia.profundidad">
 				</div>
 				<div class="form-group">
 				<label for="diametro">Diametro</label>
-				<input class="form-control"  type="text" ng-model="diametro">
+				<input class="form-control"  type="text" ng-model="galaxia.diametro">
 				</div>
 				<div class="form-group">
 				<label for="distanciatierra">Distancia a la Tierra</label>
-				<input class="form-control"  type="text" ng-model="distanciatierra">
+				<input class="form-control"  type="text" ng-model="galaxia.distanciatierra">
 </div>
 			<button class="btn btn-success" type="submit" ng-click="enviar()">Guardar</button>
 
