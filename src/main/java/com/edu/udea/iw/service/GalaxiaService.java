@@ -93,7 +93,7 @@ public class GalaxiaService {
 		
 		return Response.status(Response.Status.CREATED)
 				// 201
-				.entity("")
+				
 				.header("Access-Control-Allow-Origin", "*")
 				.header("Access-Control-Allow-Methods",
 						"GET, POST, DELETE, PUT").build();
@@ -137,7 +137,7 @@ public class GalaxiaService {
 		return Response
 				.ok()
 				// 200
-				.entity("Eliminado")
+				.entity("")
 				.header("Access-Control-Allow-Origin", "*")
 				.header("Access-Control-Allow-Methods",
 						"GET, POST, DELETE, PUT").build();
