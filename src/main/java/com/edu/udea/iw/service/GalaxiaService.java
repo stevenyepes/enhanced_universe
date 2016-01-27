@@ -115,7 +115,6 @@ public class GalaxiaService {
 		
 		return Response.status(Response.Status.CREATED)
 				// 201
-				.entity("Actualizado: "+actualizado)
 				.header("Access-Control-Allow-Origin", "*")
 				.header("Access-Control-Allow-Methods",
 						"GET, POST, DELETE, PUT").build();

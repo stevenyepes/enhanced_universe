@@ -92,11 +92,33 @@ angular.module('app.galaxia', ['ngRoute'])
 			        	console.log("aqui ando chaval");
 		        
 		        
+		      }else {
+			        // send on server
+				      
+				      $http({
+					        method : 'PUT',
+					        url : 'http://localhost:8080/enhanced_universe/rest/galaxia/',
+					        //headers: headers,
+					        data : {
+					        	nombre : galaxia.nombre,
+								tipogalaxia : {
+									nombre : galaxia.tipogalaxia.nombre
+								},
+								ancho : galaxia.ancho,
+								alto : galaxia.alto,
+								profundidad: galaxia.profundidad,
+								diametro: galaxia.diametro,
+								distanciatierra: galaxia.distanciatierra,
+					        }
+					        	
+					        }).success(function() {
+					            console.log('actualizado')
+					            
+					            //$location.path("/galaxia")
+					        });
+				        	console.log("aqui ando chaval");
 		      }
-
-		     
-			 
-			 
+		     		 
 		    }
 	  }
 	
