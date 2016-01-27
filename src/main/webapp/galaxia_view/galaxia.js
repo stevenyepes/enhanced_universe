@@ -1,7 +1,6 @@
 'use strict';
 
-angular.module('app.galaxia', ['ngRoute',
-                               'app.addGalaxia'])
+angular.module('app.galaxia', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/galaxia', {
@@ -129,4 +128,18 @@ angular.module('app.galaxia', ['ngRoute',
 		})
 	}
 
+})
+.service('tipoGalaxiaService',function($http) {
+	
+	this.getAll = function() {
+		
+		return $http({
+			
+			method: 'GET',
+			url: 'http://localhost:8080/enhanced_universe/rest/tipogalaxia/',
+			
+		})
+	}
+	
+	
 });
