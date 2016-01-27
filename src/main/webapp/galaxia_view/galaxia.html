@@ -12,8 +12,7 @@
 				<th>Profundidad</th>
 				<th>Diametro</th>
 				<th>Distancia Tierra</th>
-				<th><span ng-show="tableform.$visible">Action</span>
-				<th>
+				<th><span ng-show="tableform.$visible">Action</span><th>
 			</tr>
 
 			<tr ng-repeat="galaxia in galaxias">
@@ -36,7 +35,7 @@
 				<td><span editable-text="galaxia.distanciatierra"
 					e-form="tableform"> {{galaxia.distanciatierra}} </span></td>
 				<td><button type="button" ng-show="tableform.$visible"
-						ng-click="eliminar(galaxia)" class="btn btn-danger pull-right">Del</button></td>
+						ng-click="eliminarGalaxia(galaxia.id)" class="btn btn-danger pull-right">Del</button></td>
 			</tr>
 
 
@@ -50,7 +49,7 @@
 		</div>
 		<div class="btn-form" ng-show="tableform.$visible">
 			<button type="button" ng-disabled="tableform.$waiting"
-				ng-click="addUser()" class="btn btn-default pull-right">Agregar</button>
+				ng-click="addGalaxia()" class="btn btn-default pull-right">Agregar</button>
 			<button type="submit" ng-disabled="tableform.$waiting"
 				class="btn btn-primary">Guardar</button>
 			<button type="button" ng-disabled="tableform.$waiting"

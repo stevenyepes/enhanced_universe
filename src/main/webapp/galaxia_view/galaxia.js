@@ -27,7 +27,31 @@ angular.module('app.galaxia', ['ngRoute'])
 		console.log(data);
 	});
 	
+	 // marcar una galaxia como eliminada
+	  $scope.eliminarGalaxia = function(id) {
+	    var filtered = $filter('filter')($scope.galaxias, {id: id});
+	    if (filtered.length) {
+	      filtered[0].isDeleted = true;
+	    }
+	  };
+	  
+	// cancelar los cambios
+	  $scope.cancel = function() {
+	    for (var i = $scope.galaxias.length; i--;) {
+	      var galaxia = $scope.galaxias[i];    
+	      // undelete
+	      if (galaxia.isDeleted) {
+	        delete galaxia.isDeleted;
+	      }
+	      // remove new 
+	      if (galaxia.isNew) {
+	        $scope.galaxias.splice(i, 1);
+	      }      
+	    };
+	  };
+
 	
+	// mostrar los tipos de galaxia
 	$scope.showStatus = function(galaxia) {
 	    var selected = [];
 	    if(galaxia.tipogalaxia) {
@@ -38,7 +62,7 @@ angular.module('app.galaxia', ['ngRoute'])
 	    return selected.length ? selected[0].nombre : 'Not set';
 	  };
 	  
-	  $scope.addUser = function() {
+	  $scope.addGalaxia = function() {
 		    $scope.galaxias.push({
 		    	nombre : 'nombre',
 				tipogalaxia : {
@@ -62,6 +86,7 @@ angular.module('app.galaxia', ['ngRoute'])
 		      // actually delete user
 		      if (galaxia.isDeleted) {
 		        $scope.galaxias.splice(i, 1);
+		        $scope.eliminar(galaxia);
 		      }
 		      // mark as not new 
 		      if (galaxia.isNew) {
