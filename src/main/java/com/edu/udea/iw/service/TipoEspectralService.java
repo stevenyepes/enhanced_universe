@@ -65,8 +65,7 @@ public class TipoEspectralService {
 
 		
 		return Response.status(Response.Status.CREATED)
-				// 201
-				.entity("Creado")
+				// 201				
 				.header("Location",
 						"http://localhost:8080/enhanced_universe/rest/tipoEspectral"
 								+ tipoEspectral.getClasificacion()).build();
@@ -87,8 +86,7 @@ public class TipoEspectralService {
 		tipoEspectralBL.eliminarTipoEspectral(tipoEspectral_nombre);
 		return Response
 				.ok()
-				// 200
-				.entity("Eliminado")
+				// 200				
 				.header("Access-Control-Allow-Origin", "*")
 				.header("Access-Control-Allow-Methods",
 						"GET, POST, DELETE, PUT").build();
