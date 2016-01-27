@@ -2,16 +2,13 @@ var app = angular.module('app',[
                                 'ngRoute',
                                 'ngCookies',
                                 'xeditable',
-                                'app.galaxia' ]);
+                                'app.galaxia',
+                                'app.api',
+                                'app.Principal']);
 
 app.config([ '$routeProvider', function($routeProvider) {
 
-	$routeProvider.when('/', {
-
-		templateUrl : 'templates/principal.html',
-		controller : 'principalCtrl'
-	});
-
+	
 	$routeProvider.when('/login', {
 
 		templateUrl : 'templates/login.html',
@@ -21,9 +18,6 @@ app.config([ '$routeProvider', function($routeProvider) {
 	$routeProvider.otherwise('/');
 } ]);
 
-app.controller('principalCtrl', function($scope) {
-
-});
 
 app.controller('contLogin', function($scope, usuario) {
 

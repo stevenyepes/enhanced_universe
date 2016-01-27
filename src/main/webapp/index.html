@@ -1,21 +1,122 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=320, height=device-height, target-densitydpi=medium-dpi" />	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<link rel="stylesheet" href="resources/css/xeditable.css" >
+	<link href="resources/css/custom.css" rel="stylesheet">
 
 </head>
 
 <body ng-app="app">
+ <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#" title="La web donde puedes compararme este">
+            <img alt="Enhanced Universe" src="resources/logo.png" class="brand">
+          </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-1">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button"> 
+                Astros <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Galaxia</a></li>
+                <li><a href="#">Planeta</a></li>
+                <li><a href="#">Satelite</a></li>
+                <li><a href="#">Estrella</a></li>
+                <li><a href="#">Asteroide</a></li>
+                <li><a href="#">Cometa</a></li>
+              </ul>
+            </li>
+            <li><a href="">Comparar</a></li>
+            <li><a href="">Glosario</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#/api">API</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 	<div ng-view></div>
 </body>
+ <div class="footer-top"><br/><br/></div>
+  <footer class="footer-body">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4 col-md-4">
+          <img src="resources/shonatan.jpg" alt="..." class="img-circle avatar">
+          <h4 class="avatar-text">StevenDemon</h3>
+          <p class="avatar-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, veritatis provident rem nostrum dicta nisi neque praesentium at amet officiis libero culpa a fugiat beatae quasi labore nesciunt? Vitae, dignissimos.</p>
+          <br/>
+        </div>
+        <div class="col-sm-4 col-md-4">
+          <img src="resources/ramireza.jpg" alt="..." class="img-circle avatar">
+          <h4 class="avatar-text">Carlos Ramireza</h3>
+          <p class="avatar-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis optio molestiae iusto accusamus maxime, adipisci qui quidem saepe explicabo, id porro placeat reiciendis ullam at sequi omnis nesciunt illum. Dolorum?
+          </p>
+          <br/>
+        </div>
+        <div class="col-sm-4 col-md-4">
+          <img src="resources/ente.jpg" alt="..." class="img-circle avatar">
+          <h4 class="avatar-text">Cristian "Un Ente" Bedoya</h3>
+          <p class="avatar-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias voluptate ad velit perspiciatis ipsa! Nostrum voluptate ex at laborum esse culpa modi, molestiae eveniet numquam tenetur expedita quis aspernatur doloribus!
+          </p>
+          <br/>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <ul class="pull-right">
+            <li><h4 class="link">Links I</h4></li>
+            <li><a href="#">Links utiles</a></li>
+            <li><a href="#">Links utiles</a></li>
+            <li><a href="#">Links utiles</a></li>
+            <li><a href="#">Links utiles</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6">
+          <ul class="pull-left">
+            <li><h4 class="link">Links II</h4></li>
+            <li><a href="#">Links utiles</a></li>
+            <li><a href="#">Links utiles</a></li>
+            <li><a href="#">Links utiles</a></li>
+            <li><a href="#">Links utiles</a></li>
+          </ul>
+        </div>
+      </div>
+      <br/>
+      <div class="row">
+        <div class="col-sm-12">
+          <p><small class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti numquam nulla natus aperiam inventore recusandae commodi ullam possimus cumque hic voluptas non voluptate aliquam rem doloribus culpa, eligendi corporis animi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, inventore nisi, ipsam ratione amet vel repellat suscipit autem itaque cumque eaque quis magnam quod quam. Ratione provident ducimus dolorem voluptatum.</small></p>
+        </div>
+      </div>
+    </div>
+  </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.1/angular.min.js"></script>
 <script src="https://code.angularjs.org/1.5.0-rc.1/angular-route.min.js"></script>
 <script src="https://code.angularjs.org/1.5.0-rc.1/angular-cookies.min.js"></script>
 <script src="resources/js/xeditable.min.js"></script>
+<script src="resources/js/three.min.js"></script>
+<script src="resources/js/controls/OrbitControls.js"></script>
+<script src="resources/js/threeJsPlanetas.js"></script> 
 <script src="app.js"></script>
 <script src="galaxia_view/galaxia.js"></script>
+<script src="api_view/api.js"></script>
+<script src="principal_view/principal.js"></script>
+
 
 </html>
