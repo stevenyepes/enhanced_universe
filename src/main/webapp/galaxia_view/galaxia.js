@@ -33,6 +33,8 @@ angular.module('app.galaxia', ['ngRoute',
 	    var selected = [];
 	    if(galaxia.tipogalaxia) {
 	      selected = $filter('filter')($scope.tipogalaxias, {nombre: galaxia.tipogalaxia.nombre});
+	      
+	    
 	    }
 	    return selected.length ? selected[0].nombre : 'Not set';
 	  };
@@ -65,24 +67,35 @@ angular.module('app.galaxia', ['ngRoute',
 		      // mark as not new 
 		      if (galaxia.isNew) {
 		        galaxia.isNew = false;
+		        // send on server
+			      
+			      $http({
+				        method : 'POST',
+				        url : 'http://localhost:8080/enhanced_universe/rest/galaxia/',
+				        //headers: headers,
+				        data : {
+				        	nombre : galaxia.nombre,
+							tipogalaxia : {
+								nombre : galaxia.tipogalaxia.nombre
+							},
+							ancho : galaxia.ancho,
+							alto : galaxia.alto,
+							profundidad: galaxia.profundidad,
+							diametro: galaxia.diametro,
+							distanciatierra: galaxia.distanciatierra,
+				        }
+				        	
+				        }).success(function() {
+				            alert('guardado');
+				            
+				            //$location.path("/galaxia")
+				        });
+			        	console.log("aqui ando chaval");
 		        
-		        $http({
-			        method : 'POST',
-			        url : 'http://localhost:8080/enhanced_universe/rest/galaxia/',
-			        //headers: headers,
-			        data : galaxia
-			        	
-			        }).success(function() {
-			            alert('guardado');
-			            
-			            //$location.path("/galaxia")
-			        });
-		        	console.log("aqui ando chaval")
+		        
 		      }
 
-		      // send on server
-		      
-			
+		     
 			 
 			 
 		    }
