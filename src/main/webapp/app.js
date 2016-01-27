@@ -2,7 +2,6 @@ var app = angular.module('app',[
                                 'ngRoute',
                                 'ngCookies',
                                 'xeditable',
-                                'app.addGalaxia',
                                 'app.galaxia' ]);
 
 app.config([ '$routeProvider', function($routeProvider) {
