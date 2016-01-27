@@ -1,32 +1,73 @@
 
 <div class="container">
-	<table class="table table-striped table-bordered table-hover" >
-		<tr class="active">
-			<th>Nombre</th>
-			<th>Tipo</th>
-			<th>Alto</th>
-			<th>Ancho</th>
-			<th>Profundidad</th>
-			<th>Diametro</th>
-			<th>Distancia Tierra</th>
-			
-		</tr>
-		
-		<tr ng-repeat="galaxia in galaxias">
-			<td>{{galaxia.nombre}}</td>
-			<td>{{galaxia.tipogalaxia.nombre}}</td>
-			<td>{{galaxia.ancho}}</td>
-			<td>{{galaxia.alto}}</td>
-			<td>{{galaxia.profundidad}}</td>
-			<td>{{galaxia.diametro}}</td>
-			<td>{{galaxia.distanciatierra}}</td>
-			<td><button class="btn btn-danger" ng-click="eliminar(galaxia)">X</button></td>
-			
-		</tr>
-		
-		
-	</table>
-	<a class="btn btn-success" href="#/addGalaxia" role="agregar">Agregar</a>
+	<form editable-form name="tableform" onaftersave="saveTable()" oncancel="cancel()">
+		<table class="table table-striped table-bordered table-hover table-condensed">
+			<tr class="active">
+				<th>Nombre</th>
+				<th>Tipo</th>
+				<th>Alto</th>
+				<th>Ancho</th>
+				<th>Profundidad</th>
+				<th>Diametro</th>
+				<th>Distancia Tierra</th>
+				<th><span ng-show="tableform.$visible">Action</span>
+				<th>
+			</tr>
+
+			<tr ng-repeat="galaxia in galaxias">
+				<td>
+				<span editable-text="galaxia.nombre" e-form="tableform">
+					{{galaxia.nombre}}
+				</span>
+				</td>
+				<td>
+					<!-- editable status (select-local) --> <span
+					editable-select="galaxia.tipogalaxia.id" e-form="tableform"
+					e-ng-options="s.id as s.nombre for s in tipogalaxias"> {{
+						showStatus(galaxia) }} </span>
+				</td>
+				<td>
+				<span editable-text="galaxia.ancho" e-form="tableform">
+					{{galaxia.ancho}}
+				</span>
+				</td>
+				<td>
+				<span editable-text="galaxia.alto" e-form="tableform">
+					{{galaxia.alto}}
+				</span>
+				</td>
+				<td><span editable-text="galaxia.profundidad" e-form="tableform">
+					{{galaxia.profundidad}}
+				</span>
+				</td>
+				<td>
+				<span editable-text="galaxia.diametro" e-form="tableform">
+					{{galaxia.diametro}}
+				</span>
+				</td>
+				<td>
+				<span editable-text="galaxia.distanciatierra" e-form="tableform">
+					{{galaxia.distanciatierra}}
+				</span>
+				</td>
+				<td><button type="button" ng-show="tableform.$visible" ng-click="eliminar(galaxia)" class="btn btn-danger pull-right">Del</button></td>
+			</tr>
+
+
+		</table>
+		<!--<a class="btn btn-success" href="#/addGalaxia" role="agregar">Agregar</a>
+		 <!-- buttons -->
+    <div class="btn-edit">
+      <button type="button" class="btn btn-default" ng-show="!tableform.$visible" ng-click="tableform.$show()">
+        Editar
+      </button>
+    </div>
+    <div class="btn-form" ng-show="tableform.$visible">
+      <button type="button" ng-disabled="tableform.$waiting" ng-click="addUser()" class="btn btn-default pull-right">Agregar</button>
+      <button type="submit" ng-disabled="tableform.$waiting" class="btn btn-primary">Guardar</button>
+      <button type="button" ng-disabled="tableform.$waiting" ng-click="tableform.$cancel()" class="btn btn-default">Cancelar</button>
+    </div> 
+	</form>
 </div>
 
 

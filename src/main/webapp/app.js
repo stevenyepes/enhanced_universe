@@ -1,6 +1,7 @@
 var app = angular.module('app',[
                                 'ngRoute',
                                 'ngCookies',
+                                'xeditable',
                                 'app.addGalaxia',
                                 'app.galaxia' ]);
 
@@ -80,8 +81,9 @@ app.service('galaxia', function($http) {
 
 });
 
-app.run(function($rootScope, $cookies, $location) {
+app.run(function($rootScope, $cookies, $location, editableOptions) {
 
+	editableOptions.theme = 'bs3';
 	$rootScope.$on('$routChangeStart', function() {
 		if (typeOf($cookies.nombreUsuario) == 'undefined') {
 
