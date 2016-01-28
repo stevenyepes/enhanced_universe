@@ -3,9 +3,15 @@ var app = angular.module('app',[
                                 'ngCookies',
                                 'xeditable',
                                 'app.galaxia',
+                                'app.planeta',
+                                'app.asteroide',
+                                'app.cometa',
+                                'app.estrella',
+                                'app.satelite',
                                 'app.api',
                                 'app.Principal',
                                 'app.login']);
+
 
 app.config([ '$routeProvider', function($routeProvider) {
 

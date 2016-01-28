@@ -64,8 +64,7 @@ public class GlosarioService {
 
 		
 		return Response.status(Response.Status.CREATED)
-				// 201
-				.entity("Creado")
+				// 201				
 				.header("Access-Control-Allow-Origin", "*")
 				.header("Access-Control-Allow-Methods",
 						"GET, POST, DELETE, PUT").build();
@@ -83,8 +82,7 @@ public class GlosarioService {
 		boolean actualizado = glosarioBL.actualizarTermino(glosario.getTermino(), glosario.getDefinicion());
 		
 		return Response.status(Response.Status.CREATED)
-				// 201
-				.entity("Actualizado: "+actualizado)
+				// 201				
 				.header("Access-Control-Allow-Origin", "*")
 				.header("Access-Control-Allow-Methods",
 						"GET, POST, DELETE, PUT").build();
@@ -104,8 +102,7 @@ public class GlosarioService {
 		glosarioBL.eliminarTermino(glosario_termino);
 		return Response
 				.ok()
-				// 200
-				.entity("Eliminado")
+				// 200			
 				.header("Access-Control-Allow-Origin", "*")
 				.header("s-Control-Allow-Methods",
 						"GET, POST, DELETE, PUT").build();

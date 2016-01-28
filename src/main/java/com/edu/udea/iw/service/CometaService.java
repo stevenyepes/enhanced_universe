@@ -90,8 +90,7 @@ public class CometaService {
 
 		
 		return Response.status(Response.Status.CREATED)
-				// 201
-				.entity("Creado")
+				// 201				
 				.header("Access-Control-Allow-Origin", "*")
 				.header("Access-Control-Allow-Methods",
 						"GET, POST, DELETE, PUT").build();
@@ -111,8 +110,7 @@ public class CometaService {
 
 		
 		return Response.status(Response.Status.CREATED)
-				// 201
-				.entity("Actualizado")
+				// 201				
 				.header("Access-Control-Allow-Origin", "*")
 				.header("Access-Control-Allow-Methods",
 						"GET, POST, DELETE, PUT").build();
@@ -133,8 +131,7 @@ public class CometaService {
 		cometaBL.eliminarCometa(cometa_nombre);
 		return Response
 				.ok()
-				// 200
-				.entity("Eliminado")
+				// 200				
 				.header("Access-Control-Allow-Origin", "*")
 				.header("Access-Control-Allow-Methods",
 						"GET, POST, DELETE, PUT").build();

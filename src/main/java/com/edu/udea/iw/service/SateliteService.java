@@ -87,8 +87,7 @@ public class SateliteService {
 
 		
 		return Response.status(Response.Status.CREATED)
-				// 201
-				.entity("Creado")
+				// 201				
 				.header("Access-Control-Allow-Origin", "*")
 				.header("Access-Control-Allow-Methods",
 						"GET, POST, DELETE, PUT").build();
@@ -106,8 +105,7 @@ public class SateliteService {
 
 		
 		return Response.status(Response.Status.CREATED)
-				// 201
-				.entity("Actualizado: "+actualizado)
+				// 201				
 				.header("Access-Control-Allow-Origin", "*")
 				.header("Access-Control-Allow-Methods",
 						"GET, POST, DELETE, PUT").build();
@@ -125,8 +123,7 @@ public class SateliteService {
 		sateliteBL.eliminarSatelite(satelite_nombre);
 		return Response
 				.ok()
-				// 200
-				.entity("Eliminado")
+				// 200				
 				.header("Access-Control-Allow-Origin", "*")
 				.header("Access-Control-Allow-Methods",
 						"GET, POST, DELETE, PUT").build();
