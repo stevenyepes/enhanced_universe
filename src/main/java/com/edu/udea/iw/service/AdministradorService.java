@@ -70,11 +70,11 @@ public class AdministradorService {
 			@PathParam("contrasena") String contrasena) throws MyException {
 		
 		boolean validado = administradorBL.validarAdministrador(login, contrasena);
-
+		String res = "{\"validado\":" + validado + "}";
 		
 		return Response.status(Response.Status.CREATED)
 				// 201
-				.entity(validado)
+				.entity(res)
 				.header("Location",
 						"http://localhost:8080/enhanced_universe/rest/administrador"
 								+ login).build();

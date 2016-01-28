@@ -4,16 +4,11 @@ var app = angular.module('app',[
                                 'xeditable',
                                 'app.galaxia',
                                 'app.api',
-                                'app.Principal']);
+                                'app.Principal',
+                                'app.login']);
 
 app.config([ '$routeProvider', function($routeProvider) {
 
-	
-	$routeProvider.when('/login', {
-
-		templateUrl : 'templates/login.html',
-		controller : 'contLogin'
-	});
 
 	$routeProvider.otherwise('/');
 } ]);
