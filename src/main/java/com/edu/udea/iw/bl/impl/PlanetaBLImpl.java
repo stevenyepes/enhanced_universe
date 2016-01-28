@@ -113,6 +113,8 @@ Boolean isDeleted = false;
 		planeta.setMasa(masa);
 		planeta.setGravedad(gravedad);
 		planeta.setPeriodoorbital(periodoOrbital);
+		planeta.setPeriodorotacional(periodoRotacional);
+		planeta.setDistanciatierra(distanciaTierra);
 		planeta.setDiametro(diametro);
 		planeta.setTemperatura(temperatura);
 
@@ -153,6 +155,8 @@ Boolean isDeleted = false;
 				planeta.setMasa(masa);
 				planeta.setGravedad(gravedad);
 				planeta.setPeriodoorbital(periodoOrbital);
+				planeta.setPeriodorotacional(periodoRotacional);
+				planeta.setDistanciatierra(distanciaTierra);
 				planeta.setDiametro(diametro);
 				planeta.setTemperatura(temperatura);
 				planeta.setNombre(nombre);

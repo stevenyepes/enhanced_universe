@@ -101,7 +101,7 @@ angular
 								if (planeta.isNew) {
 									planeta.isNew = false;
 									// send on server
-
+									
 									$http(
 											{
 												method : 'POST',
@@ -115,7 +115,7 @@ angular
 												    temperatura: planeta.temperatura,
 												    periodorotacional: planeta.periodorotacional,
 												    periodoorbital: planeta.periodoorbital,
-												    distanciatierra: planeta.distanaciatierra,
+												    distanciatierra: planeta.distanciatierra,
 												    galaxia: {							      
 												      nombre: planeta.galaxia.nombre						        
 												      },			
@@ -129,6 +129,7 @@ angular
 
 								} else {
 									// send on server
+									console.log(planeta);
 
 									$http(
 											{
@@ -143,7 +144,7 @@ angular
 												    temperatura: planeta.temperatura,
 												    periodorotacional: planeta.periodorotacional,
 												    periodoorbital: planeta.periodoorbital,
-												    distanciatierra: planeta.distanaciatierra,
+												    distanciatierra: planeta.distanciatierra,
 												    galaxia: {							      
 												      nombre: planeta.galaxia.nombre						        
 												      },	
