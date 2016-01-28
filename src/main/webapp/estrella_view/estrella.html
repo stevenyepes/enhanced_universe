@@ -1,0 +1,68 @@
+<br/>
+<br/>
+<br/>
+<div class="container">
+	<form editable-form name="tableform" onaftersave="enviar()"
+		oncancel="cancel()">
+		<table
+			class="table table-striped table-bordered table-hover table-condensed">
+			<tr class="active">
+				<th>Nombre</th>
+				<th>Tipo Espectral</th>
+				<th>Temperatura</th>
+				<th>Clase</th>
+				<th>Masa</th>
+				<th>Diametro</th>
+				<th>Galaxia</th>
+				<th><span ng-show="tableform.$visible">Action</span><th>
+			</tr>
+
+			<tr ng-repeat="estrella in estrellas">
+				<td><span editable-text="estrella.nombre" e-form="tableform">
+						{{estrella.nombre}} </span></td>
+				<td>
+					<!-- editable group (select-remote) --> <span
+					editable-select="estrella.tipoespectral.clasificacion" e-form="tableform"
+					e-ng-options="s.clasificacion as s.clasificacion for s in tiposespectrales"> {{
+						showStatus2(estrella) }} </span>
+				</td>					
+				<td><span editable-text="estrella.temperatura" e-form="tableform">
+						{{estrella.temperatura}} </span></td>
+				<td><span editable-text="estrella.clase" e-form="tableform"> 
+						{{estrella.clase}} </span></td>
+				<td><span editable-text="estrella.masa" e-form="tableform">
+						{{estrella.masa}} </span></td>
+				<td><span editable-text="estrella.diametro" e-form="tableform">
+						{{estrella.diametro}} </span></td>		
+				<td>
+					<!-- editable group (select-remote) --> <span
+					editable-select="estrella.galaxia.nombre" e-form="tableform"
+					e-ng-options="s.nombre as s.nombre for s in galaxias"> {{
+						showStatus(estrella) }} </span>
+				</td>
+				
+				<td><button type="button" ng-show="tableform.$visible"
+						ng-click="eliminarEstrella(estrella)" class="btn btn-danger pull-right">Del</button></td>
+			</tr>
+
+
+		</table>
+		<!--<a class="btn btn-success" href="#/addGalaxia" role="agregar">Agregar</a>
+		 <!-- buttons -->
+		<div class="btn-edit">
+			<button type="button" class="btn btn-default"
+				ng-show="!tableform.$visible" ng-click="tableform.$show()">
+				Editar</button>
+		</div>
+		<div class="btn-form" ng-show="tableform.$visible">
+			<button type="button" ng-disabled="tableform.$waiting"
+				ng-click="addEstrella()" class="btn btn-default pull-right">Agregar</button>
+			<button type="submit" ng-disabled="tableform.$waiting"
+				class="btn btn-primary">Guardar</button>
+			<button type="button" ng-disabled="tableform.$waiting"
+				ng-click="tableform.$cancel()" class="btn btn-default">Cancelar</button>
+		</div>
+	</form>
+</div>
+
+

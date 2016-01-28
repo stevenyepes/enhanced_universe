@@ -163,12 +163,7 @@ angular
 
 						}
 					}
-<<<<<<< HEAD
-					
-				}
 
-=======
->>>>>>> 24f0d4f22ba4be29d97cdd1712d950c41f71de45
 				})
 		.service(
 				'asteroideService',
