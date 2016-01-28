@@ -1,0 +1,22 @@
+<br>
+<br>
+<br>
+<div class="container">
+	<form name="login">
+		<div class="form-group">
+			<label for="nombreUsuario">Nombre</label> <input class="form-control"
+				id="nombreUsuario" type="text" required ng-model="nombreUsuario" />
+		</div>
+
+		<div class="form-group">
+			<label for="contrasena">Contraseña</label> <input
+				class="form-control" id="contrasena" type="password" required
+				ng-model="contrasena" />
+		</div>
+
+
+		<button type="submit" class="btn btn-success" ng-disabled="!nombreUsuario || !contrasena" ng-click="validar()">Validar</button>
+
+	</form>
+</div>
+

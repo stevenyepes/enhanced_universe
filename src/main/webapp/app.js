@@ -6,20 +6,14 @@ var app = angular.module('app',[
                                 'app.planeta',
                                 'app.asteroide',
                                 'app.cometa',
-                                'app.estrella',
                                 'app.satelite',
                                 'app.api',
-                                'app.Principal']);
+                                'app.Principal',
+                                'app.login']);
 
 
 app.config([ '$routeProvider', function($routeProvider) {
 
-	
-	$routeProvider.when('/login', {
-
-		templateUrl : 'templates/login.html',
-		controller : 'contLogin'
-	});
 
 	$routeProvider.otherwise('/');
 } ]);
