@@ -104,7 +104,7 @@ angular
 									$http(
 											{
 												method : 'POST',
-												url : 'http://localhost:8084/enhanced_universe/rest/satelite/',
+												url : 'http://localhost:8080/enhanced_universe/rest/satelite/',
 												// headers: headers,
 												data : {
 													 	nombre: satelite.nombre ,
@@ -131,7 +131,7 @@ angular
 									$http(
 											{
 												method : 'PUT',
-												url : 'http://localhost:8084/enhanced_universe/rest/satelite/',
+												url : 'http://localhost:8080/enhanced_universe/rest/satelite/',
 												// headers: headers,
 												data : {
 													nombre: satelite.nombre ,
@@ -150,8 +150,7 @@ angular
 										console.log('actualizado')
 
 										// $location.path("/galaxia")
-									});
-									console.log("aqui ando chaval");
+									});									
 								}
 							}
 						}
@@ -163,7 +162,7 @@ angular
 						$http(
 								{
 									method : 'DELETE',
-									url : 'http://localhost:8084/enhanced_universe/rest/satelite/'
+									url : 'http://localhost:8080/enhanced_universe/rest/satelite/'
 											+ data.nombre,
 								}).success(function() {
 							alert('Eliminado');
@@ -185,7 +184,7 @@ angular
 						return $http({
 
 							method : 'GET',
-							url : 'http://localhost:8084/enhanced_universe/rest/satelite/',
+							url : 'http://localhost:8080/enhanced_universe/rest/satelite/',
 
 						})
 					}
@@ -200,7 +199,7 @@ angular
 						return $http({
 
 							method : 'GET',
-							url : 'http://localhost:8084/enhanced_universe/rest/planeta/',
+							url : 'http://localhost:8080/enhanced_universe/rest/planeta/',
 
 						})
 					}
