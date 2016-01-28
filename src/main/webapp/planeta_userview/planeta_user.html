@@ -1,0 +1,30 @@
+<div class="row footer-body">
+    <div class="col-md-12">
+    	<br/><br/>
+		<h1 class="title">Planetas</h1>
+		<br/>
+	</div>
+</div>
+<br/>
+<div class="container">
+	<div class="row">
+        <div ng-repeat="planeta in planetas" class="col-md-3">
+          <div class="thumbnail">
+            <img src="resources/iconos/earth26.svg" alt="">
+            <div class="caption">
+              <h2 class="text-capitalize">{{planeta.nombre}}</h2>
+              <p class="text-capitalize"><strong>Galaxia: </strong>{{planeta.galaxia.nombre}}</p>
+              <p><strong>Masa: </strong>{{planeta.masa}}</p>
+              <p><strong>Diametro: </strong>{{planeta.diametro}}</p>
+              <p><strong>Gravedad: </strong>{{planeta.gravedad}}</p>
+              <p><strong>Temperatura: </strong>{{planeta.temperatura}}</p>
+              <p><strong>Periodo Rotacional: </strong>{{planeta.periodorotacional}}</p>
+              <p><strong>Periodo Orbital: </strong>{{planeta.periodoorbital}}</p>
+              <p><strong>Distancia a la Tierra: </strong>{{planeta.distanciatierra}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+
+

@@ -210,3 +210,11 @@ h4.link {
 #canvas {
     height: 125px;
 }
+
+.thumbnail > img {
+    max-width: 150px;
+}
+
+.thumbnail {
+    border-style: none;
+}

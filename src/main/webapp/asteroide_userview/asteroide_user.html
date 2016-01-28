@@ -1,0 +1,25 @@
+<div class="row footer-body">
+    <div class="col-md-12">
+    	<br/><br/>
+		<h1 class="title">Asteroides</h1>
+		<br/>
+	</div>
+</div>
+<br/>
+<div class="container">
+	<div class="row">
+        <div ng-repeat="asteroide in asteroides" class="col-md-3">
+          <div class="thumbnail">
+            <img src="resources/iconos/rock8.svg" alt="">
+            <div class="caption">
+              <h2 class="text-capitalize">{{asteroide.nombre}}</h2>
+              <p class="text-capitalize"><strong>Galaxia: </strong>{{asteroide.galaxia.nombre}}</p>
+              <p><strong>Diametro: </strong>{{asteroide.diametro}}</p>
+			  <p><strong>Es Peligroso?: </strong>{{asteroide.peligroso}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+
+

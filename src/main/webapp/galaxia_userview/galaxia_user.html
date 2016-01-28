@@ -1,0 +1,28 @@
+<div class="row footer-body">
+    <div class="col-md-12">
+    	<br/><br/>
+		<h1 class="title">Galaxias</h1>
+		<br/>
+	</div>
+</div>
+<br/>
+<div class="container">
+	<div class="row">
+        <div ng-repeat="galaxia in galaxias" class="col-md-3">
+          <div class="thumbnail">
+            <img src="resources/iconos/galaxy3.svg" alt="">
+            <div class="caption">
+              <h2 class="text-capitalize">{{galaxia.nombre}}</h2>
+              <p class="text-capitalize"><strong>Tipo: </strong>{{galaxia.tipogalaxia.nombre}}</p>
+              <p><strong>Alto: </strong>{{galaxia.alto}}</p>
+              <p><strong>Ancho: </strong>{{galaxia.ancho}}</p>
+              <p><strong>Profundidad: </strong>{{galaxia.profundidad}}</p>
+              <p><strong>Diametro: </strong>{{galaxia.diametro}}</p>
+              <p><strong>Distancia a la tierra: </strong>{{galaxia.distanciatierra}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+
+

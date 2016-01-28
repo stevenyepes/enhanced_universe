@@ -1,0 +1,30 @@
+<div class="row footer-body">
+    <div class="col-md-12">
+    	<br/><br/>
+		<h1 class="title">Satelites</h1>
+		<br/>
+	</div>
+</div>
+<br/>
+<div class="container">
+	<div class="row">
+        <div ng-repeat="satelite in satelites" class="col-md-3">
+          <div class="thumbnail">
+            <img src="resources/iconos/saturn15.svg" alt="">
+            <div class="caption">
+              <h2 class="text-capitalize">{{satelite.nombre}}</h2>
+              <p class="text-capitalize"><strong>Planeta: </strong>{{satelite.planeta.nombre}}</p>
+              <p class="text-capitalize"><strong>Galaxia: </strong>{{satelite.planeta.galaxia.nombre}}</p>
+              <p><strong>Masa: </strong>{{satelite.masa}}</p>
+              <p><strong>Diametro: </strong>{{satelite.diametro}}</p>
+              <p><strong>Gravedad: </strong>{{satelite.gravedad}}</p>
+              <p><strong>Temperatura: </strong>{{satelite.temperatura}}</p>
+              <p><strong>Periodo Rotacional: </strong>{{satelite.periodorotacional}}</p>
+              <p><strong>Periodo Orbital: </strong>{{satelite.periodoorbital}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+
+
