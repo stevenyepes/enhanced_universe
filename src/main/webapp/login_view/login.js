@@ -17,7 +17,7 @@ angular.module('app.login', [ 'ngRoute' ])
 				function(data) {
 
 					if (data.validado) {
-						alert('Excelente');
+						
 					} else {
 
 						alert('usuario invalido');
