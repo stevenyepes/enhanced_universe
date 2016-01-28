@@ -46,6 +46,7 @@ body {
     -o-transition: all 0.3s;
     transition: all 0.3s;
     background-color: #997BAE !important;
+    cursor: pointer;
 }
 
 .dropdown-menu > li:hover, .dropdown-menu > li > a:hover {
@@ -217,4 +218,13 @@ h4.link {
 
 .thumbnail {
     border-style: none;
+}
+
+.modal {
+	font-family: openSans;
+}
+
+.modal-body > span > p {
+	font-family: openSansLight;
+	color: #1B1B1B;
 }
