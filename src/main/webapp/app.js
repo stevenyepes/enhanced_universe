@@ -10,7 +10,8 @@ var app = angular.module('app',[
                                 'app.estrella',
                                 'app.api',
                                 'app.Principal',
-                                'app.login']);
+                                'app.login',
+                                'app.admin']);
 
 
 app.config([ '$routeProvider', function($routeProvider) {
