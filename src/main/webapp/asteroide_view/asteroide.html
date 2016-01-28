@@ -1,0 +1,54 @@
+<br/>
+<br/>
+<br/>
+<div class="container">
+	<form editable-form name="tableform" onaftersave="enviar()"
+		oncancel="cancel()">
+		<table
+			class="table table-striped table-bordered table-hover table-condensed">
+			<tr class="active">
+				<th>Nombre</th>
+				<th>Diametro</th>
+				<th>Peligroso</th>
+				<th>Galaxia</th>				
+				<th><span ng-show="tableform.$visible">Action</span><th>
+			</tr>
+
+			<tr ng-repeat="asteroide in asteroides">
+				<td><span editable-text="asteroide.nombre" e-form="tableform">
+						{{asteroide.nombre}} </span></td>
+				<td><span editable-text="asteroide.Diametro" e-form="tableform">
+						{{asteroide.diametro}} </span></td>				
+				<td><span editable-text="asteroide.peligroso" e-form="tableform">
+						{{asteroide.peligroso}} </span></td>
+				<td>		
+					<!-- editable group (select-remote) --> <span
+					editable-select="asteroide.galaxia.nombre" e-form="tableform"
+					e-ng-options="s.nombre as s.nombre for s in galaxias"> {{
+						showStatus(asteroide) }} </span>
+				</td>				
+				<td><button type="button" ng-show="tableform.$visible"
+						ng-click="eliminarAsteroide(asteroide)" class="btn btn-danger pull-right">Del</button></td>
+			</tr>
+
+
+		</table>
+		<!--<a class="btn btn-success" href="#/addGalaxia" role="agregar">Agregar</a>
+		 <!-- buttons -->
+		<div class="btn-edit">
+			<button type="button" class="btn btn-default"
+				ng-show="!tableform.$visible" ng-click="tableform.$show()">
+				Editar</button>
+		</div>
+		<div class="btn-form" ng-show="tableform.$visible">
+			<button type="button" ng-disabled="tableform.$waiting"
+				ng-click="addAsteroide()" class="btn btn-default pull-right">Agregar</button>
+			<button type="submit" ng-disabled="tableform.$waiting"
+				class="btn btn-primary">Guardar</button>
+			<button type="button" ng-disabled="tableform.$waiting"
+				ng-click="tableform.$cancel()" class="btn btn-default">Cancelar</button>
+		</div>
+	</form>
+</div>
+
+
