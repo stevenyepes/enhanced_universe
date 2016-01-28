@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('app.login', [ 'ngRoute' ])
+angular.module('app.login', [ 'ngRoute' , 'ngCookies'])
 
 .config([ '$routeProvider', function($routeProvider) {
 			$routeProvider.when('/login', {
@@ -9,7 +9,7 @@ angular.module('app.login', [ 'ngRoute' ])
 			});
 		} ])
 		
-.controller('loginCtrl', function($scope, $http, validacionService) {
+.controller('loginCtrl', function($scope, $http, $cookies,$location, validacionService) {
 	
 	$scope.validar = function() {
 
@@ -17,7 +17,8 @@ angular.module('app.login', [ 'ngRoute' ])
 				function(data) {
 
 					if (data.validado) {
-						
+						$cookies.usuario = $scope.nombreUsuario;
+						$location.path('/admin')
 					} else {
 
 						alert('usuario invalido');

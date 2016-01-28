@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('app.admin', [ 'ngRoute' ])
+angular.module('app.admin', [ 'ngRoute', 'ngCookies'])
 
 .config([ '$routeProvider', function($routeProvider) {
 	$routeProvider.when('/admin', {
@@ -8,8 +8,18 @@ angular.module('app.admin', [ 'ngRoute' ])
 		controller : 'adminCtrl'
 	});
 } ])
-.controller('adminCtrl',function($scope, $http, $filter, galaxiaService, asteroideService) {
+.controller('adminCtrl',function($scope, $http, $filter,$cookies, $location) {
 
+	$scope.usuario = '';
+	if (!($cookies.nombreUsuario)) {
+		console.log("cambie")
+
+		$location.path('/login')
+	}else {
+		
+		$scope.usuario = $cookies.nombreUsuario
+	}
+	
 	
 	
 });
