@@ -71,14 +71,14 @@ angular
 					};
 
 					$scope.addAsteroide = function() {
-						$scope.asteroides.push({							    
-							    nombre: 'nombre',
-							    diametro: null,
-							    peligroso: null,
-							    galaxia: {
-							      nombre: null							      
-							      },							  
-							      isNew : true
+						$scope.asteroides.push({
+							nombre : 'nombre',
+							diametro : null,
+							peligroso : null,
+							galaxia : {
+								nombre : null
+							},
+							isNew : true
 						});
 					};
 
@@ -103,12 +103,12 @@ angular
 												url : 'http://localhost:8080/enhanced_universe/rest/asteroide/',
 												// headers: headers,
 												data : {
-													nombre: asteroide.nombre,
-												    diametro: asteroide.diametro,
-												    peligroso: asteroide.peligroso,
-												    galaxia: {
-												      nombre: asteroide.galaxia.nombre							      
-												      },	
+													nombre : asteroide.nombre,
+													diametro : asteroide.diametro,
+													peligroso : asteroide.peligroso,
+													galaxia : {
+														nombre : asteroide.galaxia.nombre
+													},
 												}
 
 											}).success(function() {
@@ -126,41 +126,43 @@ angular
 												url : 'http://localhost:8080/enhanced_universe/rest/asteroide/',
 												// headers: headers,
 												data : {
-													nombre: asteroide.nombre,
-												    diametro: asteroide.diametro,
-												    peligroso: asteroide.peligroso,
-												    galaxia: {
-												      nombre: asteroide.galaxia.nombre							      
-												      },	
+													nombre : asteroide.nombre,
+													diametro : asteroide.diametro,
+													peligroso : asteroide.peligroso,
+													galaxia : {
+														nombre : asteroide.galaxia.nombre
+													},
 												}
 
 											}).success(function() {
 										console.log('actualizado')
 
 										// $location.path("/galaxia")
-									});									
+									});
+								}
 							}
+
 						}
 
+						$scope.eliminar = function(data) {
+
+							$http(
+									{
+										method : 'DELETE',
+										url : 'http://localhost:8080/enhanced_universe/rest/asteroide/'
+												+ data.nombre,
+									}).success(
+									function() {
+										alert('Eliminado');
+										asteroideService.getAll().success(
+												function(data) {
+
+													$scope.asteroides = data;
+												});
+									});
+
+						}
 					}
-
-					$scope.eliminar = function(data) {
-
-						$http(
-								{
-									method : 'DELETE',
-									url : 'http://localhost:8080/enhanced_universe/rest/asteroide/'
-											+ data.nombre,
-								}).success(function() {
-							alert('Eliminado');
-							asteroideService.getAll().success(function(data) {
-
-								$scope.asteroides = data;
-							});
-						});
-
-					}
-
 				})
 		.service(
 				'asteroideService',

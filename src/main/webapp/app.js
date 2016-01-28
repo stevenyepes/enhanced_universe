@@ -6,7 +6,6 @@ var app = angular.module('app',[
                                 'app.planeta',
                                 'app.asteroide',
                                 'app.cometa',
-                                'app.estrella',
                                 'app.satelite',
                                 'app.api',
                                 'app.Principal',
