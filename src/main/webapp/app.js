@@ -17,6 +17,7 @@ var app = angular.module('app',[
                                 'app.satelite_user',
                                 'app.estrella_user',
                                 'app.asteroide_user',
+                                'app.cometa_user'
                                 ]);
 
 
