@@ -1,0 +1,26 @@
+<div class="row footer-body">
+    <div class="col-md-12">
+    	<br/><br/>
+		<h1 class="title">Cometas</h1>
+		<br/>
+	</div>
+</div>
+<br/>
+<div class="container">
+	<div class="row">
+        <div ng-repeat="cometa in cometas" class="col-md-3">
+          <div class="thumbnail">
+            <img src="resources/iconos/asteroid.svg" alt="">
+            <div class="caption">
+              <h2 class="text-capitalize">{{cometa.nombre}}</h2>
+              <p class="text-capitalize"><strong>Galaxia: </strong>{{cometa.galaxia.nombre}}</p>
+              <p><strong>Diametro: </strong>{{cometa.diametro}}</p>
+			  <p><strong>Periodo Orbital: </strong>{{cometa.periodoorbital}}</p>
+			  <p><strong>Ultimo Perihelio: </strong>{{cometa.ultimoperihelio}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+
+

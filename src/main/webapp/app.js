@@ -11,7 +11,13 @@ var app = angular.module('app',[
                                 'app.api',
                                 'app.Principal',
                                 'app.login',
-                                'app.admin']);
+                                'app.admin',
+                                'app.galaxia_user',
+                                'app.planeta_user',
+                                'app.satelite_user',
+                                'app.estrella_user',
+                                'app.asteroide_user',
+                                ]);
 
 
 app.config([ '$routeProvider', function($routeProvider) {

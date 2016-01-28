@@ -1,0 +1,29 @@
+<div class="row footer-body">
+    <div class="col-md-12">
+    	<br/><br/>
+		<h1 class="title">Estrellas</h1>
+		<br/>
+	</div>
+</div>
+<br/>
+<div class="container">
+	<div class="row">
+        <div ng-repeat="estrella in estrellas" class="col-md-3">
+          <div class="thumbnail">
+            <img src="resources/iconos/sun79.svg" alt="">
+            <div class="caption">
+              <h2 class="text-capitalize">{{estrella.nombre}}</h2>
+              <p class="text-capitalize"><strong>Galaxia: </strong>{{estrella.galaxia.nombre}}</p>
+              <p class="text-capitalize"><strong>Clase: </strong>{{estrella.clase}}</p>
+              <p class="text-capitalize"><strong>Clasificacion: </strong>{{estrella.tipoespectral.clasificacion}}</p>
+              <p class="text-capitalize"><strong>Color: </strong>{{estrella.tipoespectral.color}}</p>
+              <p><strong>Masa: </strong>{{estrella.masa}}</p>
+              <p><strong>Diametro: </strong>{{estrella.diametro}}</p>
+              <p><strong>Temperatura: </strong>{{estrella.temperatura}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+
+
