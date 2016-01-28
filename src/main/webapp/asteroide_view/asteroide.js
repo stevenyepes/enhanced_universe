@@ -163,6 +163,7 @@ angular
 
 						}
 					}
+
 				})
 		.service(
 				'asteroideService',
